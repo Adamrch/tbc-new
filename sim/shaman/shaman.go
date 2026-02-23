@@ -135,6 +135,10 @@ type Shaman struct {
 	TremorTotem        *core.Spell
 	FireNovaTotemPA    *core.PendingAction
 
+	AirTotemAura   *core.Aura
+	EarthTotemAura *core.Aura
+	WaterTotemAura *core.Aura
+
 	waterShieldManaMetrics *core.ResourceMetrics
 }
 

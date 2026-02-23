@@ -89,7 +89,11 @@ func (shaman *Shaman) registerWindfuryTotemSpell() {
 	})
 
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		if shaman.AirTotemAura != nil {
+			shaman.AirTotemAura.Deactivate(sim)
+		}
 		shaman.TotemExpirations[AirTotem] = sim.CurrentTime + duration
+		shaman.AirTotemAura = wfAura
 		wfAura.Activate(sim)
 	}
 
@@ -119,7 +123,11 @@ func (shaman *Shaman) registerStrengthOfEarthTotemSpell() {
 		},
 	})
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		if shaman.EarthTotemAura != nil {
+			shaman.EarthTotemAura.Deactivate(sim)
+		}
 		shaman.TotemExpirations[EarthTotem] = sim.CurrentTime + duration
+		shaman.EarthTotemAura = buffAura
 		buffAura.Activate(sim)
 	}
 	shaman.RegisterSpell(config)
@@ -144,7 +152,11 @@ func (shaman *Shaman) registerGraceOfAirTotemSpell() {
 		},
 	})
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		if shaman.AirTotemAura != nil {
+			shaman.AirTotemAura.Deactivate(sim)
+		}
 		shaman.TotemExpirations[AirTotem] = sim.CurrentTime + duration
+		shaman.AirTotemAura = buffAura
 		buffAura.Activate(sim)
 	}
 	shaman.RegisterSpell(config)
@@ -175,7 +187,11 @@ func (shaman *Shaman) registerWrathOfAirTotemSpell() {
 		},
 	})
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		if shaman.AirTotemAura != nil {
+			shaman.AirTotemAura.Deactivate(sim)
+		}
 		shaman.TotemExpirations[AirTotem] = sim.CurrentTime + duration
+		shaman.AirTotemAura = buffAura
 		buffAura.Activate(sim)
 	}
 	shaman.RegisterSpell(config)
@@ -200,12 +216,17 @@ func (shaman *Shaman) registerManaSpringTotemSpell() {
 		},
 	})
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		if shaman.WaterTotemAura != nil {
+			shaman.WaterTotemAura.Deactivate(sim)
+		}
 		shaman.TotemExpirations[WaterTotem] = sim.CurrentTime + duration
+		shaman.WaterTotemAura = buffAura
 		buffAura.Activate(sim)
 	}
 	shaman.RegisterSpell(config)
 }
-func (shaman *Shaman) registerHealingStreamTotemSpell() {
+
+/* func (shaman *Shaman) registerHealingStreamTotemSpell() {
 	config := shaman.newTotemSpellConfig(3, 5394, SpellMaskBasicTotem)
 	hsHeal := shaman.RegisterSpell(core.SpellConfig{
 		ActionID:         core.ActionID{SpellID: 5394},
@@ -237,4 +258,4 @@ func (shaman *Shaman) registerHealingStreamTotemSpell() {
 		}
 	}
 	shaman.HealingStreamTotem = shaman.RegisterSpell(config)
-}
+} */
