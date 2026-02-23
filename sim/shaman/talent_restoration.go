@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/wowsims/tbc/sim/core"
+	"github.com/wowsims/tbc/sim/core/stats"
 )
 
 func (shaman *Shaman) ApplyRestorationTalents() {
@@ -18,10 +19,13 @@ func (shaman *Shaman) applyNaturesGuidance() {
 	if shaman.Talents.NaturesGuidance == 0 {
 		return
 	}
-	shaman.AddStaticMod(core.SpellModConfig{
-		Kind:       core.SpellMod_BonusHit_Percent,
-		FloatValue: 1 * float64(shaman.Talents.NaturesGuidance),
-	})
+	core.MakePermanent(shaman.RegisterAura(core.Aura{
+		Label:      "Nature's Guidance",
+		BuildPhase: core.CharacterBuildPhaseTalents,
+	}).AttachStatsBuff(stats.Stats{
+		stats.SpellHitPercent: 1.0 * float64(shaman.Talents.NaturesGuidance),
+		stats.MeleeHitRating:  1.0 * float64(shaman.Talents.NaturesGuidance) * core.PhysicalHitRatingPerHitPercent,
+	}))
 }
 
 func (shaman *Shaman) applyNaturesSwiftness() {
