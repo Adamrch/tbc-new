@@ -19,12 +19,14 @@ func (shaman *Shaman) applyNaturesGuidance() {
 	if shaman.Talents.NaturesGuidance == 0 {
 		return
 	}
+	value := 1.0 * float64(shaman.Talents.NaturesGuidance)
 	core.MakePermanent(shaman.RegisterAura(core.Aura{
-		Label:      "Nature's Guidance",
-		BuildPhase: core.CharacterBuildPhaseTalents,
+		Label:    "Nature's Guidance",
+		ActionID: core.ActionID{SpellID: 16198},
 	}).AttachStatsBuff(stats.Stats{
-		stats.SpellHitPercent: 1.0 * float64(shaman.Talents.NaturesGuidance),
-		stats.MeleeHitRating:  1.0 * float64(shaman.Talents.NaturesGuidance) * core.PhysicalHitRatingPerHitPercent,
+		stats.SpellHitPercent:    value,
+		stats.PhysicalHitPercent: value,
+		stats.RangedHitPercent:   value,
 	}))
 }
 
