@@ -654,7 +654,7 @@ func WintersChillAura(target *Unit, startingStacks int32) *Aura {
 func ThunderClapAura(target *Unit, points int32) *Aura {
 	aura := target.GetOrRegisterAura(Aura{
 		Label:    "ThunderClap-" + strconv.Itoa(int(points)),
-		ActionID: ActionID{SpellID: 6343},
+		ActionID: ActionID{SpellID: 25264},
 		Duration: time.Second * 30,
 	})
 	AtkSpeedReductionEffect(aura, []float64{1.1, 1.14, 1.17, 1.2}[points])
