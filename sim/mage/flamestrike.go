@@ -1,6 +1,7 @@
 package mage
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/wowsims/tbc/sim/common/shared"
@@ -42,7 +43,7 @@ func (mage *Mage) registerFlamestrike(rankConfig shared.SpellRankConfig) {
 		Dot: core.DotConfig{
 			IsAOE: true,
 			Aura: core.Aura{
-				Label: "Flamestrike DoT " + mage.Label + " " + rankConfig.GetRankLabel(),
+				Label: fmt.Sprintf("Flamestrike DoT %s", rankConfig.GetRankLabel()),
 			},
 			NumberOfTicks:    4,
 			TickLength:       time.Second * 2,
