@@ -205,6 +205,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-HandofJustice-11815"
+ value: {
+  dps: 656.67957
+  tps: 1034.32121
+  dtps: 1412.88551
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-HourglassoftheUnraveller-28034"
  value: {
   dps: 662.25449
