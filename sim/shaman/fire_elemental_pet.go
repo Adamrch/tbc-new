@@ -1,6 +1,8 @@
 package shaman
 
 import (
+	"time"
+
 	"github.com/wowsims/tbc/sim/core"
 	"github.com/wowsims/tbc/sim/core/stats"
 )
@@ -33,7 +35,7 @@ func (shaman *Shaman) NewFireElemental() *FireElemental {
 		MainHand: core.Weapon{
 			BaseDamageMin:  baseMeleeDamage,
 			BaseDamageMax:  baseMeleeDamage,
-			SwingSpeed:     1.4,
+			SwingSpeed:     2.0,
 			CritMultiplier: fireElemental.DefaultMeleeCritMultiplier(),
 			SpellSchool:    core.SpellSchoolFire,
 		},
@@ -90,9 +92,9 @@ func (fireElemental *FireElemental) ExecuteCustomRotation(sim *core.Simulation) 
 		fireElemental.TryCast(sim, target, fireElemental.FireShield)
 	}
 	random := sim.RandomFloat("Fire Elemental Pet Spell")
-	if random >= .75 {
+	if random >= .92 {
 		fireElemental.TryCast(sim, target, fireElemental.FireBlast)
-	} else if random >= .40 && random < 0.75 {
+	} else if random >= .84 && random < 0.92 {
 		fireElemental.TryCast(sim, target, fireElemental.FireNova)
 	}
 
@@ -100,8 +102,7 @@ func (fireElemental *FireElemental) ExecuteCustomRotation(sim *core.Simulation) 
 		return
 	}
 
-	minCd := min(fireElemental.FireBlast.CD.ReadyAt(), fireElemental.FireNova.CD.ReadyAt())
-	fireElemental.ExtendGCDUntil(sim, max(minCd, fireElemental.AutoAttacks.NextAttackAt()))
+	fireElemental.ExtendGCDUntil(sim, max(sim.CurrentTime+time.Second, fireElemental.AutoAttacks.NextAttackAt()))
 }
 
 func (fireElemental *FireElemental) TryCast(sim *core.Simulation, target *core.Unit, spell *core.Spell) bool {
@@ -115,18 +116,15 @@ func (fireElemental *FireElemental) TryCast(sim *core.Simulation, target *core.U
 
 func (shaman *Shaman) fireElementalBaseStats() stats.Stats {
 	return stats.Stats{
-		stats.Mana:    3130,
-		stats.Stamina: 323,
+		stats.Mana:                3130,
+		stats.Stamina:             323,
+		stats.PhysicalCritPercent: 5 + 1.8,
+		stats.SpellCritPercent:    2.61,
 	}
 }
 
 func (shaman *Shaman) fireElementalStatInheritance() core.PetStatInheritance {
 	return func(ownerStats stats.Stats) stats.Stats {
-		ownerSpellCritPercent := ownerStats[stats.SpellCritPercent]
-		ownerPhysicalCritPercent := ownerStats[stats.PhysicalCritPercent]
-		ownerSpellHasteRating := ownerStats[stats.SpellHasteRating]
-		ownerMeleeHasteRating := ownerStats[stats.MeleeHasteRating]
-
 		power := ownerStats[stats.SpellDamage] + ownerStats[stats.NatureDamage] -
 			ownerStats[stats.AttackPower]*0.1*float64(shaman.Talents.MentalQuickness) // remove Spell Damage that comes from Mental Quickness
 
@@ -134,11 +132,6 @@ func (shaman *Shaman) fireElementalStatInheritance() core.PetStatInheritance {
 			stats.Stamina:     ownerStats[stats.Stamina] * 0.30,
 			stats.Intellect:   ownerStats[stats.Intellect] * 0.30, // https://discord.com/channels/260297137554849794/1474479843428139101/1474888606454775983
 			stats.SpellDamage: power,
-
-			stats.SpellCritPercent:    ownerSpellCritPercent,
-			stats.PhysicalCritPercent: ownerPhysicalCritPercent,
-			stats.SpellHasteRating:    ownerSpellHasteRating,
-			stats.MeleeHasteRating:    ownerMeleeHasteRating,
 		}
 	}
 }

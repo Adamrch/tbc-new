@@ -163,7 +163,10 @@ func (shaman *Shaman) applyMentalQuickness() {
 		FloatValue: -0.02 * float64(shaman.Talents.MentalQuickness),
 		SpellFlag:  SpellFlagInstant,
 	})
-	shaman.AddStatDependency(stats.AttackPower, stats.SpellDamage, 0.1*float64(shaman.Talents.MentalQuickness))
+	core.MakePermanent(shaman.RegisterAura(core.Aura{
+		Label:      "Mental Quickness",
+		BuildPhase: core.CharacterBuildPhaseTalents,
+	})).AttachStatDependency(shaman.NewDynamicStatDependency(stats.AttackPower, stats.SpellDamage, 0.1*float64(shaman.Talents.MentalQuickness)))
 }
 
 func (shaman *Shaman) applyShamanisticFocus() {

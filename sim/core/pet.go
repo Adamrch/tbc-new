@@ -146,16 +146,19 @@ func makeStatInheritanceFunc(nonHitExpStatInheritance PetStatInheritance) PetSta
 	return func(ownerStats stats.Stats) stats.Stats {
 		inheritedStats := nonHitExpStatInheritance(ownerStats)
 
-		// TODO: I dunno how this works in TBC
-		hitRating := ownerStats[stats.MeleeHitRating]
-		expertiseRating := ownerStats[stats.ExpertiseRating]
-		combined := (hitRating + expertiseRating) * 0.5
+		inheritedStats[stats.SpellHitPercent] = ownerStats[stats.SpellHitPercent]
+		inheritedStats[stats.PhysicalHitPercent] = ownerStats[stats.PhysicalHitPercent]
+		inheritedStats[stats.RangedHitPercent] = ownerStats[stats.RangedHitPercent]
 
-		inheritedStats[stats.MeleeHitRating] = combined
-		inheritedStats[stats.ExpertiseRating] = combined
+		inheritedStats[stats.ExpertiseRating] = ownerStats[stats.ExpertiseRating]
 
 		return inheritedStats
 	}
+}
+
+func (pet *Pet) inheritOwnerStats(sim *Simulation) {
+	pet.inheritedStats = pet.statInheritance(pet.Owner.GetStats())
+	pet.AddStatsDynamic(sim, pet.inheritedStats)
 }
 
 func (pet *Pet) enableDynamicStats(sim *Simulation) {
@@ -166,8 +169,7 @@ func (pet *Pet) enableDynamicStats(sim *Simulation) {
 		panic("Pet already present in dynamic stats pet list!")
 	}
 
-	pet.inheritedStats = pet.statInheritance(pet.Owner.GetStats())
-	pet.AddStatsDynamic(sim, pet.inheritedStats)
+	pet.inheritOwnerStats(sim)
 	pet.Owner.DynamicStatsPets = append(pet.Owner.DynamicStatsPets, pet)
 	pet.dynamicStatInheritance = pet.statInheritance
 	pet.pendingStatInheritance = stats.Stats{}
@@ -194,6 +196,11 @@ func (pet *Pet) AddOwnerStats(sim *Simulation, addedStats stats.Stats) {
 	pet.AddStatsDynamic(sim, inheritedChange)
 }
 
+func (pet *Pet) resetInheritedOwnerStats(sim *Simulation) {
+	pet.AddStatsDynamic(sim, pet.inheritedStats.Invert())
+	pet.inheritedStats = stats.Stats{}
+}
+
 func (pet *Pet) resetDynamicStats(sim *Simulation) {
 	if pet.dynamicStatInheritance == nil || !pet.isDynamic {
 		return
@@ -206,8 +213,7 @@ func (pet *Pet) resetDynamicStats(sim *Simulation) {
 	}
 
 	pet.dynamicStatInheritance = nil
-	pet.AddStatsDynamic(sim, pet.inheritedStats.Invert())
-	pet.inheritedStats = stats.Stats{}
+	pet.resetInheritedOwnerStats(sim)
 	pet.pendingStatInheritance = stats.Stats{}
 }
 
@@ -252,8 +258,11 @@ func (pet *Pet) Enable(sim *Simulation, petAgent PetAgent) {
 		pet.reset(sim, petAgent)
 	}
 
-	pet.enableDynamicStats(sim)
-
+	if pet.isDynamic {
+		pet.enableDynamicStats(sim)
+	} else {
+		pet.inheritOwnerStats(sim)
+	}
 	//reset current mana after applying stats
 	pet.manaBar.reset()
 
@@ -417,7 +426,11 @@ func (pet *Pet) Disable(sim *Simulation) {
 		return
 	}
 
-	pet.resetDynamicStats(sim)
+	if pet.isDynamic {
+		pet.resetDynamicStats(sim)
+	} else {
+		pet.resetInheritedOwnerStats(sim)
+	}
 	pet.resetDynamicMeleeSpeed(sim)
 	pet.resetDynamicCastSpeed(sim)
 	pet.CancelGCDTimer(sim)

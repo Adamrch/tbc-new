@@ -16,18 +16,13 @@ func (fireElemental *FireElemental) registerFireBlast() {
 		ManaCost: core.ManaCostOptions{
 			FlatCost: 120,
 		},
-		Cast: core.CastConfig{
-			CD: core.Cooldown{
-				Timer:    fireElemental.NewTimer(),
-				Duration: time.Second * 6,
-			},
-		},
 
 		DamageMultiplier: 1,
 		CritMultiplier:   fireElemental.DefaultSpellCritMultiplier(),
 		ThreatMultiplier: 1,
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			baseDamage := 535.0 // https://discord.com/channels/260297137554849794/699626629152112730/904088040992026655
+			scalingCoeff := 46.977695 / 11.334235
+			baseDamage := fireElemental.CalcAndRollDamageRange(sim, 110*scalingCoeff, 130*scalingCoeff)
 			spell.CalcAndDealDamage(sim, target, baseDamage, spell.OutcomeMagicHitAndCrit)
 		},
 	})
@@ -47,10 +42,6 @@ func (fireElemental *FireElemental) registerFireNova() {
 			DefaultCast: core.Cast{
 				CastTime: time.Second * 2,
 			},
-			CD: core.Cooldown{
-				Timer:    fireElemental.NewTimer(),
-				Duration: time.Second * 6,
-			},
 			IgnoreHaste: true,
 		},
 
@@ -60,7 +51,9 @@ func (fireElemental *FireElemental) registerFireNova() {
 		BonusCoefficient: 0.332, // https://discord.com/channels/260297137554849794/699626629152112730/904088040992026655
 
 		ApplyEffects: func(sim *core.Simulation, _ *core.Unit, spell *core.Spell) {
-			spell.CalcAndDealAoeDamage(sim, 703, spell.OutcomeMagicHitAndCrit)
+			scalingCoeff := 46.977695 / 11.334235
+			baseDamage := fireElemental.CalcAndRollDamageRange(sim, 148*scalingCoeff, 170*scalingCoeff)
+			spell.CalcAndDealAoeDamage(sim, baseDamage, spell.OutcomeMagicHitAndCrit)
 		},
 	})
 }
@@ -74,23 +67,24 @@ func (fireElemental *FireElemental) registerFireShield() {
 		ProcMask:    core.ProcMaskSpellDamage,
 		Flags:       SpellFlagShamanSpell,
 
-		DamageMultiplier: 1,
-		CritMultiplier:   fireElemental.DefaultSpellCritMultiplier(),
-		ThreatMultiplier: 1,
-
 		ManaCost: core.ManaCostOptions{
 			FlatCost: 95,
 		},
+
+		DamageMultiplier: 1,
+		CritMultiplier:   fireElemental.DefaultSpellCritMultiplier(),
+		ThreatMultiplier: 1,
+		BonusCoefficient: 0.0109, // https://discord.com/channels/260297137554849794/699626629152112730/904088040992026655
 		Dot: core.DotConfig{
 			Aura: core.Aura{
 				Label: "Fire Shield",
 			},
-			IsAOE:            true,
-			NumberOfTicks:    40,
-			TickLength:       time.Second * 3,
-			BonusCoefficient: 0.0109, // https://discord.com/channels/260297137554849794/699626629152112730/904088040992026655
+			IsAOE:         true,
+			NumberOfTicks: 40,
+			TickLength:    time.Second * 3,
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				dot.Spell.CalcAndDealAoeDamage(sim, 84, dot.Spell.OutcomeMagicHitAndCrit) // https://discord.com/channels/260297137554849794/699626629152112730/904088040992026655
+				baseDamage := 1.20000004768 * (70 - 1)
+				dot.Spell.CalcAndDealAoeDamage(sim, baseDamage, dot.Spell.OutcomeMagicHitAndCrit)
 			},
 		},
 		ApplyEffects: func(sim *core.Simulation, _ *core.Unit, spell *core.Spell) {
