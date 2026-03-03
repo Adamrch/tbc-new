@@ -35,7 +35,7 @@ import { SimSettingCategories } from './constants/sim_settings';
 import { simLaunchStatuses } from './launched_sims';
 import { Player, PlayerConfig, registerSpecConfig as registerPlayerConfig } from './player';
 import { PlayerSpecs } from './player_specs';
-import { PresetBuild, PresetEpWeights, PresetGear, PresetItemSwap, PresetRotation, PresetSettings } from './preset_utils';
+import { PresetBuild, PresetEncounter, PresetEpWeights, PresetGear, PresetItemSwap, PresetRotation, PresetSettings } from './preset_utils';
 import { StatWeightsResult } from './proto/api';
 import { APLRotation, APLRotation_Type as APLRotationType } from './proto/apl';
 import {
@@ -45,7 +45,7 @@ import {
 	Encounter as EncounterProto,
 	EquipmentSpec,
 	Faction,
-	HandType,
+	HealingModel,
 	IndividualBuffs,
 	ItemSlot,
 	ItemSwap,
@@ -59,15 +59,13 @@ import {
 } from './proto/common';
 import { IndividualSimSettings, ReforgeSettings, SavedTalents } from './proto/ui';
 import { getMetaGemConditionDescription } from './proto_utils/gems';
-import { armorTypeNames, professionNames } from './proto_utils/names';
+import { professionNames } from './proto_utils/names';
 import { pseudoStatIsCapped, StatCap, Stats, UnitStat } from './proto_utils/stats';
 import { getTalentPoints, migrateOldProto, ProtoConversionMap, SpecOptions, SpecRotation } from './proto_utils/utils';
-import { hasRequiredTalents, getMissingTalentRows, getRequiredTalentRows } from './talents/required_talents';
 import { SimUI, SimWarning } from './sim_ui';
 import { EventID, TypedEvent } from './typed_event';
 import { isDevMode } from './utils';
 import { CURRENT_API_VERSION } from './constants/other';
-import { Raid } from './raid';
 import { CHARACTER_LEVEL } from './constants/mechanics';
 import { ReforgeOptimizer } from './components/suggest_reforges_action';
 
@@ -97,6 +95,7 @@ export interface OtherDefaults {
 	highHpThreshold?: number;
 	iterationCount?: number;
 	race?: Race;
+	healingModel?: HealingModel;
 }
 
 export interface RaidSimPreset<SpecType extends Spec> {
@@ -125,9 +124,11 @@ export interface IndividualSimUIConfig<SpecType extends Spec> extends PlayerConf
 	warnings?: Array<(simUI: IndividualSimUI<SpecType>) => SimWarning>;
 	consumableStats?: Array<Stat>;
 	gemStats?: Array<Stat>;
+	epRatios?: number[];
 	epStats: Array<Stat>;
 	epPseudoStats?: Array<PseudoStat>;
 	epReferenceStat: Stat;
+	tankRefStat?: Stat;
 	displayStats: Array<UnitStat>;
 	modifyDisplayStats?: CharacterStats['modifyDisplayStats'];
 	overwriteDisplayStats?: CharacterStats['overwriteDisplayStats'];
@@ -172,6 +173,7 @@ export interface IndividualSimUIConfig<SpecType extends Spec> extends PlayerConf
 		rotationType?: APLRotationType;
 		simpleRotation?: SpecRotation<SpecType>;
 
+		encounter?: string;
 		other?: OtherDefaults;
 	};
 
@@ -197,6 +199,7 @@ export interface IndividualSimUIConfig<SpecType extends Spec> extends PlayerConf
 		gear: Array<PresetGear>;
 		talents: Array<SavedDataConfig<Player<SpecType>, SavedTalents>>;
 		rotations: Array<PresetRotation>;
+		encounters?: Array<PresetEncounter>;
 		settings?: Array<PresetSettings>;
 		builds?: Array<PresetBuild>;
 		itemSwaps?: Array<PresetItemSwap>;
@@ -576,12 +579,30 @@ export abstract class IndividualSimUI<SpecType extends Spec> extends SimUI {
 
 			this.reforger?.applyDefaults(eventID);
 
+			this.tankRefStat = this.individualConfig.tankRefStat;
+
 			if (this.isWithinRaidSim) {
 				this.sim.raid.setTargetDummies(eventID, 0);
 			} else {
 				this.sim.raid.setTargetDummies(eventID, healingSpec ? 9 : 0);
-				this.sim.encounter.applyDefaults(eventID);
+				try {
+					if (!this.individualConfig.defaults.encounter) {
+						throw new Error('No default encounter specified');
+					}
+					const presetEncounter = this.sim.db.getPresetEncounter(this.individualConfig.defaults.encounter);
+					if (!presetEncounter) {
+						throw new Error('No default encounter specified');
+					}
+
+					this.sim.encounter.applyPreset(eventID, presetEncounter);
+				} catch {
+					this.sim.encounter.applyDefaults(eventID);
+				}
 				this.sim.encounter.setExecuteProportion90(eventID, this.individualConfig.defaults.other?.highHpThreshold || 0.9);
+				if (this.individualConfig.defaults.other?.healingModel) {
+					this.player.setHealingModel(eventID, this.individualConfig.defaults.other?.healingModel);
+				}
+
 				this.sim.raid.setDebuffs(eventID, this.individualConfig.defaults.debuffs);
 				this.sim.applyDefaults(eventID, tankSpec, healingSpec);
 
@@ -704,9 +725,8 @@ export abstract class IndividualSimUI<SpecType extends Spec> extends SimUI {
 				if (settings.healRefStat) {
 					this.healRefStat = settings.healRefStat;
 				}
-				if (settings.tankRefStat) {
-					this.tankRefStat = settings.tankRefStat;
-				}
+
+				this.tankRefStat = settings.tankRefStat || this.individualConfig.tankRefStat;
 
 				if (settings.settings) {
 					this.sim.fromProto(eventID, settings.settings);

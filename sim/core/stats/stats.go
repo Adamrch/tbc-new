@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"strings"
+	"time"
 
 	"github.com/wowsims/tbc/sim/core/proto"
 )
@@ -59,6 +60,7 @@ const (
 	FrostResistance
 	NatureResistance
 	ShadowResistance
+	PhysicalDamage
 	// end of Stat enum in proto/common.proto
 
 	// The remaining stats below are stored as PseudoStats rather than as
@@ -218,6 +220,8 @@ func (s Stat) StatName() string {
 		return "NatureResistance"
 	case ShadowResistance:
 		return "ShadowResistance"
+	case PhysicalDamage:
+		return "PhysicalDamage"
 	}
 
 	return "none"
@@ -434,7 +438,8 @@ type PseudoStats struct {
 	RangedHasteMultiplier float64
 	AttackSpeedMultiplier float64 // Used for real haste effects like Bloodlust that modify resoruce regen and are used for RPPM effects
 
-	SpiritRegenRateCombat float64 // percentage of spirit regen allowed during combat
+	FiveSecondRuleRefreshTime time.Duration // last time a spell was cast
+	SpiritRegenRateCasting    float64       // percentage of spirit regen allowed during casting
 
 	// Both of these are currently only used for innervate.
 	ForceFullSpiritRegen  bool    // If set, automatically uses full spirit regen regardless of FSR refresh time.
@@ -442,10 +447,6 @@ type PseudoStats struct {
 
 	// If true, allows block/parry.
 	InFrontOfTarget bool
-
-	// "Apply Aura: Mod Damage Done (Physical)", applies to abilities with EffectSpellCoefficient > 0.
-	//  This includes almost all "(Normalized) Weapon Damage", but also some "School Damage (Physical)" abilities.
-	BonusDamage float64 // Comes from '+X Weapon Damage' effects
 
 	BonusMHDps     float64
 	BonusOHDps     float64

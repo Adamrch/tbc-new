@@ -4,12 +4,14 @@ import (
 	"time"
 
 	"github.com/wowsims/tbc/sim/core"
+	"github.com/wowsims/tbc/sim/core/proto"
 	"github.com/wowsims/tbc/sim/core/stats"
 )
 
 func (war *Warrior) registerShieldBlock() {
 	actionId := core.ActionID{SpellID: 2565}
 
+	var spell *core.Spell
 	aura := war.RegisterAura(core.Aura{
 		Label:     "Shield Block",
 		ActionID:  actionId,
@@ -20,12 +22,12 @@ func (war *Warrior) registerShieldBlock() {
 		TriggerImmediately: true,
 		Outcome:            core.OutcomeBlock,
 		Callback:           core.CallbackOnSpellHitTaken,
-		Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
+		Handler: func(sim *core.Simulation, _ *core.Spell, _ *core.SpellResult) {
 			spell.RelatedSelfBuff.RemoveStack(sim)
 		},
 	})
 
-	war.RegisterSpell(core.SpellConfig{
+	spell = war.RegisterSpell(core.SpellConfig{
 		ActionID:       actionId,
 		SpellSchool:    core.SpellSchoolPhysical,
 		ClassSpellMask: SpellMaskShieldBlock,
@@ -50,10 +52,16 @@ func (war *Warrior) registerShieldBlock() {
 			return war.PseudoStats.CanBlock && war.StanceMatches(DefensiveStance)
 		},
 
-		ApplyEffects: func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
-			aura.Activate(sim)
+		ApplyEffects: func(sim *core.Simulation, _ *core.Unit, spell *core.Spell) {
+			spell.RelatedSelfBuff.Activate(sim)
 		},
 
 		RelatedSelfBuff: aura,
+	})
+
+	war.RegisterItemSwapCallback([]proto.ItemSlot{proto.ItemSlot_ItemSlotOffHand}, func(sim *core.Simulation, slot proto.ItemSlot) {
+		if !war.PseudoStats.CanBlock {
+			aura.Deactivate(sim)
+		}
 	})
 }

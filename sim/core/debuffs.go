@@ -32,7 +32,8 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	}
 
 	if debuffs.ExposeWeaknessUptime > 0.0 {
-		ExposeWeaknessAura(target, debuffs.ExposeWeaknessUptime, debuffs.ExposeWeaknessHunterAgility)
+		aura := ExposeWeaknessAura(target, debuffs.ExposeWeaknessHunterAgility)
+		ApplyFixedUptimeAura(aura, debuffs.ExposeWeaknessUptime, aura.Duration, 1)
 	}
 
 	if debuffs.FaerieFire != proto.TristateEffect_TristateEffectMissing {
@@ -48,7 +49,20 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	}
 
 	if debuffs.HuntersMark != proto.TristateEffect_TristateEffectMissing {
-		MakePermanent(HuntersMarkAura(target, IsImproved(debuffs.HuntersMark)))
+		aura := HuntersMarkAura(target, IsImproved(debuffs.HuntersMark))
+		ApplyFixedUptimeAura(aura, 1, aura.Duration, 1)
+
+		ScheduledAura(aura, PeriodicActionOptions{
+			Period:   time.Second * 1,
+			NumTicks: 5,
+			Priority: ActionPriorityDOT,
+			OnAction: func(sim *Simulation) {
+				aura.Activate(sim)
+				if aura.IsActive() {
+					aura.SetStacks(sim, aura.GetStacks()+6)
+				}
+			},
+		}, raid)
 	}
 
 	if debuffs.ImprovedScorch {
@@ -102,7 +116,7 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	if debuffs.ExposeArmor != proto.TristateEffect_TristateEffectMissing {
 		aura := MakePermanent(ExposeArmorAura(target, func() int32 { return 5 }, TernaryInt32(debuffs.ExposeArmor == 2, 2, 0)))
 
-		ScheduledMajorArmorAura(aura, PeriodicActionOptions{
+		ScheduledAura(aura, PeriodicActionOptions{
 			Period:   time.Second * 3,
 			NumTicks: 1,
 			OnAction: func(sim *Simulation) {
@@ -114,7 +128,7 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	if debuffs.SunderArmor {
 		aura := MakePermanent(SunderArmorAura(target))
 
-		ScheduledMajorArmorAura(aura, PeriodicActionOptions{
+		ScheduledAura(aura, PeriodicActionOptions{
 			Period:          GCDDefault,
 			NumTicks:        5,
 			TickImmediately: true,
@@ -137,7 +151,7 @@ func applyDebuffEffects(target *Unit, targetIdx int, debuffs *proto.Debuffs, rai
 	}
 }
 
-func ScheduledMajorArmorAura(aura *Aura, options PeriodicActionOptions, raid *proto.Raid) {
+func ScheduledAura(aura *Aura, options PeriodicActionOptions, raid *proto.Raid) {
 	aura.OnReset = func(aura *Aura, sim *Simulation) {
 		aura.Duration = NeverExpires
 		StartPeriodicAction(sim, options)
@@ -184,14 +198,14 @@ func DemoralizingRoarAura(target *Unit, improved bool) *Aura {
 		apReduction *= 1.4
 	}
 
-	return statsDebuff(target, "Demoralizing Roar", 26998, stats.Stats{stats.AttackPower: apReduction}, time.Second*30)
+	return statsDebuff(target, "Demoralizing Roar", 26998, stats.Stats{stats.AttackPower: -apReduction}, time.Second*30)
 }
 
 func DemoralizingShoutAura(target *Unit, boomingVoicePoints int32, improvedDemoShoutPoints int32) *Aura {
 	apReduction := 300.0 * (1 + 0.1*float64(improvedDemoShoutPoints))
 	duration := time.Duration(float64(time.Second*30) * (1 + 0.1*float64(boomingVoicePoints)))
 
-	return statsDebuff(target, "Demoralizing Shout", 25203, stats.Stats{stats.AttackPower: apReduction}, duration)
+	return statsDebuff(target, "Demoralizing Shout", 25203, stats.Stats{stats.AttackPower: -apReduction}, duration)
 }
 
 func SlowAura(target *Unit) *Aura {
@@ -214,37 +228,23 @@ func castSlowReductionAura(target *Unit, label string, spellID int32, multiplier
 	return aura
 }
 
-func ExposeWeaknessAura(target *Unit, uptime float64, hunterAgility float64) *Aura {
+func ExposeWeaknessAura(target *Unit, hunterAgility float64) *Aura {
 	apBonus := hunterAgility * 0.25
-	stats := stats.Stats{stats.AttackPower: apBonus, stats.RangedAttackPower: apBonus}
-	var character *Character
-	for _, party := range target.Env.Raid.Parties {
-		for _, agent := range party.Players {
-			c := agent.GetCharacter()
-			if c.Type == PlayerUnit {
-				character = c
-				break
-			}
-		}
-	}
 
-	hasAura := target.HasAura("Expose Weakness")
 	aura := target.GetOrRegisterAura(Aura{
 		Label:    "Expose Weakness",
 		Tag:      "ExposeWeakness",
 		ActionID: ActionID{SpellID: 34503},
 		Duration: time.Second * 7,
 		OnGain: func(aura *Aura, sim *Simulation) {
-			character.AddStatsDynamic(sim, stats)
+			target.PseudoStats.BonusAttackPower += apBonus
+			target.PseudoStats.BonusRangedAttackPower += apBonus
 		},
 		OnExpire: func(aura *Aura, sim *Simulation) {
-			character.AddStatsDynamic(sim, stats.Invert())
+			target.PseudoStats.BonusAttackPower -= apBonus
+			target.PseudoStats.BonusRangedAttackPower -= apBonus
 		},
 	})
-
-	if !hasAura {
-		ApplyFixedUptimeAura(aura, uptime, aura.Duration, 1)
-	}
 
 	return aura
 
@@ -265,11 +265,27 @@ func FaerieFireAura(target *Unit, improved bool) *Aura {
 }
 
 func GiftOfArthasAura(target *Unit) *Aura {
-	return target.GetOrRegisterAura(Aura{
+	var effect *ExclusiveEffect
+	aura := target.GetOrRegisterAura(Aura{
 		Label:    "Gift of Arthas",
 		ActionID: ActionID{SpellID: 11374},
 		Duration: time.Minute * 3,
-	}).AttachAdditivePseudoStatBuff(&target.PseudoStats.BonusPhysicalDamageTaken, 8)
+		OnGain: func(aura *Aura, sim *Simulation) {
+			effect.SetPriority(sim, 8)
+		},
+	})
+
+	effect = aura.NewExclusiveEffect("GiftOfArthasAura", true, ExclusiveEffect{
+		Priority: 0,
+		OnGain: func(ee *ExclusiveEffect, s *Simulation) {
+			ee.Aura.Unit.PseudoStats.BonusPhysicalDamageTaken += ee.Priority
+		},
+		OnExpire: func(ee *ExclusiveEffect, s *Simulation) {
+			ee.Aura.Unit.PseudoStats.BonusPhysicalDamageTaken -= ee.Priority
+		},
+	})
+
+	return aura
 }
 
 func HemorrhageAura(target *Unit, uptime float64) *Aura {
@@ -289,35 +305,38 @@ func HemorrhageAura(target *Unit, uptime float64) *Aura {
 }
 
 func HuntersMarkAura(target *Unit, improved bool) *Aura {
-	maxBonus := 440.0
+	initialBonus := 110.0
+	bonusPerStack := 11.0
 
-	return target.GetOrRegisterAura(Aura{
-		Label:    "HuntersMark",
-		Tag:      "HuntersMark",
-		ActionID: ActionID{SpellID: 14325},
-		Duration: NeverExpires,
-		OnGain: func(aura *Aura, sim *Simulation) {
-			for _, unit := range sim.AllUnits {
-				if unit.Type == PlayerUnit || unit.Type == PetUnit {
-					if improved {
-						unit.PseudoStats.BonusAttackPower += maxBonus
-					}
-					unit.PseudoStats.BonusRangedAttackPower += maxBonus
-				}
-			}
-
-		},
-		OnExpire: func(aura *Aura, sim *Simulation) {
-			for _, unit := range sim.AllUnits {
-				if unit.Type == PlayerUnit || unit.Type == PetUnit {
-					if improved {
-						unit.PseudoStats.BonusAttackPower -= maxBonus
-					}
-					unit.PseudoStats.BonusRangedAttackPower -= maxBonus
-				}
-			}
+	var effect *ExclusiveEffect
+	aura := target.RegisterAura(Aura{
+		Label:     "Hunters Mark",
+		Tag:       "HuntersMark",
+		ActionID:  ActionID{SpellID: 14325},
+		Duration:  time.Minute * 2,
+		MaxStacks: 30,
+		OnStacksChange: func(aura *Aura, sim *Simulation, oldStacks int32, newStacks int32) {
+			effect.SetPriority(sim, initialBonus+bonusPerStack*float64(newStacks))
 		},
 	})
+
+	effect = aura.NewExclusiveEffect("HuntersMark", true, ExclusiveEffect{
+		Priority: initialBonus,
+		OnGain: func(ee *ExclusiveEffect, sim *Simulation) {
+			if improved {
+				target.PseudoStats.BonusAttackPower += initialBonus
+			}
+			target.PseudoStats.BonusRangedAttackPower += ee.Priority
+		},
+		OnExpire: func(ee *ExclusiveEffect, sim *Simulation) {
+			if improved {
+				target.PseudoStats.BonusAttackPower -= initialBonus
+			}
+			target.PseudoStats.BonusRangedAttackPower -= ee.Priority
+		},
+	})
+
+	return aura
 }
 
 func ImprovedScorchAura(target *Unit, startingStacks int32) *Aura {
@@ -611,7 +630,7 @@ func WintersChillAura(target *Unit, startingStacks int32) *Aura {
 func ThunderClapAura(target *Unit, points int32) *Aura {
 	aura := target.GetOrRegisterAura(Aura{
 		Label:    "ThunderClap-" + strconv.Itoa(int(points)),
-		ActionID: ActionID{SpellID: 6343},
+		ActionID: ActionID{SpellID: 25264},
 		Duration: time.Second * 30,
 	})
 	AtkSpeedReductionEffect(aura, []float64{1.1, 1.14, 1.17, 1.2}[points])
@@ -657,13 +676,13 @@ func damageDealtDebuff(target *Unit, label string, spellID int32, schools []stat
 
 		OnGain: func(aura *Aura, sim *Simulation) {
 			for _, school := range schools {
-				target.PseudoStats.SchoolDamageDealtMultiplier[school] *= 1.0 - multiplier
+				target.PseudoStats.SchoolDamageDealtMultiplier[school] *= multiplier
 			}
 		},
 
 		OnExpire: func(aura *Aura, sim *Simulation) {
 			for _, school := range schools {
-				target.PseudoStats.SchoolDamageDealtMultiplier[school] /= 1.0 - multiplier
+				target.PseudoStats.SchoolDamageDealtMultiplier[school] /= multiplier
 			}
 		},
 	})

@@ -38,8 +38,39 @@ func applyConsumeEffects(agent Agent, partyBuffs *proto.PartyBuffs) {
 	}
 
 	if consumables.GuardianElixirId != 0 {
-		elixir := ConsumablesByID[consumables.GuardianElixirId]
-		character.AddStats(elixir.Stats)
+		// Gift of Arthas
+		if consumables.GuardianElixirId == 9088 {
+			character.AddStat(stats.ShadowResistance, 10)
+			auras := character.NewEnemyAuraArray(func(target *Unit) *Aura {
+				return GiftOfArthasAura(target)
+			})
+			procSpell := character.RegisterSpell(SpellConfig{
+				ActionID:    ActionID{SpellID: 11374},
+				SpellSchool: SpellSchoolNature,
+				ProcMask:    ProcMaskEmpty,
+
+				FlatThreatBonus: 90,
+
+				ApplyEffects: func(sim *Simulation, target *Unit, spell *Spell) {
+					spell.CalcAndDealOutcome(sim, target, spell.OutcomeAlwaysHit)
+					auras.Get(target).Activate(sim)
+				},
+			})
+
+			character.MakeProcTriggerAura(ProcTrigger{
+				Name:       "Gift of Arthas - Trigger",
+				ICD:        time.Second * 3,
+				ProcChance: 0.3,
+				Outcome:    OutcomeLanded,
+				Callback:   CallbackOnSpellHitTaken,
+				Handler: func(sim *Simulation, spell *Spell, _ *SpellResult) {
+					procSpell.Cast(sim, spell.Unit)
+				},
+			})
+		} else {
+			elixir := ConsumablesByID[consumables.GuardianElixirId]
+			character.AddStats(elixir.Stats)
+		}
 	}
 	if consumables.FoodId != 0 {
 		food := ConsumablesByID[consumables.FoodId]
@@ -207,7 +238,7 @@ func makePotionActivationSpellInternal(potion Consumable, character *Character) 
 		for _, config := range gains {
 			switch config.resType {
 			case proto.ResourceType_ResourceTypeMana:
-				totalRegen := character.ManaRegenPerSecondWhileCombat() * 5
+				totalRegen := character.ManaRegenPerSecondWhileCasting() * 5
 				manaGain := config.min + config.spread
 				manaGain *= stoneMul
 				shouldActivate = character.MaxMana()-(character.CurrentMana()+totalRegen) >= manaGain
@@ -227,6 +258,113 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 
 	//Todo: Implement dynamic handling like pots etc.
 	switch consumes.ConjuredId {
+	case 22105:
+		actionID := ActionID{ItemID: 22105}
+		healthMetrics := character.NewHealthMetrics(actionID)
+
+		spell := character.RegisterSpell(SpellConfig{
+			ActionID: actionID,
+			Flags:    SpellFlagNoOnCastComplete,
+			Cast: CastConfig{
+				SharedCD: Cooldown{
+					Timer:    character.GetConjuredCD(),
+					Duration: time.Minute * 2,
+				},
+
+				// Enforce only one HS per fight
+				CD: Cooldown{
+					Timer:    character.NewTimer(),
+					Duration: time.Minute * 60,
+				},
+			},
+			ApplyEffects: func(sim *Simulation, _ *Unit, _ *Spell) {
+				character.GainHealth(sim, 2496, healthMetrics)
+			},
+		})
+		character.AddMajorCooldown(MajorCooldown{
+			Spell: spell,
+			Type:  CooldownTypeSurvival,
+		})
+	case 7676:
+		actionID := ActionID{ItemID: 7676}
+		energyMetrics := character.NewEnergyMetrics(actionID)
+
+		spell := character.RegisterSpell(SpellConfig{
+			ActionID: actionID,
+			Flags:    SpellFlagNoOnCastComplete,
+			Cast: CastConfig{
+				SharedCD: Cooldown{
+					Timer:    character.GetConjuredCD(),
+					Duration: time.Minute * 2,
+				},
+
+				CD: Cooldown{
+					Timer:    character.NewTimer(),
+					Duration: time.Minute * 5,
+				},
+			},
+			ApplyEffects: func(sim *Simulation, target *Unit, spell *Spell) {
+				character.AddEnergy(sim, 40, energyMetrics)
+			},
+		})
+		character.AddMajorCooldown(MajorCooldown{
+			Spell: spell,
+			Type:  CooldownTypeDPS,
+		})
+	case 22788:
+
+		actionID := ActionID{ItemID: 22788}
+
+		flameCapProc := character.RegisterSpell(SpellConfig{
+			ActionID:    actionID,
+			SpellSchool: SpellSchoolFire,
+			ProcMask:    ProcMaskEmpty,
+
+			DamageMultiplier: 1,
+			CritMultiplier:   character.DefaultSpellCritMultiplier(),
+			ThreatMultiplier: 1,
+
+			ApplyEffects: func(sim *Simulation, target *Unit, spell *Spell) {
+				spell.CalcAndDealDamage(sim, target, 40, spell.OutcomeMagicHitAndCrit)
+			},
+		})
+
+		procTrigger := character.MakeProcTriggerAura(ProcTrigger{
+			Name:       "Flame Cap - Proc",
+			ActionID:   actionID,
+			Duration:   time.Minute * 1,
+			ProcChance: 0.185,
+			ProcMask:   ProcMaskMeleeOrRanged,
+			Outcome:    OutcomeLanded,
+			Callback:   CallbackOnSpellHitDealt,
+			Handler: func(sim *Simulation, spell *Spell, result *SpellResult) {
+				flameCapProc.Cast(sim, result.Target)
+			},
+		})
+
+		flameCapAura := character.NewTemporaryStatsAura("Flame Cap", actionID, stats.Stats{stats.FireDamage: 80}, time.Minute)
+		flameCapAura.AttachDependentAura(procTrigger)
+
+		spell := character.RegisterSpell(SpellConfig{
+			ActionID: actionID,
+			Flags:    SpellFlagNoOnCastComplete,
+			Cast: CastConfig{
+				CD: Cooldown{
+					Timer:    character.GetConjuredCD(),
+					Duration: time.Minute * 3,
+				},
+			},
+			ApplyEffects: func(sim *Simulation, _ *Unit, _ *Spell) {
+				flameCapAura.Activate(sim)
+			},
+
+			RelatedSelfBuff: flameCapAura.Aura,
+		})
+
+		character.AddMajorCooldown(MajorCooldown{
+			Spell: spell,
+			Type:  CooldownTypeDPS,
+		})
 	case 20520:
 		actionID := ActionID{ItemID: 20520}
 		manaMetrics := character.NewManaMetrics(actionID)
@@ -259,62 +397,37 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 			Type:  CooldownTypeMana,
 			ShouldActivate: func(sim *Simulation, character *Character) bool {
 				// Only pop if we have less than the max mana provided by the potion minus 1mp5 tick.
-				totalRegen := character.ManaRegenPerSecondWhileCombat() * 5
+				totalRegen := character.ManaRegenPerSecondWhileCasting() * 5
 				return character.MaxMana()-(character.CurrentMana()+totalRegen) >= 1500
 			},
 		})
-	case 5512:
-		actionID := ActionID{ItemID: 5512}
-		healthMetrics := character.NewHealthMetrics(actionID)
+	}
+
+	if consumes.NightmareSeed {
+		aura := character.NewTemporaryStatsAura(
+			"Nightmare Seed",
+			ActionID{SpellID: 28726},
+			stats.Stats{stats.Health: 2000},
+			time.Second*30,
+		)
 
 		spell := character.RegisterSpell(SpellConfig{
-			ActionID: actionID,
+			ActionID: ActionID{ItemID: 22797},
 			Flags:    SpellFlagNoOnCastComplete,
 			Cast: CastConfig{
-				SharedCD: Cooldown{
-					Timer:    character.GetConjuredCD(),
-					Duration: time.Minute * 2,
-				},
-
-				// Enforce only one HS per fight
 				CD: Cooldown{
-					Timer:    character.NewTimer(),
-					Duration: time.Minute * 60,
+					Timer:    character.GetConjuredCD(),
+					Duration: time.Minute * 3,
 				},
 			},
 			ApplyEffects: func(sim *Simulation, _ *Unit, _ *Spell) {
-				character.GainHealth(sim, 0.45*character.baseStats[stats.Health], healthMetrics)
+				aura.Activate(sim)
 			},
 		})
+
 		character.AddMajorCooldown(MajorCooldown{
 			Spell: spell,
 			Type:  CooldownTypeSurvival,
-		})
-	case 7676:
-		actionID := ActionID{ItemID: 7676}
-		energyMetrics := character.NewEnergyMetrics(actionID)
-
-		spell := character.RegisterSpell(SpellConfig{
-			ActionID: actionID,
-			Flags:    SpellFlagNoOnCastComplete,
-			Cast: CastConfig{
-				SharedCD: Cooldown{
-					Timer:    character.GetConjuredCD(),
-					Duration: time.Minute * 2,
-				},
-
-				CD: Cooldown{
-					Timer:    character.NewTimer(),
-					Duration: time.Minute * 5,
-				},
-			},
-			ApplyEffects: func(sim *Simulation, target *Unit, spell *Spell) {
-				character.AddEnergy(sim, 40, energyMetrics)
-			},
-		})
-		character.AddMajorCooldown(MajorCooldown{
-			Spell: spell,
-			Type:  CooldownTypeDPS,
 		})
 	}
 }

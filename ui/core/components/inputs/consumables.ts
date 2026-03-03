@@ -79,19 +79,24 @@ export const ConjuredDarkRune = {
 	value: 12662,
 };
 export const ConjuredHealthstone = {
-	actionId: ActionId.fromItemId(5512),
-	value: 5512,
+	actionId: ActionId.fromItemId(22105),
+	value: 22105,
 };
 export const ConjuredRogueThistleTea = {
 	actionId: ActionId.fromItemId(7676),
 	value: 7676,
 	showWhen: <SpecType extends Spec>(player: Player<SpecType>) => player.getClass() == Class.ClassRogue,
 };
+export const ConjuredFlameCap = {
+	actionId: ActionId.fromItemId(22788),
+	value: 22788,
+};
 
 export const CONJURED_CONFIG = [
 	{ config: ConjuredRogueThistleTea, stats: [] },
 	{ config: ConjuredHealthstone, stats: [Stat.StatStamina] },
 	{ config: ConjuredDarkRune, stats: [Stat.StatIntellect] },
+	{ config: ConjuredFlameCap, stats: [] },
 ] as ConsumableStatOption<number>[];
 
 export const makeConjuredInput = makeConsumeInputFactory({ consumesFieldName: 'conjuredId' });
@@ -158,7 +163,7 @@ export const SupWizardOil = {
 export const AdamantiteSharpeningMH = {
 	actionId: ActionId.fromItemId(23529),
 	value: 29453,
-	showWhen: (player: Player<any>) => !player.getGear().hasBluntMHWeapon(),
+	showWhen: (player: Player<any>) => player.getGear().hasSharpMHWeapon(),
 };
 export const AdamantiteWeightMH = {
 	actionId: ActionId.fromItemId(28421),
@@ -168,7 +173,7 @@ export const AdamantiteWeightMH = {
 export const AdamantiteSharpeningOH = {
 	actionId: ActionId.fromItemId(23529),
 	value: 29453,
-	showWhen: (player: Player<any>) => !player.getGear().hasBluntOHWeapon(),
+	showWhen: (player: Player<any>) => player.getGear().hasSharpOHWeapon(),
 };
 export const AdamantiteWeightOH = {
 	actionId: ActionId.fromItemId(28421),
@@ -250,7 +255,7 @@ export const makeMHImbueInput = makeConsumeInputFactory({
 	showWhen: (player: Player<any>) => !player.getParty() || player.getParty()!.getBuffs().windfuryTotem == 0,
 	changedEvent: (player: Player<any>) => TypedEvent.onAny([player.getParty()!.changeEmitter]),
 });
-export const makeOHImbueinput = makeConsumeInputFactory({
+export const makeOHImbueInput = makeConsumeInputFactory({
 	consumesFieldName: 'ohImbueId',
 	showWhen: (player: Player<any>) => player.getGear().getEquippedItem(ItemSlot.ItemSlotOffHand)?.item.weaponSpeed !== undefined,
 });
@@ -317,6 +322,16 @@ export const ScrollArm = makeBooleanConsumeInput({
 });
 
 ///////////////////////////////////////////////////////////////////////////
+//                            MISCELLANEOUS
+///////////////////////////////////////////////////////////////////////////
+
+export const NightmareSeed = makeBooleanConsumeInput({
+	actionId: () => ActionId.fromItemId(22797),
+	fieldName: 'nightmareSeed',
+	showWhen: (player: Player<any>) => player.getPlayerSpec().isTankSpec,
+});
+
+///////////////////////////////////////////////////////////////////////////
 
 export interface ConsumableInputOptions {
 	consumesFieldName: keyof ConsumesSpec;
@@ -337,7 +352,7 @@ export function makeConsumableInput(
 	return {
 		type: 'iconEnum',
 		tooltip: tooltip,
-		numColumns: items.length > 5 ? 2 : 1,
+		numColumns: items.length > 10 ? 3 : items.length > 5 ? 2 : 1,
 		values: [{ value: 0, iconUrl: '', tooltip: i18n.t('common.none') }].concat(valueOptions),
 		equals: (a: number, b: number) => a === b,
 		zeroValue: 0,

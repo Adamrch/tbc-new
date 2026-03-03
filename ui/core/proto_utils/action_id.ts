@@ -1,4 +1,5 @@
 import { CHARACTER_LEVEL } from '../constants/mechanics';
+import { APLActionItemSwap_SwapSet } from '../proto/apl';
 import { ActionID as ActionIdProto, ItemRandomSuffix, OtherAction } from '../proto/common';
 import { ResourceType } from '../proto/spell';
 import { IconData, UIItem as Item } from '../proto/ui';
@@ -17,6 +18,7 @@ type ActionIdOptions = {
 	name?: string;
 	iconUrl?: string;
 	randomSuffixId?: number;
+	rank?: number;
 };
 
 // Uniquely identifies a specific item / spell / thing in WoW. This object is immutable.
@@ -26,18 +28,20 @@ export class ActionId {
 	readonly spellId: number;
 	readonly otherId: OtherAction;
 	readonly tag: number;
+	readonly rank: number;
 
 	readonly baseName: string; // The name without any tag additions.
 	readonly name: string;
 	readonly iconUrl: string;
 	readonly spellIdTooltipOverride: number | null;
 
-	private constructor({ itemId, spellId, otherId, tag, baseName, name, iconUrl, randomSuffixId }: ActionIdOptions = {}) {
+	private constructor({ itemId, spellId, otherId, tag, baseName, name, iconUrl, randomSuffixId, rank }: ActionIdOptions = {}) {
 		this.itemId = itemId ?? 0;
 		this.randomSuffixId = randomSuffixId ?? 0;
 		this.spellId = spellId ?? 0;
 		this.otherId = otherId ?? OtherAction.OtherActionNone;
 		this.tag = tag ?? 0;
+		this.rank = rank ?? 0;
 
 		switch (otherId) {
 			case OtherAction.OtherActionNone:
@@ -50,9 +54,9 @@ export class ActionId {
 				name = 'Mana Tick';
 				iconUrl = resourceTypeToIcon[ResourceType.ResourceTypeMana];
 				if (tag == 1) {
-					name += ' (In Combat)';
+					name += ' (Casting)';
 				} else if (tag == 2) {
-					name += ' (Out of Combat)';
+					name += ' (Not Casting)';
 				}
 				break;
 			case OtherAction.OtherActionEnergyRegen:
@@ -78,6 +82,16 @@ export class ActionId {
 					name += ' (Main Hand)';
 				} else if (this.tag == 2) {
 					name += ' (Off Hand)';
+				} else if (this.tag == 11815) {
+					name += ' (Hand of Justice)';
+				} else if (this.tag == 12281) {
+					name += ' (Sword Specialization)';
+				} else if (this.tag == 25584) {
+					name += ' (Windfury)';
+				} else if (this.tag == 31332) {
+					name += ' (Blinkstrike)';
+				} else if (this.tag == 17257) {
+					name += ' (Magtheridon)';
 				} else if (this.tag == 99999) {
 					name += ' (Boss)';
 				} else if (this.tag == 99998) {
@@ -118,10 +132,20 @@ export class ActionId {
 				baseName = 'Encounter Start';
 				iconUrl = 'https://wow.zamimg.com/images/wow/icons/medium/achievement_faction_elders.jpg';
 				break;
+			case OtherAction.OtherActionItemSwap:
+				baseName = 'Item Swap: ';
+				if (this.tag == APLActionItemSwap_SwapSet.Main) {
+					baseName += 'Main';
+				} else {
+					baseName += 'Swapped';
+				}
+				iconUrl = 'https://wow.zamimg.com/images/wow/icons/medium/ability_dualwield.jpg';
+				break;
 		}
 		this.baseName = baseName ?? '';
 		this.name = (name || baseName) ?? '';
 		this.iconUrl = iconUrl ?? '';
+		if (this.name) this.name += this.rank ? ` (Rank ${this.rank})` : '';
 		this.spellIdTooltipOverride = this.spellTooltipOverride?.spellId || null;
 	}
 
@@ -339,7 +363,7 @@ export class ActionId {
 			case 'Wound Poison':
 			case 'Instant Poison VII':
 				if (tag == 1) {
-					name += ' (Shiv)'
+					name += ' (Shiv)';
 				}
 				break;
 			case 'Shadow Blades':
@@ -462,7 +486,7 @@ export class ActionId {
 				break;
 			case 'Whirlwind':
 			case 'Windfury Weapon':
-			case 'Berserk':
+			case 'Enchant Weapon - Crusader':
 				if (tag == 1) {
 					name += ' (Main Hand)';
 				} else if (tag == 2) {
@@ -580,6 +604,7 @@ export class ActionId {
 			name,
 			iconUrl,
 			randomSuffixId: this.randomSuffixId,
+			rank: this.rank || tooltipData['rank'],
 		});
 	}
 
@@ -615,6 +640,7 @@ export class ActionId {
 				oneofKind: 'spellId',
 				spellId: this.spellId,
 			};
+			protoId.rank = this.rank;
 		} else if (this.otherId) {
 			protoId.rawId = {
 				oneofKind: 'otherId',
@@ -637,6 +663,7 @@ export class ActionId {
 			baseName: this.baseName,
 			iconUrl: this.iconUrl,
 			randomSuffixId: this.randomSuffixId,
+			rank: this.rank,
 		});
 	}
 
@@ -652,8 +679,8 @@ export class ActionId {
 		});
 	}
 
-	static fromSpellId(spellId: number, tag?: number): ActionId {
-		return new ActionId({ spellId, tag });
+	static fromSpellId(spellId: number, rank = 0, tag?: number): ActionId {
+		return new ActionId({ spellId, rank, tag });
 	}
 
 	static fromOtherId(otherId: OtherAction, tag?: number): ActionId {
@@ -680,7 +707,7 @@ export class ActionId {
 
 	static fromProto(protoId: ActionIdProto): ActionId {
 		if (protoId.rawId.oneofKind == 'spellId') {
-			return ActionId.fromSpellId(protoId.rawId.spellId, protoId.tag);
+			return ActionId.fromSpellId(protoId.rawId.spellId, protoId.rank, protoId.tag);
 		} else if (protoId.rawId.oneofKind == 'itemId') {
 			return ActionId.fromItemId(protoId.rawId.itemId, protoId.tag);
 		} else if (protoId.rawId.oneofKind == 'otherId') {
@@ -762,6 +789,14 @@ export class ActionId {
 		const override = spellIdTooltipOverrides.get(JSON.stringify({ spellId: this.spellId, tag: this.tag }));
 		if (!override) return null;
 		return override.itemId ? ActionId.fromItemId(override.itemId) : ActionId.fromSpellId(override.spellId!);
+	}
+
+	get nameWithoutRank(): string {
+		return this.name.replace(/ \(Rank \d+\)/g, '');
+	}
+
+	get hasRank(): boolean {
+		return this.rank > 0;
 	}
 }
 
@@ -905,13 +940,4 @@ export const resourceTypeToIcon: Record<ResourceType, string> = {
 };
 
 // Use this to connect a buff row to a cast row in the timeline view
-export const buffAuraToSpellIdMap: Record<number, ActionId> = {
-	96228: ActionId.fromSpellId(82174), // Synapse Springs - Agi
-	96229: ActionId.fromSpellId(82174), // Synapse Springs - Str
-	96230: ActionId.fromSpellId(82174), // Synapse Springs - Int
-
-	132403: ActionId.fromSpellId(53600), // Shield of the Righteous
-	138169: ActionId.fromSpellId(85256), // Paladin T15 Ret 4P Templar's Verdict
-
-	131900: ActionId.fromSpellId(131894), // A Murder of Crows
-};
+export const buffAuraToSpellIdMap: Record<number, ActionId> = {};

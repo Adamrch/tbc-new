@@ -1,18 +1,15 @@
 import * as OtherInputs from '../../core/components/inputs/other_inputs';
-import * as Mechanics from '../../core/constants/mechanics';
 import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_ui';
 import { Player } from '../../core/player';
 import { PlayerClasses } from '../../core/player_classes';
 import { Mage } from '../../core/player_classes/mage';
 import { APLRotation } from '../../core/proto/apl';
-import { Faction, IndividualBuffs, ItemSlot, PartyBuffs, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
-import { StatCapType } from '../../core/proto/ui';
-import { DEFAULT_CASTER_GEM_STATS, StatCap, Stats, UnitStat } from '../../core/proto_utils/stats';
-import { formatToNumber } from '../../core/utils';
-import { DefaultDebuffs, DefaultRaidBuffs, DefaultPartyBuffs, DefaultIndividualBuffs, DefaultConsumables} from './presets';
-import * as Inputs from './inputs';
+import { Faction, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
+import { DEFAULT_CASTER_GEM_STATS, UnitStat } from '../../core/proto_utils/stats';
+import { DefaultDebuffs, DefaultRaidBuffs, DefaultPartyBuffs, DefaultIndividualBuffs, DefaultConsumables } from './presets';
 import * as Presets from './presets';
 import * as MageInputs from './inputs';
+import { Mage_Rotation } from '../../core/proto/mage';
 
 const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 	requiredTalentRows: [],
@@ -22,7 +19,16 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 	knownIssues: [],
 
 	// All stats for which EP should be calculated.
-	epStats: [Stat.StatIntellect, Stat.StatSpellDamage], // Reference stat against which to calculate EP. I think all classes use either spell power or attack power.
+	epStats: [
+		Stat.StatIntellect,
+		Stat.StatSpellDamage,
+		Stat.StatFrostDamage,
+		Stat.StatFireDamage,
+		Stat.StatArcaneDamage,
+		Stat.StatSpellHitRating,
+		Stat.StatSpellCritRating,
+		Stat.StatSpellHasteRating,
+	], // Reference stat against which to calculate EP. I think all classes use either spell power or attack power.
 	epReferenceStat: Stat.StatSpellDamage,
 	// Which stats to display in the Character Stats section, at the bottom of the left-hand sidebar.
 	displayStats: UnitStat.createDisplayStatArray(
@@ -33,20 +39,28 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 			Stat.StatIntellect,
 			Stat.StatSpirit,
 			Stat.StatSpellDamage,
+			Stat.StatFrostDamage,
+			Stat.StatFireDamage,
+			Stat.StatArcaneDamage,
 		],
-		[PseudoStat.PseudoStatSpellHitPercent, PseudoStat.PseudoStatSpellCritPercent, PseudoStat.PseudoStatSpellHastePercent],
+		[
+			PseudoStat.PseudoStatSpellHitPercent,
+			PseudoStat.PseudoStatSpellCritPercent,
+			PseudoStat.PseudoStatSpellHastePercent,
+			PseudoStat.PseudoStatSchoolHitArcane,
+		],
 	),
 	gemStats: DEFAULT_CASTER_GEM_STATS,
 
 	defaults: {
 		// Default equipped gear.
-		gear: Presets.BLANK_GEARSET.gear,
+		gear: Presets.P1_BIS_ARCANE.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Presets.P1_EP_PRESET.epWeights,
 		// Default consumes settings.
-		consumables: DefaultConsumables,
+		consumables: Presets.DefaultConsumables,
 		// Default talents.
-		talents: Presets.Talents.data,
+		talents: Presets.ARCANE_TALENTS.data,
 		// Default spec-specific settings.
 		specOptions: Presets.DefaultOptions,
 		other: Presets.OtherDefaults,
@@ -76,11 +90,11 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 	presets: {
 		epWeights: [],
 		// Preset rotations that the user can quickly select.
-		rotations: [],
+		rotations: [Presets.ROTATION_PRESET_ARCANE],
 		// Preset talents that the user can quickly select.
-		talents: [],
+		talents: [Presets.ARCANE_TALENTS],
 		// Preset gear configurations that the user can quickly select.
-		gear: [],
+		gear: [Presets.PREBIS_ARCANE, Presets.P1_BIS_ARCANE],
 
 		builds: [],
 	},
@@ -90,7 +104,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecMage, {
 		// if (numTargets >= 2) {
 		// 	return Presets.ROTATION_PRESET_CLEAVE.rotation.rotation!;
 		// } else {
-		return Presets.BLANK_APL.rotation.rotation!;
+		return Presets.ROTATION_PRESET_ARCANE.rotation.rotation!;
 		// }
 	},
 

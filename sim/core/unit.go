@@ -162,8 +162,8 @@ type Unit struct {
 	hardcastAction *PendingAction
 
 	// Cached mana return values per tick.
-	manaTickWhileCombat    float64
-	manaTickWhileNotCombat float64
+	manaTickWhileCasting    float64
+	manaTickWhileNotCasting float64
 
 	CastSpeed           float64
 	meleeAttackSpeed    float64
@@ -211,7 +211,7 @@ func (unit *Unit) getSpellDamageValueImpl(spell *Spell) float64 {
 }
 
 func (unit *Unit) getAttackPowerValueImpl(spell *Spell) float64 {
-	return unit.GetStat(stats.AttackPower)
+	return unit.GetStat(stats.AttackPower) + spell.Unit.CurrentTarget.PseudoStats.BonusAttackPower
 }
 
 // Units can be disabled for several reasons:
@@ -742,6 +742,7 @@ func (unit *Unit) reset(sim *Simulation, _ Agent) {
 	unit.stats = unit.initialStats
 	unit.PseudoStats = unit.initialPseudoStats
 	unit.auraTracker.reset(sim)
+
 	for _, spell := range unit.Spellbook {
 		spell.reset(sim)
 	}
@@ -845,6 +846,7 @@ func (unit *Unit) GetMetadata() *proto.UnitMetadata {
 			IsFriendly:      spell.Flags.Matches(SpellFlagHelpful),
 			HasExpectedTick: spell.expectedTickDamageInternal != nil,
 			HasMissileSpeed: spell.MissileSpeed > 0.0,
+			HasRanks:        spell.Rank > 0,
 		}
 	})
 
@@ -912,6 +914,12 @@ func (unit *Unit) GetTotalBlockChanceAsDefender(atkTable *AttackTable) float64 {
 
 func (unit *Unit) GetDefenseReduction() float64 {
 	return math.Floor(unit.stats[stats.DefenseRating]/DefenseRatingPerDefenseLevel) * MissDodgeParryBlockCritChancePerDefense / 100
+}
+
+func (unit *Unit) GetCritImmunityPercent() float64 {
+	return unit.GetDefenseReduction() +
+		unit.GetStat(stats.ResilienceRating)/ResilienceRatingPerCritReductionChance/100 +
+		unit.PseudoStats.ReducedCritTakenChance
 }
 
 func (unit *Unit) GetTotalAvoidanceChance(spell *Spell, atkTable *AttackTable) float64 {

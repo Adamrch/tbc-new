@@ -112,6 +112,12 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
+		13503, // Alchemist's Stone
+		[
+			"Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack.", // 17619 - https://www.wowhead.com/tbc/spell=17619
+		]
+	],
+	[
 		13505, // Runeblade of Baron Rivendare
 		[
 			"Increases movement speed and life regeneration rate.", // 17625 - https://www.wowhead.com/tbc/spell=17625
@@ -1523,12 +1529,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		25996, // Emblem of Perseverance
-		[
-			"Increases defense rating by 80 for 15s.", // 32957 - https://www.wowhead.com/tbc/spell=32957
-		]
-	],
-	[
 		26000, // Gladiator's Linked Gauntlets
 		[
 			"Increases the damage done by your Lightning Shield by 8%.", // 33020 - https://www.wowhead.com/tbc/spell=33020
@@ -1559,12 +1559,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		27529, // Figurine of the Colossus
-		[
-			"Each successful block heals you for 120. Effect lasts 20s.", // 33089 - https://www.wowhead.com/tbc/spell=33089
-		]
-	],
-	[
 		27544, // Totem of Spontaneous Regrowth
 		[
 			"Increases healing done by Healing Wave by up to 88.", // 34294 - https://www.wowhead.com/tbc/spell=34294
@@ -1586,12 +1580,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		27744, // Idol of Ursoc
 		[
 			"Increases initial and per application periodic damage done by Lacerate by 8.", // 34253 - https://www.wowhead.com/tbc/spell=34253
-		]
-	],
-	[
-		27770, // Argussian Compass
-		[
-			"Reduces damage from each attack by 68, up to a total of 1150 damage absorbed. Lasts 20s.", // 39228 - https://www.wowhead.com/tbc/spell=39228
 		]
 	],
 	[
@@ -2552,12 +2540,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		32375, // Bulwark of Azzinoth
-		[
-			"When struck in combat has a 2% chance of increasing your Armor by 2000 for 10 secs.", // 40408 - https://www.wowhead.com/tbc/spell=40408
-		]
-	],
-	[
 		32387, // Idol of the Raven Goddess
 		[
 			"Increases the healing granted by the Tree of Life form aura by 44, adds 20 critical strike rating to the Leader of the Pack aura, and adds 20 spell critical strike rating to the Moonkin form aura.", // 39926 - https://www.wowhead.com/tbc/spell=39926
@@ -2992,12 +2974,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		34473, // Commendation of Kael'thas
-		[
-			"Melee attacks which reduce you below 35% health cause you to gain 152 dodge rating for 10s. Cannot occur more than once every 30 sec.", // 45058 - https://www.wowhead.com/tbc/spell=45058
-		]
-	],
-	[
 		34677, // Shattered Sun Pendant of Restoration
 		[
 			"Your heals have a chance to call on the power of the Arcane if you're exalted with the Scryers, or the Light if you're exalted with the Aldor.", // 45484 - https://www.wowhead.com/tbc/spell=45484
@@ -3319,6 +3295,30 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		35703, // Figurine - Seaspray Albatross
 		[
 			"Restores 900 mana over 12s.", // 46785 - https://www.wowhead.com/tbc/spell=46785
+		]
+	],
+	[
+		35748, // Guardian's Alchemist Stone
+		[
+			"Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack.", // 17619 - https://www.wowhead.com/tbc/spell=17619
+		]
+	],
+	[
+		35749, // Sorcerer's Alchemist Stone
+		[
+			"Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack.", // 17619 - https://www.wowhead.com/tbc/spell=17619
+		]
+	],
+	[
+		35750, // Redeemer's Alchemist Stone
+		[
+			"Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack.", // 17619 - https://www.wowhead.com/tbc/spell=17619
+		]
+	],
+	[
+		35751, // Assassin's Alchemist Stone
+		[
+			"Increases the effect that healing and mana potions have on the wearer by 40%. This effect does not stack.", // 17619 - https://www.wowhead.com/tbc/spell=17619
 		]
 	],
 	[

@@ -65,6 +65,7 @@ const (
 	SpellMaskWhirlwind
 	SpellMaskWhirlwindOh
 	SpellMaskShieldSlam
+	SpellMaskConcussionBlow
 	SpellMaskShieldBash
 	SpellMaskBloodthirst
 	SpellMaskMortalStrike
@@ -111,6 +112,7 @@ type Warrior struct {
 	Rend                            *core.Spell
 	DeepWounds                      *core.Spell
 	MortalStrike                    *core.Spell
+	DevastateSunder                 *core.Spell
 	SweepingStrikesNormalizedAttack *core.Spell
 
 	HeroicStrike       *core.Spell
@@ -224,6 +226,9 @@ func NewWarrior(character *core.Character, options *proto.WarriorOptions, talent
 	})
 
 	warrior.PseudoStats.CanParry = true
+	warrior.PseudoStats.BaseDodgeChance += 0.0075
+	warrior.PseudoStats.BaseParryChance += 0.05
+	warrior.PseudoStats.BaseBlockChance += 0.05
 
 	warrior.AddStatDependency(stats.Strength, stats.AttackPower, 2)
 	warrior.AddStatDependency(stats.Strength, stats.BlockValue, 1/20.0)

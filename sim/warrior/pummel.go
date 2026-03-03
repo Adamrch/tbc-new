@@ -8,7 +8,7 @@ import (
 
 func (war *Warrior) registerPummel() {
 	war.RegisterSpell(core.SpellConfig{
-		ActionID:       core.ActionID{SpellID: 6552},
+		ActionID:       core.ActionID{SpellID: 6554},
 		Flags:          core.SpellFlagMeleeMetrics | core.SpellFlagAPL,
 		ClassSpellMask: SpellMaskPummel,
 		ProcMask:       core.ProcMaskMeleeMHSpecial,
@@ -27,8 +27,9 @@ func (war *Warrior) registerPummel() {
 			},
 		},
 
-		CritMultiplier:   war.DefaultMeleeCritMultiplier(),
 		DamageMultiplier: 1,
+		CritMultiplier:   war.DefaultMeleeCritMultiplier(),
+		ThreatMultiplier: 1,
 
 		ExtraCastCondition: func(sim *core.Simulation, target *core.Unit) bool {
 			return war.StanceMatches(BerserkerStance)

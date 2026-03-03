@@ -3,8 +3,11 @@ import { IndividualSimUI, registerSpecConfig } from '../../core/individual_sim_u
 import { Player } from '../../core/player';
 import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation } from '../../core/proto/apl';
-import { Faction, ItemSlot, PseudoStat, Race, RaidBuffs, Spec, Stat, TristateEffect } from '../../core/proto/common';
-import { UnitStat } from '../../core/proto_utils/stats';
+import { Debuffs, Faction, IndividualBuffs, ItemSlot, PartyBuffs, PseudoStat, Race, RaidBuffs, Spec, Stat, TristateEffect } from '../../core/proto/common';
+import { StatCap, Stats, UnitStat } from '../../core/proto_utils/stats';
+import { ReforgeOptimizer } from '../../core/components/suggest_reforges_action';
+
+import * as Mechanics from '../../core/constants/mechanics';
 import * as Presets from './presets';
 import * as WarriorPresets from '../presets';
 import * as WarriorInputs from '../inputs';
@@ -15,6 +18,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 	// List any known bugs / issues here and they'll be shown on the site.
 	knownIssues: [],
 
+	epRatios: [0, 0, 0.6, 0, 1.15, 0],
 	// All stats for which EP should be calculated.
 	epStats: [
 		Stat.StatStamina,
@@ -28,6 +32,8 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 		Stat.StatExpertiseRating,
 		Stat.StatResilienceRating,
 		Stat.StatDefenseRating,
+		Stat.StatBlockRating,
+		Stat.StatBlockValue,
 		Stat.StatDodgeRating,
 		Stat.StatParryRating,
 		Stat.StatArmor,
@@ -36,6 +42,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 	epPseudoStats: [PseudoStat.PseudoStatMainHandDps],
 	// Reference stat against which to calculate EP. I think all classes use either spell power or attack power.
 	epReferenceStat: Stat.StatStrength,
+	tankRefStat: Stat.StatStamina,
 	// Which stats to display in the Character Stats section, at the bottom of the left-hand sidebar.
 	displayStats: UnitStat.createDisplayStatArray(
 		[
@@ -48,6 +55,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 			Stat.StatAttackPower,
 			Stat.StatBlockValue,
 			Stat.StatDefenseRating,
+			Stat.StatExpertiseRating,
 			Stat.StatResilienceRating,
 			Stat.StatArcaneResistance,
 			Stat.StatFireResistance,
@@ -70,21 +78,48 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 		gear: Presets.P1_PRESET.gear,
 		// Default EP weights for sorting gear in the gear picker.
 		epWeights: Presets.P1_EP_PRESET.epWeights,
+		statCaps: (() => {
+			const hitCap = new Stats().withPseudoStat(PseudoStat.PseudoStatMeleeHitPercent, 9);
+			const expCap = new Stats().withStat(Stat.StatExpertiseRating, 6.5 * 4 * Mechanics.EXPERTISE_PER_QUARTER_PERCENT_REDUCTION);
+
+			return hitCap.add(expCap);
+		})(),
 		other: Presets.OtherDefaults,
 		// Default consumes settings.
 		consumables: Presets.DefaultConsumables,
 		// Default talents.
-		talents: Presets.StandardTalents.data,
+		talents: Presets.DefaultTalents.data,
 		// Default spec-specific settings.
 		specOptions: Presets.DefaultOptions,
+		// Default encounter
+		encounter: "Magtheridon's Lair/Magtheridon 25",
 		// Default raid/party buffs settings.
 		raidBuffs: RaidBuffs.create({
 			...WarriorPresets.DefaultRaidBuffs,
-			thorns: TristateEffect.TristateEffectImproved,
+			thorns: TristateEffect.TristateEffectRegular,
+			shadowProtection: true,
 		}),
-		partyBuffs: WarriorPresets.DefaultPartyBuffs,
-		individualBuffs: WarriorPresets.DefaultIndividualBuffs,
-		debuffs: WarriorPresets.DefaultDebuffs,
+		partyBuffs: PartyBuffs.create({
+			sanctityAura: TristateEffect.TristateEffectImproved,
+			braidedEterniumChain: true,
+			graceOfAirTotem: TristateEffect.TristateEffectImproved,
+			strengthOfEarthTotem: TristateEffect.TristateEffectImproved,
+			windfuryTotem: TristateEffect.TristateEffectImproved,
+			battleShout: TristateEffect.TristateEffectImproved,
+		}),
+		individualBuffs: IndividualBuffs.create({
+			...WarriorPresets.DefaultIndividualBuffs,
+			blessingOfSanctuary: true,
+		}),
+		debuffs: Debuffs.create({
+			...WarriorPresets.DefaultDebuffs,
+			giftOfArthas: false,
+			demoralizingShout: TristateEffect.TristateEffectImproved,
+			thunderClap: TristateEffect.TristateEffectImproved,
+			insectSwarm: true,
+			shadowEmbrace: true,
+			screech: true,
+		}),
 	},
 
 	// IconInputs to include in the 'Player' section on the settings tab.
@@ -99,10 +134,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 			WarriorInputs.BattleShoutT2(),
 			WarriorInputs.StartingRage(),
 			WarriorInputs.StanceSnapshot(),
-			OtherInputs.DistanceFromTarget,
 			WarriorInputs.QueueDelay(),
 			OtherInputs.InputDelay,
-			OtherInputs.TankAssignment,
+			// OtherInputs.TankAssignment,
+			OtherInputs.InspirationUptime,
 			OtherInputs.IncomingHps,
 			OtherInputs.HealingCadence,
 			OtherInputs.HealingCadenceVariation,
@@ -121,11 +156,12 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 	presets: {
 		epWeights: [Presets.P1_EP_PRESET],
 		// Preset talents that the user can quickly select.
-		talents: [Presets.StandardTalents],
+		talents: [Presets.DefaultTalents],
 		// Preset rotations that the user can quickly select.
 		rotations: [Presets.ROTATION_DEFAULT],
 		// Preset gear configurations that the user can quickly select.
-		gear: [Presets.PRERAID_BALANCED_PRESET, Presets.P1_PRESET],
+		gear: [Presets.PRERAID_BALANCED_PRESET, Presets.P1_PRESET, Presets.P2_PRESET, Presets.P3_PRESET, Presets.P35_PRESET, Presets.P4_PRESET],
+		builds: [Presets.P1_PRESET_BUILD],
 	},
 
 	autoRotation: (_player: Player<Spec.SpecProtectionWarrior>): APLRotation => {
@@ -135,7 +171,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 	raidSimPresets: [
 		{
 			spec: Spec.SpecProtectionWarrior,
-			talents: Presets.StandardTalents.data,
+			talents: Presets.DefaultTalents.data,
 			specOptions: Presets.DefaultOptions,
 			consumables: Presets.DefaultConsumables,
 			defaultFactionRaces: {
@@ -162,5 +198,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecProtectionWarrior, {
 export class ProtectionWarriorSimUI extends IndividualSimUI<Spec.SpecProtectionWarrior> {
 	constructor(parentElem: HTMLElement, player: Player<Spec.SpecProtectionWarrior>) {
 		super(parentElem, player, SPEC_CONFIG);
+
+		this.reforger = new ReforgeOptimizer(this);
 	}
 }

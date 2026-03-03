@@ -40,7 +40,7 @@ export class ConsumesPicker extends Component {
 		}
 		return [
 			...consumables,
-			...this.db.getConsumablesByTypeAndStats(type, this.simUI.individualConfig.consumableStats ?? this.simUI.individualConfig.epStats),
+			...this.db.getConsumablesByTypeAndStats(type, [...(this.simUI.individualConfig.consumableStats ?? this.simUI.individualConfig.epStats)]),
 		];
 	}
 
@@ -59,6 +59,7 @@ export class ConsumesPicker extends Component {
 		this.buildImbuePicker();
 		this.buildDrumsPicker();
 		this.buildScrollsPicker();
+		this.buildMiscPicker();
 	}
 
 	private buildPotionsPicker(): void {
@@ -117,7 +118,6 @@ export class ConsumesPicker extends Component {
 		const guardianElixirOptions = ConsumablesInputs.makeConsumableInput(guardianElixirs, { consumesFieldName: 'guardianElixirId' }, '');
 
 		buildIconInput(battleElixirsElem, this.simUI.player, battleElixirOptions);
-
 		buildIconInput(guardianElixirsElem, this.simUI.player, guardianElixirOptions);
 	}
 
@@ -187,7 +187,7 @@ export class ConsumesPicker extends Component {
 			i18n.t('settings_tab.consumables.imbue.mhImbue'),
 		);
 
-		const ohImbueOptions = ConsumablesInputs.makeOHImbueinput(
+		const ohImbueOptions = ConsumablesInputs.makeOHImbueInput(
 			relevantStatOptions(ConsumablesInputs.IMBUE_CONFIG_OH, this.simUI),
 			i18n.t('settings_tab.consumables.imbue.ohImbue'),
 		);
@@ -228,6 +228,21 @@ export class ConsumesPicker extends Component {
 
 		// Initial update of row based on current state.
 		this.updateRow(row, [scrollAgi, scrollStr, scrollInt, scrollSpi, scrollArm]);
+	}
+
+	private buildMiscPicker(): void {
+		const miscRef = ref<HTMLDivElement>();
+		const row = this.rootElem.appendChild(
+			<ConsumeRow label="Miscellaneous">
+				<div ref={miscRef} className="picker-group icon-group consumes-row-inputs consumes-misc"></div>
+			</ConsumeRow>,
+		);
+		const miscElem = miscRef.value!;
+
+		const nightmareSeed = buildIconInput(miscElem, this.simUI.player, ConsumablesInputs.NightmareSeed);
+
+		// Initial update of row based on current state.
+		this.updateRow(row, [nightmareSeed]);
 	}
 
 	private updateRow(rowElem: Element, pickers: (IconPicker<Player<any>, any> | IconEnumPicker<Player<any>, any>)[]) {

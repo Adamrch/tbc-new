@@ -128,6 +128,8 @@ func (rot *APLRotation) newAPLValueWithContext(config *proto.APLValue, groupVari
 		value = rot.newValueCurrentComboPoints(config.GetCurrentComboPoints(), config.Uuid)
 	case *proto.APLValue_MaxHealth:
 		value = rot.newValueMaxHealth(config.GetMaxHealth(), config.Uuid)
+	case *proto.APLValue_MaxMana:
+		value = rot.newValueMaxMana(config.GetMaxMana(), config.Uuid)
 	case *proto.APLValue_MaxComboPoints:
 		value = rot.newValueMaxComboPoints(config.GetMaxComboPoints(), config.Uuid)
 	case *proto.APLValue_MaxEnergy:
@@ -158,8 +160,12 @@ func (rot *APLRotation) newAPLValueWithContext(config *proto.APLValue, groupVari
 		value = rot.newValueGCDTimeToReady(config.GetGcdTimeToReady(), config.Uuid)
 
 	// Auto attacks
+	case *proto.APLValue_AutoSwingTime:
+		value = rot.newValueAutoSwingTime(config.GetAutoSwingTime(), config.Uuid)
 	case *proto.APLValue_AutoTimeToNext:
 		value = rot.newValueAutoTimeToNext(config.GetAutoTimeToNext(), config.Uuid)
+	case *proto.APLValue_AutoTimeSinceLast:
+		value = rot.newValueAutoTimeSinceLast(config.GetAutoTimeSinceLast(), config.Uuid)
 
 	// Spells
 	case *proto.APLValue_SpellIsKnown:

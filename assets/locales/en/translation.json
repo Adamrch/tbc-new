@@ -27,6 +27,8 @@
 		"search": "Search",
 		"filter": "Filter",
 		"elapsed_time": "Elapsed Time",
+		"melee": "Melee",
+		"any": "Any",
 		"phases": {
 			"1": "Phase 1 (2.0 - T4)",
 			"2": "Phase 2 (2.1 - T5)",
@@ -170,12 +172,12 @@
 			"ranged_haste": "Ranged Haste",
 			"healing_power": "Healing Power",
 			"spell_damage": "Spell Damage",
-			"arcane_power": "Arcane Spellpower",
-			"fire_power": "Fire Spellpower",
-			"frost_power": "Frost Spellpower",
-			"holy_power": "Holy Spellpower",
-			"nature_power": "Nature Spellpower",
-			"shadow_power": "Shadow Spellpower",
+			"arcane_damage": "Arcane Spell Damage",
+			"fire_damage": "Fire Spell Damage",
+			"frost_damage": "Frost Spell Damage",
+			"holy_damage": "Holy Spell Damage",
+			"nature_damage": "Nature Spell Damage",
+			"shadow_damage": "Shadow Spell Damage",
 			"spell_hit_rating": "Spell Hit Rating",
 			"spell_crit_rating": "Spell Crit Rating",
 			"spell_haste_rating": "Spell Haste Rating",
@@ -196,7 +198,8 @@
 			"frost_resistance": "Frost Resistance",
 			"fire_resistance": "Fire Resistance",
 			"nature_resistance": "Nature Resistance",
-			"shadow_resistance": "Shadow Resistance"
+			"shadow_resistance": "Shadow Resistance",
+			"physical_damage": "Bonus Weapon Damage"
 		},
 		"currency": {
 			"valorPoints": "Valor Points",
@@ -229,7 +232,8 @@
 			"class_spec_options": "Class/Spec Options",
 			"consumables": "Consumables",
 			"other_settings": "Other Settings",
-			"buffs": "Buffs"
+			"buffs": "Buffs",
+			"reforge_settings": "Suggest Gem Settings"
 		}
 	},
 	"sim": {
@@ -250,8 +254,7 @@
 			"title": "This sim is currently not supported.",
 			"contribute_message": "Want to contribute?",
 			"discord_message": "Make sure to join our Discord!",
-			"healing_message": "Looking for healing simulations?",
-			"qe_live_message": "Check out QE Live!"
+			"old_sim_message": "You can find the old Sim for this spec here:"
 		},
 		"notifications": {
 			"raid_sim_cancelled": "Raid sim cancelled.",
@@ -439,6 +442,10 @@
 				"label": "Tank Assignment",
 				"tooltip": "Determines which mobs will be tanked. Most mobs default to targeting the Main Tank, but in preset multi-target encounters this is not always true."
 			},
+			"inspiration_uptime": {
+				"label": "Inspiration % Uptime",
+				"tooltip": "<p>% average of Encounter Duration, during which you have the Inspiration buff.</p><p>If set to 0, the buff isn't applied.</p>"
+			},
 			"incoming_hps": {
 				"label": "Incoming HPS",
 				"tooltip": "Average amount of healing received per second. Used for calculating chance of death. If set to 0, defaults to 25% of the primary target's base DPS."
@@ -596,6 +603,9 @@
 			},
 			"scrolls": {
 				"title": "Scrolls"
+			},
+			"miscellaneous": {
+				"title": "Miscellaneous"
 			}
 		},
 		"encounter": {
@@ -1215,6 +1225,10 @@
 					"label": "Current Mana (%)",
 					"tooltip": "Amount of currently available Mana, as a percentage."
 				},
+				"max_mana": {
+					"label": "Max Mana",
+					"tooltip": "Maximum mana of the unit"
+				},
 				"current_rage": {
 					"label": "Current Rage",
 					"tooltip": "Amount of currently available Rage."
@@ -1287,9 +1301,17 @@
 					"label": "GCD Time To Ready",
 					"tooltip": "Amount of time remaining before the GCD comes off cooldown, or <b>0</b> if it is not on cooldown."
 				},
+				"auto_swing_time": {
+					"label": "Auto Swing Time",
+					"tooltip": "Total swing duration including all haste buffs."
+				},
 				"time_to_next_auto": {
 					"label": "Time To Next Auto",
-					"tooltip": "Amount of time remaining before the next Main-hand or Off-hand melee attack, or <b>0</b> if autoattacks are not engaged."
+					"tooltip": "Amount of time remaining before the next Main-hand, Off-hand or Ranged attack, or <b>0</b> if autoattacks are not engaged."
+				},
+				"time_since_last_auto": {
+					"label": "Time Since Last Auto",
+					"tooltip": "Amount of time since the last Main-hand, Off-hand or Ranged attack, or <b>0</b> if autoattacks are not engaged."
 				},
 				"spell_known": {
 					"label": "Spell Known",
@@ -1885,6 +1907,7 @@
 			"tabs": {
 				"damage": "Damage",
 				"healing": "Healing",
+				"threat": "Threat",
 				"damage_taken": "Damage Taken",
 				"buffs": "Buffs",
 				"debuffs": "Debuffs",
@@ -1895,6 +1918,8 @@
 			},
 			"columns": {
 				"damage_done": "Damage done",
+				"threat_done": "Threat done",
+				"healing_done": "Healing done",
 				"casts": "Casts",
 				"avg_cast": "Avg Cast",
 				"hits": "Hits",
@@ -1903,7 +1928,8 @@
 				"miss_percent": "Miss %",
 				"dpet": "DPET",
 				"dps": "DPS",
-				"healing_done": "Healing done",
+				"tpet": "TPET",
+				"tps": "TPS",
 				"cpm": "CPM",
 				"cast_time": "Cast Time",
 				"hpm": "HPM",
@@ -1982,7 +2008,9 @@
 				"type": "Type",
 				"count": "Count",
 				"average": "Average",
-				"amount": "Amount"
+				"amount": "Amount",
+				"per_cast": "Per Cast",
+				"per_hit": "Per Hit"
 			}
 		}
 	},

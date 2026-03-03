@@ -72,7 +72,7 @@ func main() {
 		panic(fmt.Sprintf("Error loading DBC data %v", err))
 	}
 
-	_, err = database.LoadAndWriteRawItems(helper, "s.OverallQualityId != 7 AND s.Field_1_15_7_59706_054 = 0 AND s.OverallQualityId != 0 AND (i.ClassID = 2 OR i.ClassID = 4) AND s.Display_lang != '' AND (s.ID != 34219 AND s.Display_lang NOT LIKE '%Test%' AND s.Display_lang NOT LIKE 'QA%' AND s.Display_lang != 'unused')", inputsDir)
+	_, err = database.LoadAndWriteRawItems(helper, "s.OverallQualityId != 7 AND s.Field_1_15_7_59706_054 = 0 AND s.OverallQualityId != 0 AND (i.ClassID = 2 OR i.ClassID = 4 OR (i.ClassID = 7 AND i.InventoryType = 12)) AND s.Display_lang != '' AND (s.ID != 34219 AND s.Display_lang NOT LIKE '%Test%' AND s.Display_lang NOT LIKE 'QA%' AND s.Display_lang != 'unused')", inputsDir)
 	if err != nil {
 		panic(fmt.Sprintf("Error loading DBC data %v", err))
 	}
@@ -149,6 +149,7 @@ func main() {
 
 	var instance = dbc.GetDBC()
 	instance.LoadSpellScaling()
+	instance.LoadShieldBlockValues()
 	database.GenerateProtos(instance, db)
 
 	processItems(instance, iconsMap, names, dropSources, craftingSources, repSources, db)
@@ -194,42 +195,8 @@ func main() {
 		}
 	}
 
-	bestByStat := make(map[int]map[int]*dbc.Consumable)
-
-	// Phase 1: find the best consumable per (subclass, stat-index)
-	for i := range consumables {
-		c := &consumables[i]
-		subclass := int(c.SubClassId)
-
-		// ensure the inner map exists
-		if _, ok := bestByStat[subclass]; !ok {
-			bestByStat[subclass] = make(map[int]*dbc.Consumable)
-		}
-		bucket := bestByStat[subclass]
-
-		// pull the raw stats array once
-		stats := c.ToProto().Stats
-		for idx, val := range stats {
-			if existing, seen := bucket[idx]; !seen || val > existing.ToProto().Stats[idx] {
-				bucket[idx] = c
-			}
-		}
-	}
-
-	// Phase 2: merge each unique consumable exactly once
-	seen := make(map[int]bool)
-	for _, bucket := range bestByStat {
-		for _, c := range bucket {
-			if seen[c.Id] {
-				continue
-			}
-			p := c.ToProto()
-			p.Icon = strings.ToLower(
-				database.GetIconName(iconsMap, c.IconFileDataID),
-			)
-			db.MergeConsumable(p)
-			seen[c.Id] = true
-		}
+	for _, consumable := range consumables {
+		db.MergeConsumable(consumable.ToProto())
 	}
 
 	for _, consumable := range database.ConsumableOverrides {
@@ -276,7 +243,7 @@ func main() {
 
 	icons, err := database.LoadSpellIcons(helper)
 	if err != nil {
-		panic("error loading icons")
+		panic(fmt.Sprintf("error loading icons: %v", err))
 	}
 
 	addSpellIcons(db, database.SharedSpellsIcons, icons, iconsMap)
@@ -475,6 +442,8 @@ func ApplyGlobalFilters(db *database.WowDatabase) {
 		_, uncut, _ := strings.Cut(gem.Name, " ")
 		if slices.Contains([]string{"Crimson Spinel", "Empyrean Sapphire", "Lionseye", "Shadowsong Amethyst", "Pyrestone", "Seaspray Emerald"}, uncut) {
 			gem.Phase = 3
+		} else if gem.Name == "Charmed Amani Jewel" {
+			gem.Phase = 3
 		} else {
 			gem.Phase = 1
 		}
@@ -534,7 +503,7 @@ func ApplyGlobalFilters(db *database.WowDatabase) {
 			return false
 		}
 
-		return !strings.HasPrefix(consumable.Name, "QA") && !strings.HasPrefix(consumable.Name, "Test") && !strings.HasPrefix(consumable.Name, "TEST")
+		return !strings.HasPrefix(consumable.Name, "QA") && !strings.HasPrefix(consumable.Name, "Test") && !strings.HasPrefix(consumable.Name, "TEST") && !strings.Contains(consumable.Name, "Flaskataur")
 	})
 }
 
@@ -853,6 +822,7 @@ func addSpellIcons(db *database.WowDatabase, spellIds []int32, icons map[int]dat
 			Name:    iconEntry.Name,
 			Icon:    strings.ToLower(database.GetIconName(iconsMap, iconEntry.FDID)),
 			HasBuff: iconEntry.HasBuff,
+			Rank:    int32(iconEntry.Rank),
 		}
 	}
 }

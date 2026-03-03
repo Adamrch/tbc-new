@@ -8,7 +8,7 @@ import (
 
 func (war *Warrior) registerSlam() {
 
-	actionID := core.ActionID{SpellID: 1464}
+	actionID := core.ActionID{SpellID: 25242}
 
 	war.RegisterSpell(core.SpellConfig{
 		ActionID:       actionID,
@@ -30,13 +30,14 @@ func (war *Warrior) registerSlam() {
 			IgnoreHaste: true,
 			ModifyCast: func(sim *core.Simulation, spell *core.Spell, cast *core.Cast) {
 				if cast.CastTime > 0 {
-					war.AutoAttacks.DelayMeleeBy(sim, cast.CastTime)
+					war.AutoAttacks.StopMeleeUntil(sim, sim.CurrentTime+cast.CastTime)
 				}
 			},
 		},
 
 		CritMultiplier:   war.DefaultMeleeCritMultiplier(),
 		DamageMultiplier: 1,
+		ThreatMultiplier: 1,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			baseDamage := 140 + spell.Unit.MHWeaponDamage(sim, spell.MeleeAttackPower())

@@ -44,12 +44,30 @@ var IgnoreSpellEffectBySpellEffectType = map[dbc.SpellEffectType][]int{
 
 var OtherItemIdsToFetch = []string{}
 var ConsumableOverrides = []*proto.Consumable{}
-var ItemOverrides = []*proto.UIItem{}
+var ItemOverrides = []*proto.UIItem{
+	{Id: 32658, Phase: 2}, // Badge of Tenacity
+
+	{Id: 34665, Phase: 5},
+	{Id: 34666, Phase: 5},
+	{Id: 34667, Phase: 5},
+	{Id: 34670, Phase: 5},
+	{Id: 34671, Phase: 5},
+	{Id: 34672, Phase: 5},
+	{Id: 34673, Phase: 5},
+	{Id: 34674, Phase: 5},
+	{Id: 34675, Phase: 5},
+	{Id: 34676, Phase: 5},
+	{Id: 34677, Phase: 5},
+	{Id: 34678, Phase: 5},
+	{Id: 34679, Phase: 5},
+	{Id: 34680, Phase: 5},
+}
 
 // Keep these sorted by item ID.
 var ItemAllowList = map[int32]struct{}{
-	2140: {},
-	2505: {},
+	2140:  {},
+	2505:  {},
+	11815: {}, // Hand of Justice
 }
 
 // Keep these sorted by item ID.
@@ -159,9 +177,13 @@ var ExtraItemIcons = []int32{
 // Item Ids of consumables to allow
 var ConsumableAllowList = []int32{
 	7676,  // Thisle Tea
+	9088,  // Gift of Arthas
 	9224,  // Elixir of Demonslaying
 	13442, // Migty Rage Potion
+	13452, // Elixir of the Mongoose
 	20520, // Dark Rune
+	22788, // Flamecap
+	22797, // Nightmare Seed
 }
 var ConsumableDenyList = []int32{}
 
@@ -375,9 +397,12 @@ var EnchantAllowList = []int32{
 	368,  // Enchant Cloak - Greater Agility
 	684,  // Enchant Gloves - Major Strength
 	1593, // Bracer 24 AP
+	1594, // Gloves 26 AP
+	1900, // Enchant Weapon - Crusader
 	2564, // Weapon 15 Agi
 	2583, // Presence of Might
 	2647, // Enchant Bracer - Brawn
+	2659, // Enchant Chest - Exceptional Health
 }
 
 // Note: EffectId is required for all enchants, because they are
