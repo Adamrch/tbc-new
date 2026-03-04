@@ -55,85 +55,85 @@ character_stats_results: {
 dps_results: {
  key: "TestDestruction-AllItems-AshtongueTalismanofShadows-32493"
  value: {
-  dps: 2321.16779
-  tps: 2056.73938
+  dps: 2266.24874
+  tps: 2005.17901
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-CorruptorRaiment"
  value: {
-  dps: 2264.2517
-  tps: 1999.13897
+  dps: 2226.03904
+  tps: 1963.49314
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-MaleficRaiment"
  value: {
-  dps: 2497.06433
-  tps: 2209.26067
+  dps: 2448.33684
+  tps: 2163.8743
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-OblivionRaiment"
  value: {
-  dps: 2050.92037
-  tps: 1811.92396
+  dps: 2027.98746
+  tps: 1790.94829
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-SwiftWindfireDiamond"
  value: {
-  dps: 2352.37936
-  tps: 2083.98954
+  dps: 2294.64928
+  tps: 2029.83438
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-TheBlackBook-19337"
  value: {
-  dps: 2321.16779
-  tps: 2056.73938
+  dps: 2266.24874
+  tps: 2005.17901
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-VoidStarTalisman-30449"
  value: {
-  dps: 2372.38798
-  tps: 2101.75142
+  dps: 2313.53369
+  tps: 2045.47889
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-VoidheartRaiment"
  value: {
-  dps: 2184.66154
-  tps: 1929.78119
+  dps: 2153.08757
+  tps: 1898.32742
  }
 }
 dps_results: {
  key: "TestDestruction-Average-Default"
  value: {
-  dps: 2375.2607
-  tps: 2104.0672
+  dps: 2336.94711
+  tps: 2068.53426
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Gnome-preraid-Destruction-destruction-FullBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 5960.01446
-  tps: 4665.30287
+  dps: 5938.6849
+  tps: 4602.36741
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Gnome-preraid-Destruction-destruction-FullBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 2334.38922
-  tps: 2068.57821
+  dps: 2286.46945
+  tps: 2023.39449
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Gnome-preraid-Destruction-destruction-FullBuffs-0.0yards-ShortSingleTarget"
  value: {
-  dps: 2762.82446
-  tps: 2425.8361
+  dps: 2720.21414
+  tps: 2392.39059
  }
 }
 dps_results: {
@@ -160,22 +160,22 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-Settings-Orc-preraid-Destruction-destruction-FullBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 6016.99588
-  tps: 4700.91757
+  dps: 5983.94102
+  tps: 4627.62371
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Orc-preraid-Destruction-destruction-FullBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 2361.35267
-  tps: 2092.09302
+  dps: 2302.25365
+  tps: 2036.70431
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Orc-preraid-Destruction-destruction-FullBuffs-0.0yards-ShortSingleTarget"
  value: {
-  dps: 2766.02253
-  tps: 2443.80614
+  dps: 2752.90851
+  tps: 2418.89614
  }
 }
 dps_results: {
@@ -202,7 +202,7 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-SwitchInFrontOfTarget-Default"
  value: {
-  dps: 2361.35267
-  tps: 2092.09302
+  dps: 2302.25365
+  tps: 2036.70431
  }
 }
