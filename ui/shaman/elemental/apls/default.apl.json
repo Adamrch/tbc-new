@@ -1,5 +1,12 @@
 {
 	"type": "TypeAPL",
-	"prepullActions": [],
-	"priorityList": [{ "action": { "autocastOtherCooldowns": {} } }]
+	"priorityList": [
+		{
+			"action": {
+				"condition": { "not": { "val": { "dotIsActive": { "spellId": { "spellId": 25457 } } } } },
+				"castSpell": { "spellId": { "spellId": 25457 } }
+			}
+		},
+		{ "action": { "castSpell": { "spellId": { "spellId": 25449 } } } }
+	]
 }
