@@ -200,7 +200,7 @@ func init() {
 			SpellSchool:  core.SpellSchoolNature,
 			ProcMask:     core.ProcMaskEmpty,
 			Flags:        core.SpellFlagPassiveSpell | core.SpellFlagIgnoreAttackerModifiers,
-			MissileSpeed: 28, // this is a guess atm
+			MissileSpeed: 20,
 
 			DamageMultiplier: 1,
 			CritMultiplier:   character.DefaultSpellCritMultiplier(),
