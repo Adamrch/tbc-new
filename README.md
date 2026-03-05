@@ -6,7 +6,7 @@ The primary goal of this project is to provide a framework that makes it easy to
 
 This project is licensed with MIT license. We request that anyone using this software in their own project to make sure there is a user visible link back to the original project.
 
-[Live sims can be found here.](https://wowsims.github.io/tbc 'https://wowsims.github.io/tbc')
+[Live sims can be found here.](https://wowsims.com/tbc)
 
 [Support our devs via Patreon.](https://www.patreon.com/wowsims)
 
