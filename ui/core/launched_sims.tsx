@@ -69,15 +69,7 @@ export const simLaunchStatuses: Record<Spec, SimStatus> = {
 		status: LaunchStatus.Unlaunched,
 	},
 	// Priest
-	[Spec.SpecDisciplinePriest]: {
-		phase: Phase.Phase1,
-		status: LaunchStatus.Unlaunched,
-	},
-	[Spec.SpecHolyPriest]: {
-		phase: Phase.Phase1,
-		status: LaunchStatus.Unlaunched,
-	},
-	[Spec.SpecShadowPriest]: {
+	[Spec.SpecPriest]: {
 		phase: Phase.Phase1,
 		status: LaunchStatus.Unlaunched,
 	},

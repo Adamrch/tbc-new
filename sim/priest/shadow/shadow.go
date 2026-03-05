@@ -40,26 +40,16 @@ func NewShadowPriest(character *core.Character, options *proto.Player) *ShadowPr
 		options: shadowOptions.Options,
 	}
 
-	// spriest.ShadowOrbs = spriest.NewDefaultSecondaryResourceBar(core.SecondaryResourceConfig{
-	// 	Type:    proto.SecondaryResourceType_SecondaryResourceTypeShadowOrbs,
-	// 	Default: MaxShadowOrbs, // We now generate 1 orb every 6 seconds out of combat, so should pretty much start with 3 always
-	// 	Max:     MaxShadowOrbs,
-	// })
-	// spriest.RegisterSecondaryResourceBar(spriest.ShadowOrbs)
 	return spriest
 }
 
 type ShadowPriest struct {
 	*priest.Priest
 	options *proto.ShadowPriest_Options
-	//ShadowOrbs   core.SecondaryResourceBar
-	orbsConsumed float64 // Number of orbs consumed by the last devouring plague cast
 
 	// Shadow Spells
 	DevouringPlague *core.Spell
-	MindSpike       *core.Spell
 	MindBlast       *core.Spell
-	SurgeOfDarkness *core.Aura // Required for dummy effect
 }
 
 func (spriest *ShadowPriest) GetPriest() *priest.Priest {
@@ -87,13 +77,6 @@ func (spriest *ShadowPriest) Reset(sim *core.Simulation) {
 func (spriest *ShadowPriest) ApplyTalents() {
 	spriest.Priest.ApplyTalents()
 
-	// apply shadow spec specific auras
-	spriest.AddStaticMod(core.SpellModConfig{
-		FloatValue: 0.25 + 0.10, // 2025-07-01 - Shadowform damage increase raised to 35% (was 30%)
-		School:     core.SpellSchoolShadow,
-		Kind:       core.SpellMod_DamageDone_Pct,
-	})
-
 	core.MakePermanent(spriest.RegisterAura(core.Aura{
 		Label: "Shadowform",
 		ActionID: core.ActionID{
@@ -101,14 +84,4 @@ func (spriest *ShadowPriest) ApplyTalents() {
 		},
 	}))
 
-	// core.MakePermanent(core.MindQuickeningAura(&spriest.Unit))
-
-	// spriest.registerTwistOfFate()
-	// spriest.registerSolaceAndInstanity()
-	// spriest.registerSurgeOfDarkness()
-	// spriest.registerDivineInsight()
-	// spriest.registerHalo()
-	// spriest.registerCascade()
-	// spriest.registerDivineStar()
-	// spriest.registerHotfixes()
 }
