@@ -1,8 +1,6 @@
 package warlock
 
 import (
-	"time"
-
 	"github.com/wowsims/tbc/sim/core"
 )
 
@@ -22,8 +20,7 @@ func (warlock *Warlock) registerCurseOfElements() {
 		},
 		Cast: core.CastConfig{
 			DefaultCast: core.Cast{
-				GCDMin: time.Millisecond * 500,
-				GCD:    core.GCDMin,
+				GCD: core.GCDDefault,
 			},
 		},
 

@@ -156,7 +156,6 @@ export const DefaultDebuffs = Debuffs.create({
 	judgementOfWisdom: true,
 	misery: true,
 	shadowWeaving: true,
-	curseOfElements: TristateEffect.TristateEffectImproved,
 	sunderArmor: true,
 	screech: true,
 	faerieFire: TristateEffect.TristateEffectImproved,

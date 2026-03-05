@@ -248,7 +248,7 @@ const (
 	WarlockDemonologySpells = WarlockAllSummons
 
 	WarlockDestructionSpells = WarlockSpellHellfire | WarlockSpellImmolate | WarlockSpellIncinerate | WarlockSpellRainOfFire | WarlockSpellSearingPain |
-		WarlockSpellShadowBolt | WarlockSpellSoulFire
+		WarlockSpellShadowBolt | WarlockSpellSoulFire | WarlockSpellConflagrate | WarlockSpellShadowFury | WarlockSpellShadowBurn
 )
 
 // Called to handle custom resources
