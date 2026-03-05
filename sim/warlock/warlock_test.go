@@ -3,12 +3,14 @@ package warlock
 import (
 	"testing"
 
+	"github.com/wowsims/tbc/sim/common"
 	"github.com/wowsims/tbc/sim/core"
 	"github.com/wowsims/tbc/sim/core/proto"
 )
 
 func init() {
 	RegisterWarlock()
+	common.RegisterAllEffects()
 }
 
 func TestAffliction(t *testing.T) {
