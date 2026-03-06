@@ -14,18 +14,20 @@ type Priest struct {
 	SelfBuffs
 	Talents *proto.PriestTalents
 
-	SurgeOfLight bool
-
 	Latency float64
 
 	ShadowfiendAura *core.Aura
 	// ShadowfiendPet  *Shadowfiend
-	InnerFocus     *core.Spell
-	HolyFire       *core.Spell
-	Smite          *core.Spell
-	ShadowWordPain *core.Spell
-	Shadowfiend    *core.Spell
-	VampiricTouch  *core.Spell
+
+	Shadowfiend *core.Spell
+
+	ShadowWordPain  []*core.Spell
+	MindBlast       []*core.Spell
+	MindFlay        []*core.Spell
+	ShadowWordDeath []*core.Spell
+	DevouringPlague *core.Spell
+	VampiricEmbrace *core.Spell
+	VampiricTouch   []*core.Spell
 }
 
 type TargetDoTInfo struct {
@@ -45,12 +47,13 @@ func (priest *Priest) AddPartyBuffs(_ *proto.PartyBuffs) {
 }
 
 func (priest *Priest) Initialize() {
-	// priest.registerShadowWordPainSpell()
+	MindBlastRankMap.RegisterAll(priest.registerMindBlastSpell)
+	MindFlayRankMap.RegisterAll(priest.registerMindFlaySpell)
+	ShadowWordPainRankMap.RegisterAll(priest.registerShadowWordPainSpell)
+	ShadowWordDeathRankMap.RegisterAll(priest.registerShadowWordDeathSpell)
+	VampiricTouchRankMap.RegisterAll(priest.registerVampiricTouchSpell)
 	// priest.registerShadowfiendSpell()
 	// priest.registerVampiricTouchSpell()
-
-	// priest.registerDispersionSpell()
-
 	// priest.registerPowerInfusionSpell()
 }
 
@@ -84,8 +87,6 @@ type PriestAgent interface {
 }
 
 func NewPriest(character *core.Character, options *proto.Player) *Priest {
-	//priestOptions := options.GetPriest()
-
 	selfBuffs := SelfBuffs{
 		UseShadowfiend: true,
 	}
@@ -119,22 +120,19 @@ func RegisterPriest() {
 }
 
 const (
-	PriestSpellFlagNone  int64 = 0
-	PriestSpellArchangel int64 = 1 << iota
-	PriestSpellDevouringPlague
+	PriestSpellFlagNone        int64 = 0
+	PriestSpellDevouringPlague int64 = 1 << iota
 	PriestSpellDevouringPlagueDoT
 	PriestSpellDevouringPlagueHeal
-	PriestSpellHolyFire
 	PriestSpellHolyNova
-	PriestSpellInnerFocus
-	PriestSpellManaBurn
+	PriestSpellHolyFire
 	PriestSpellMindBlast
 	PriestSpellMindFlay
 	PriestSpellPowerInfusion
+	PriestSpellShadowform
 	PriestSpellShadowWordDeath
 	PriestSpellShadowWordPain
 	PriestSpellShadowFiend
-	PriestSpellSmite
 	PriestSpellVampiricEmbrace
 	PriestSpellVampiricTouch
 	PriestSpellFade
@@ -151,8 +149,11 @@ const (
 		PriestSpellVampiricEmbrace
 	PriestShadowSpells = PriestSpellDevouringPlague |
 		PriestSpellShadowWordDeath |
+		PriestSpellShadowform |
 		PriestSpellShadowWordPain |
 		PriestSpellMindFlay |
 		PriestSpellMindBlast |
-		PriestSpellVampiricTouch
+		PriestSpellVampiricTouch |
+		PriestSpellShadowFiend |
+		PriestSpellVampiricEmbrace
 )
