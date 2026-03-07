@@ -6,7 +6,7 @@ import { PlayerClasses } from '../../core/player_classes';
 import { APLRotation } from '../../core/proto/apl';
 import { Faction, ItemSlot, PseudoStat, Race, Spec, Stat } from '../../core/proto/common';
 import { StatCapType } from '../../core/proto/ui';
-import { StatCap, Stats, UnitStat } from '../../core/proto_utils/stats';
+import { StatCap, UnitStat } from '../../core/proto_utils/stats';
 import * as HunterInputs from './inputs';
 import * as Presets from './presets';
 
@@ -18,8 +18,10 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 	warnings: [],
 	// All stats for which EP should be calculated.
 	epStats: [
-		Stat.StatStrength,
 		Stat.StatAgility,
+		Stat.StatStrength,
+		Stat.StatIntellect,
+		Stat.StatMP5,
 		Stat.StatAttackPower,
 		Stat.StatRangedAttackPower,
 		Stat.StatArmorPenetration,
@@ -28,9 +30,11 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecHunter, {
 		Stat.StatMeleeCritRating,
 		Stat.StatArmorPenetration,
 		Stat.StatExpertiseRating,
+		Stat.StatPhysicalDamage,
 	],
 	gemStats: [Stat.StatStamina, Stat.StatAgility],
 	epPseudoStats: [PseudoStat.PseudoStatRangedHitPercent, PseudoStat.PseudoStatRangedCritPercent, PseudoStat.PseudoStatRangedDps],
+	consumableStats: [Stat.StatStamina, Stat.StatHealth, Stat.StatMana],
 	// Reference stat against which to calculate EP.
 	epReferenceStat: Stat.StatAgility,
 	// Which stats to display in the Character Stats section, at the bottom of the left-hand sidebar.
