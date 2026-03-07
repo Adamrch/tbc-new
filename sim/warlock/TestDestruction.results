@@ -13,7 +13,7 @@ character_stats_results: {
   final_stats: 0
   final_stats: 0
   final_stats: 233
-  final_stats: 164
+  final_stats: 199
   final_stats: 219
   final_stats: 0
   final_stats: 15
@@ -44,7 +44,7 @@ character_stats_results: {
   final_stats: 93.75
   final_stats: 0
   final_stats: 0
-  final_stats: 16
+  final_stats: 18.77439
   final_stats: 9.17422
   final_stats: 29.54366
   final_stats: 0
@@ -139,22 +139,22 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-AllItems-BandoftheEternalChampion-29301"
  value: {
-  dps: 1956.95784
-  tps: 1742.16886
+  dps: 1970.22079
+  tps: 1753.73816
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-BandoftheEternalRestorer-29309"
  value: {
-  dps: 2018.83569
-  tps: 1792.02718
+  dps: 2025.79374
+  tps: 1798.61863
  }
 }
 dps_results: {
  key: "TestDestruction-AllItems-BandoftheEternalSage-29305"
  value: {
-  dps: 2049.39257
-  tps: 1820.02381
+  dps: 2058.10592
+  tps: 1827.74635
  }
 }
 dps_results: {
@@ -258,8 +258,8 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-AllItems-BraidedEterniumChain-24114"
  value: {
-  dps: 1955.36042
-  tps: 1740.49488
+  dps: 1970.22079
+  tps: 1753.73816
  }
 }
 dps_results: {
@@ -606,10 +606,17 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDestruction-AllItems-Mana-EtchedRegalia"
+ value: {
+  dps: 1725.66511
+  tps: 1532.68681
+ }
+}
+dps_results: {
  key: "TestDestruction-AllItems-MasqueradeGown-28578"
  value: {
-  dps: 1977.67471
-  tps: 1755.31878
+  dps: 1984.40414
+  tps: 1761.01674
  }
 }
 dps_results: {
@@ -692,8 +699,8 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-AllItems-RobeoftheElderScribes-28602"
  value: {
-  dps: 2023.45042
-  tps: 1795.69041
+  dps: 2030.84553
+  tps: 1802.15075
  }
 }
 dps_results: {
@@ -938,8 +945,8 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-AllItems-WrathofCenarius-21190"
  value: {
-  dps: 1985.49153
-  tps: 1766.33977
+  dps: 1998.40408
+  tps: 1777.67922
  }
 }
 dps_results: {
@@ -987,22 +994,22 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-Settings-Gnome-preraid-Destruction-destruction-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 913.07333
-  tps: 2043.27252
+  dps: 933.2288
+  tps: 2064.04324
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Gnome-preraid-Destruction-destruction-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 913.07333
-  tps: 835.43724
+  dps: 933.2288
+  tps: 853.50891
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Gnome-preraid-Destruction-destruction-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
-  dps: 986.59369
-  tps: 873.77813
+  dps: 1005.61028
+  tps: 890.24313
  }
 }
 dps_results: {
@@ -1029,22 +1036,22 @@ dps_results: {
 dps_results: {
  key: "TestDestruction-Settings-Orc-preraid-Destruction-destruction-NoBuffs-0.0yards-LongMultiTarget"
  value: {
-  dps: 921.24445
-  tps: 2063.58167
+  dps: 946.73454
+  tps: 2084.94741
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Orc-preraid-Destruction-destruction-NoBuffs-0.0yards-LongSingleTarget"
  value: {
-  dps: 921.24445
-  tps: 842.90239
+  dps: 946.73454
+  tps: 865.57702
  }
 }
 dps_results: {
  key: "TestDestruction-Settings-Orc-preraid-Destruction-destruction-NoBuffs-0.0yards-ShortSingleTarget"
  value: {
-  dps: 1007.76539
-  tps: 891.43177
+  dps: 1032.49785
+  tps: 912.91606
  }
 }
 dps_results: {

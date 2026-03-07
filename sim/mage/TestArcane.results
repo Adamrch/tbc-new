@@ -592,6 +592,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-AllItems-Mana-EtchedRegalia"
+ value: {
+  dps: 1567.78906
+  tps: 1100.09312
+ }
+}
+dps_results: {
  key: "TestArcane-AllItems-MasqueradeGown-28578"
  value: {
   dps: 1815.33847
