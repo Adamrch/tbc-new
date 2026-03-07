@@ -114,7 +114,7 @@ var ItemSetBurningRage = core.NewItemSet(core.ItemSet{
 	},
 })
 
-// Leatherworking - Mail
+// Leatherworking - Mail Caster
 var ItemSetNetherstrikeArmor = core.NewItemSet(core.ItemSet{
 	ID:   617,
 	Name: "Netherstrike Armor",
@@ -127,7 +127,7 @@ var ItemSetNetherstrikeArmor = core.NewItemSet(core.ItemSet{
 	},
 })
 
-// Leatherworking - Leather
+// Leatherworking - Leather Caster
 var ItemSetWindhawkArmor = core.NewItemSet(core.ItemSet{
 	ID:   618,
 	Name: "Windhawk Armor",
