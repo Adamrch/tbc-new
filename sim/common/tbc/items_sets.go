@@ -183,9 +183,47 @@ var ItemSetWrathOfSpellfire = core.NewItemSet(core.ItemSet{
 	},
 })
 
-// Tailoring - Nehterweave
-var ItemSetNetherweaveVestments = core.NewItemSet(core.ItemSet{
+// Tailoring - Shadow's Embrace
+var ItemSetShadowsEmbrace = core.NewItemSet(core.ItemSet{
 	ID:   618,
+	Name: "Shadow's Embrace",
+	Bonuses: map[int32]core.ApplySetBonus{
+		3: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Your Frost and Shadow damage spells heal you for 2% of the damage they deal.
+			// TODO
+		},
+	},
+})
+
+// Tailoring - Primal Mooncloth
+var ItemSetPrimalMooncloth = core.NewItemSet(core.ItemSet{
+	ID:   557,
+	Name: "Primal Mooncloth",
+	Bonuses: map[int32]core.ApplySetBonus{
+		3: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Allow 5% of your Mana regeneration to continue while casting.
+			character := agent.GetCharacter()
+			character.PseudoStats.SpiritRegenRateCasting += 0.05
+			character.UpdateManaRegenRates()
+		},
+	},
+})
+
+// Tailoring - Netherweave
+var ItemSetImbuedNetherweave = core.NewItemSet(core.ItemSet{
+	ID:   556,
+	Name: "Imbued Netherweave",
+	Bonuses: map[int32]core.ApplySetBonus{
+		3: func(agent core.Agent, setBonusAura *core.Aura) {
+			setBonusAura.
+				AttachStatBuff(stats.SpellCritRating, 28)
+		},
+	},
+})
+
+// Tailoring - Netherweave
+var ItemSetNetherweaveVestments = core.NewItemSet(core.ItemSet{
+	ID:   555,
 	Name: "Netherweave Vestments",
 	Bonuses: map[int32]core.ApplySetBonus{
 		2: func(agent core.Agent, setBonusAura *core.Aura) {
