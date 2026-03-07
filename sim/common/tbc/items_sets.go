@@ -183,6 +183,20 @@ var ItemSetWrathOfSpellfire = core.NewItemSet(core.ItemSet{
 	},
 })
 
+// Tailoring - Whitemend
+var ItemSetWhitemendWisdom = core.NewItemSet(core.ItemSet{
+	ID:   571,
+	Name: "Whitemend Wisdom",
+	Bonuses: map[int32]core.ApplySetBonus{
+		2: func(agent core.Agent, setBonusAura *core.Aura) {
+			// Increases healing by up to 10% of your total Intellect.
+			character := agent.GetCharacter()
+			statDep := character.Unit.NewDynamicStatDependency(stats.Intellect, stats.HealingPower, 1.10)
+			setBonusAura.AttachStatDependency(statDep)
+		},
+	},
+})
+
 // Tailoring - Shadow's Embrace
 var ItemSetShadowsEmbrace = core.NewItemSet(core.ItemSet{
 	ID:   618,
@@ -195,9 +209,21 @@ var ItemSetShadowsEmbrace = core.NewItemSet(core.ItemSet{
 	},
 })
 
+// Tailoring - Soulcloth Embrace
+var ItemSetSoulclothEmbrace = core.NewItemSet(core.ItemSet{
+	ID:   557,
+	Name: "Soulcloth Embrace",
+	Bonuses: map[int32]core.ApplySetBonus{
+		3: func(agent core.Agent, setBonusAura *core.Aura) {
+			setBonusAura.
+				AttachStatBuff(stats.SpellHitRating, 16)
+		},
+	},
+})
+
 // Tailoring - Primal Mooncloth
 var ItemSetPrimalMooncloth = core.NewItemSet(core.ItemSet{
-	ID:   557,
+	ID:   554,
 	Name: "Primal Mooncloth",
 	Bonuses: map[int32]core.ApplySetBonus{
 		3: func(agent core.Agent, setBonusAura *core.Aura) {
@@ -233,6 +259,18 @@ var ItemSetNetherweaveVestments = core.NewItemSet(core.ItemSet{
 		4: func(agent core.Agent, setBonusAura *core.Aura) {
 			setBonusAura.
 				AttachStatBuff(stats.SpellCritRating, 14)
+		},
+	},
+})
+
+// Tailoring - Arcanoweave
+var ItemSetArcanoweaveVestments = core.NewItemSet(core.ItemSet{
+	ID:   558,
+	Name: "Arcanoweave Vestments",
+	Bonuses: map[int32]core.ApplySetBonus{
+		3: func(agent core.Agent, setBonusAura *core.Aura) {
+			setBonusAura.
+				AttachStatBuff(stats.SpellHitRating, 16)
 		},
 	},
 })

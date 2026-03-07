@@ -116,6 +116,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-AllItems-ArcanoweaveVestments"
+ value: {
+  dps: 2173.90663
+  tps: 1527.34621
+ }
+}
+dps_results: {
  key: "TestArcane-AllItems-ArgussianCompass-27770"
  value: {
   dps: 2387.05319
@@ -557,6 +564,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-AllItems-ImbuedNetherweave"
+ value: {
+  dps: 2250.9907
+  tps: 1568.93911
+ }
+}
+dps_results: {
  key: "TestArcane-AllItems-KissoftheSpider-22954"
  value: {
   dps: 2387.05319
@@ -634,6 +648,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-AllItems-NetherweaveVestments"
+ value: {
+  dps: 1539.12508
+  tps: 1097.34499
+ }
+}
+dps_results: {
  key: "TestArcane-AllItems-OgreMauler'sBadge-25628"
  value: {
   dps: 2387.05319
@@ -645,6 +666,13 @@ dps_results: {
  value: {
   dps: 2416.45817
   tps: 1700.59452
+ }
+}
+dps_results: {
+ key: "TestArcane-AllItems-PrimalMooncloth"
+ value: {
+  dps: 1749.72337
+  tps: 1203.64682
  }
 }
 dps_results: {
@@ -732,6 +760,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestArcane-AllItems-Shadow'sEmbrace"
+ value: {
+  dps: 2225.25612
+  tps: 1569.03767
+ }
+}
+dps_results: {
  key: "TestArcane-AllItems-ShadowmoonInsignia-32501"
  value: {
   dps: 2387.05319
@@ -757,6 +792,13 @@ dps_results: {
  value: {
   dps: 2387.05319
   tps: 1681.00129
+ }
+}
+dps_results: {
+ key: "TestArcane-AllItems-SoulclothEmbrace"
+ value: {
+  dps: 1653.96433
+  tps: 1148.47127
  }
 }
 dps_results: {
@@ -919,6 +961,13 @@ dps_results: {
  value: {
   dps: 2410.66546
   tps: 1689.0719
+ }
+}
+dps_results: {
+ key: "TestArcane-AllItems-WhitemendWisdom"
+ value: {
+  dps: 2182.3787
+  tps: 1511.90422
  }
 }
 dps_results: {
