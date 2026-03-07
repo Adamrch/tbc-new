@@ -895,8 +895,8 @@ dps_results: {
 dps_results: {
  key: "TestEnhancement-AllItems-TheLightningCapacitor-28785"
  value: {
-  dps: 1920.2898
-  tps: 1788.13995
+  dps: 1918.49664
+  tps: 1786.86515
  }
 }
 dps_results: {

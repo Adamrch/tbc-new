@@ -601,8 +601,8 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-ImbuedNetherweave"
  value: {
-  dps: 1346.03876
-  tps: 1137.92392
+  dps: 1330.34784
+  tps: 1124.94902
  }
 }
 dps_results: {
@@ -629,15 +629,15 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-Mana-EtchedRegalia"
  value: {
-  dps: 1258.17801
-  tps: 1066.11756
+  dps: 1242.58436
+  tps: 1053.2189
  }
 }
 dps_results: {
  key: "TestElemental-AllItems-MasqueradeGown-28578"
  value: {
-  dps: 1444.70107
-  tps: 1219.87111
+  dps: 1428.50015
+  tps: 1206.47536
  }
 }
 dps_results: {
@@ -734,8 +734,8 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-RobeoftheElderScribes-28602"
  value: {
-  dps: 1471.89929
-  tps: 1243.02507
+  dps: 1455.57253
+  tps: 1229.51605
  }
 }
 dps_results: {
@@ -783,8 +783,8 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-Shadow'sEmbrace"
  value: {
-  dps: 1322.23938
-  tps: 1118.6829
+  dps: 1306.31963
+  tps: 1105.51859
  }
 }
 dps_results: {
@@ -818,8 +818,8 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-SoulclothEmbrace"
  value: {
-  dps: 1327.95329
-  tps: 1122.65892
+  dps: 1311.73115
+  tps: 1109.25923
  }
 }
 dps_results: {
@@ -902,8 +902,8 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-TheLightningCapacitor-28785"
  value: {
-  dps: 1492.24267
-  tps: 1202.15736
+  dps: 1489.74291
+  tps: 1198.23516
  }
 }
 dps_results: {
@@ -965,8 +965,8 @@ dps_results: {
 dps_results: {
  key: "TestElemental-AllItems-WastewalkerArmor"
  value: {
-  dps: 1073.36701
-  tps: 915.04107
+  dps: 1058.85688
+  tps: 902.99728
  }
 }
 dps_results: {
