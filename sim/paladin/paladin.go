@@ -24,12 +24,12 @@ type Paladin struct {
 	CurrentJudgement  *core.Spell
 
 	// Timers for spells with multiple ranks
-	consecrationTimer *core.Timer
-	hammerOfWrathTimer *core.Timer
-	holyShieldTimer *core.Timer
-	holyShockTimer *core.Timer
-	holyWrathTimer *core.Timer
-	exorcismTimer *core.Timer
+	consecrationTimer   *core.Timer
+	hammerOfWrathTimer  *core.Timer
+	holyShieldTimer     *core.Timer
+	holyShockTimer      *core.Timer
+	holyWrathTimer      *core.Timer
+	exorcismTimer       *core.Timer
 	avengersShieldTimer *core.Timer
 
 	// Shared spells
