@@ -193,7 +193,8 @@ func (shaman *Shaman) applyElementalPrecision() {
 	shaman.AddStaticMod(core.SpellModConfig{
 		Kind:       core.SpellMod_BonusHit_Percent,
 		FloatValue: 2 * float64(shaman.Talents.ElementalPrecision),
-		School:     core.SpellSchoolElemental,
+		// Applies only to class abilities
+		ClassMask: SpellMaskFire | SpellMaskFireTotem | SpellMaskNature | SpellMaskFrost,
 	})
 	shaman.AddStaticMod(core.SpellModConfig{
 		Kind:       core.SpellMod_ThreatMultiplier_Pct,
