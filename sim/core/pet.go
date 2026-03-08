@@ -25,12 +25,10 @@ type PetStatInheritance func(ownerStats stats.Stats) stats.Stats
 type PetSpeedInheritance func(sim *Simulation, ownerSpeedMultiplier float64)
 
 type PetConfig struct {
-	Name      string
-	Owner     *Character
-	BaseStats stats.Stats
-	// Hit and Expertise are always inherited by combining the owners physical hit and expertise, then halving it
-	// For casters this will automatically give spell hit cap at 7.5% physical hit and exp
-	NonHitExpStatInheritance        PetStatInheritance
+	Name                            string
+	Owner                           *Character
+	BaseStats                       stats.Stats
+	StatInheritance                 PetStatInheritance
 	EnabledOnStart                  bool
 	IsGuardian                      bool
 	HasDynamicMeleeSpeedInheritance bool
@@ -109,7 +107,7 @@ func NewPet(config PetConfig) Pet {
 			baseStats:  config.BaseStats,
 		},
 		Owner:                           config.Owner,
-		statInheritance:                 makeStatInheritanceFunc(config.NonHitExpStatInheritance),
+		statInheritance:                 makeStatInheritanceFunc(config.StatInheritance),
 		hasDynamicMeleeSpeedInheritance: config.HasDynamicMeleeSpeedInheritance,
 		inheritedMeleeSpeedMultiplier:   1,
 		hasDynamicCastSpeedInheritance:  config.HasDynamicCastSpeedInheritance,
@@ -138,17 +136,9 @@ func (pet *Pet) Initialize() {
 	}
 }
 
-func makeStatInheritanceFunc(nonHitExpStatInheritance PetStatInheritance) PetStatInheritance {
+func makeStatInheritanceFunc(statInheritance PetStatInheritance) PetStatInheritance {
 	return func(ownerStats stats.Stats) stats.Stats {
-		inheritedStats := nonHitExpStatInheritance(ownerStats)
-
-		// TODO: I dunno how this works in TBC
-		hitRating := ownerStats[stats.MeleeHitRating]
-		expertiseRating := ownerStats[stats.ExpertiseRating]
-		combined := (hitRating + expertiseRating) * 0.5
-
-		inheritedStats[stats.MeleeHitRating] = combined
-		inheritedStats[stats.ExpertiseRating] = combined
+		inheritedStats := statInheritance(ownerStats)
 
 		return inheritedStats
 	}
@@ -436,9 +426,8 @@ func (pet *Pet) Disable(sim *Simulation) {
 		pet.Log(sim, pet.GetStats().FlatString())
 	}
 }
-
-func (pet *Pet) ChangeStatInheritance(nonHitExpStatInheritance PetStatInheritance) {
-	pet.statInheritance = makeStatInheritanceFunc(nonHitExpStatInheritance)
+func (pet *Pet) ChangeStatInheritance(statInheritance PetStatInheritance) {
+	pet.statInheritance = makeStatInheritanceFunc(statInheritance)
 }
 
 func (pet *Pet) GetInheritedStats() stats.Stats {
