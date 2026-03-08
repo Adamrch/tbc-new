@@ -600,12 +600,11 @@ func (character *Character) getCurrentProcMaskFor(pred func(item *Item) bool) Pr
 		return mask
 	}
 
+	if pred(character.Ranged()) {
+		mask |= ProcMaskRanged
+	}
 	if pred(character.MainHand()) {
-		if character.MainHand().RangedWeaponType > 0 {
-			mask |= ProcMaskRanged
-		} else {
-			mask |= ProcMaskMeleeMH
-		}
+		mask |= ProcMaskMeleeMH
 	}
 	if pred(character.OffHand()) {
 		mask |= ProcMaskMeleeOH
@@ -614,14 +613,11 @@ func (character *Character) getCurrentProcMaskFor(pred func(item *Item) bool) Pr
 }
 
 func (character *Character) GetProcMaskForWeaponSlot(slot proto.ItemSlot) ProcMask {
-	item := character.GetItemBySlot(slot)
 	switch slot {
+	case proto.ItemSlot_ItemSlotRanged:
+		return ProcMaskRanged
 	case proto.ItemSlot_ItemSlotMainHand:
-		if item.RangedWeaponType > 0 {
-			return ProcMaskRanged
-		} else {
-			return ProcMaskMeleeMH
-		}
+		return ProcMaskMeleeMH
 	case proto.ItemSlot_ItemSlotOffHand:
 		return ProcMaskMeleeOH
 	}
