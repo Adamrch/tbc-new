@@ -155,6 +155,7 @@ func (shaman *Shaman) applyElementalMastery() {
 	emAura := shaman.RegisterAura(core.Aura{
 		ActionID: core.ActionID{SpellID: 16166},
 		Label:    "Elemental Mastery",
+		Duration: core.NeverExpires,
 		OnCastComplete: func(aura *core.Aura, sim *core.Simulation, spell *core.Spell) {
 			if !spell.Matches(SpellMaskFire | SpellMaskFrost | SpellMaskNature) {
 				return
@@ -171,7 +172,7 @@ func (shaman *Shaman) applyElementalMastery() {
 		ClassMask:  SpellMaskFire | SpellMaskFrost | SpellMaskNature,
 	})
 
-	shaman.RegisterSpell(core.SpellConfig{
+	spell := shaman.RegisterSpell(core.SpellConfig{
 		ActionID:    core.ActionID{SpellID: 16166},
 		SpellSchool: core.SpellSchoolNature,
 		Flags:       core.SpellFlagAPL | core.SpellFlagNoOnCastComplete | SpellFlagInstant,
@@ -184,6 +185,11 @@ func (shaman *Shaman) applyElementalMastery() {
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 			emAura.Activate(sim)
 		},
+	})
+
+	shaman.AddMajorCooldown(core.MajorCooldown{
+		Spell: spell,
+		Type:  core.CooldownTypeDPS,
 	})
 }
 func (shaman *Shaman) applyElementalPrecision() {
