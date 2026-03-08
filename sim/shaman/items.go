@@ -90,6 +90,21 @@ func init() {
 		character.ItemSwap.RegisterProc(27947, aura)
 	})
 
+	// Totem of Lightning
+	core.NewItemEffect(28066, func(agent core.Agent) {
+		character := agent.GetCharacter()
+
+		aura := core.MakePermanent(character.RegisterAura(core.Aura{
+			Label: "Reduced Lightning Cost",
+		}).AttachSpellMod(core.SpellModConfig{
+			Kind:      core.SpellMod_PowerCost_Flat,
+			IntValue:  -15,
+			ClassMask: SpellMaskLightningBolt,
+		}))
+
+		character.ItemSwap.RegisterProc(28066, aura)
+	})
+
 	// Totem of Rage
 	// core.NewItemEffect(22395, func(agent core.Agent) {
 	// 	character := agent.GetCharacter()

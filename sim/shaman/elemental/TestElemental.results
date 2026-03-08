@@ -43,12 +43,12 @@ character_stats_results: {
   final_stats: 33.75
   final_stats: 93.75
   final_stats: 0
-  final_stats: 0
-  final_stats: 6.17073
+  final_stats: 3
+  final_stats: 9.17073
   final_stats: 16.74502
   final_stats: 37.49158
   final_stats: 0
-  final_stats: 0
+  final_stats: 3
   final_stats: 5
  }
 }
@@ -844,6 +844,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestElemental-AllItems-SkycallTotem-33506"
+ value: {
+  dps: 1757.9965
+  tps: 1387.19772
+ }
+}
+dps_results: {
  key: "TestElemental-AllItems-SkyshatterRegalia"
  value: {
   dps: 1800.52561
@@ -975,6 +982,41 @@ dps_results: {
  value: {
   dps: 1728.08267
   tps: 1422.90329
+ }
+}
+dps_results: {
+ key: "TestElemental-AllItems-TotemofAncestralGuidance-32330"
+ value: {
+  dps: 1816.5083
+  tps: 1434.16572
+ }
+}
+dps_results: {
+ key: "TestElemental-AllItems-TotemofImpact-27947"
+ value: {
+  dps: 1729.00361
+  tps: 1363.25418
+ }
+}
+dps_results: {
+ key: "TestElemental-AllItems-TotemofImpact-27984"
+ value: {
+  dps: 1729.00361
+  tps: 1363.25418
+ }
+}
+dps_results: {
+ key: "TestElemental-AllItems-TotemofLightning-28066"
+ value: {
+  dps: 1734.46322
+  tps: 1368.75711
+ }
+}
+dps_results: {
+ key: "TestElemental-AllItems-TotemoftheStorm-23199"
+ value: {
+  dps: 1762.97602
+  tps: 1390.78454
  }
 }
 dps_results: {
