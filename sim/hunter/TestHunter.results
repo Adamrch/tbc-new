@@ -501,6 +501,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestHunter-AllItems-EnchantCloak-Subtlety-2621"
+ value: {
+  dps: 1930.03663
+  tps: 1414.12358
+  dtps: 12.36999
+ }
+}
+dps_results: {
  key: "TestHunter-AllItems-EnchantGloves-Threat-2613"
  value: {
   dps: 1928.09619

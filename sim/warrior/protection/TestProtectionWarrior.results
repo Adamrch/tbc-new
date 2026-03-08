@@ -565,6 +565,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-EnchantCloak-Subtlety-2621"
+ value: {
+  dps: 710.72914
+  tps: 1302.72389
+  dtps: 1313.41309
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-EnchantWeapon-Crusader-1900"
  value: {
   dps: 711.32977

@@ -28,7 +28,7 @@ message ProtoVersion {
 	option (current_version_number) = 3;
 
 	// The actual field value is only used within unit tests.
-	int32 saved_version_number = 3;
+	int32 saved_version_number = 1;
 }
 
 message ScalingItemProperties {
