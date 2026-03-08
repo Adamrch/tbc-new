@@ -1022,8 +1022,8 @@ dps_results: {
 dps_results: {
  key: "TestAffliction-AllItems-WrathofSpellfire"
  value: {
-  dps: 1986.219
-  tps: 1325.64607
+  dps: 1670.83849
+  tps: 1118.02685
  }
 }
 dps_results: {
