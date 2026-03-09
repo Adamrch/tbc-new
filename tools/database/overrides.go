@@ -65,11 +65,13 @@ var ItemOverrides = []*proto.UIItem{
 
 // Keep these sorted by item ID.
 var ItemAllowList = map[int32]struct{}{
-	1168:  {}, // Skullflame Shield
-	2140:  {},
-	2505:  {},
-	11815: {}, // Hand of Justice
-	18168: {}, // Force Reactive Disk
+	1168:   {}, // Skullflame Shield
+	2140:   {},
+	2505:   {},
+	11815:  {}, // Hand of Justice
+	18168:  {}, // Force Reactive Disk
+	186071: {}, // Communal Totem of Lightning
+	186073: {}, // Communal Totem of the Storm
 }
 
 // Keep these sorted by item ID.
