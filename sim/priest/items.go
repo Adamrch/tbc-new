@@ -46,18 +46,3 @@ var ItemSetIncarnateRegalia = core.NewItemSet(core.ItemSet{
 		},
 	},
 })
-
-// Incarnate Raiment (Tier 4 - Holy/Discipline Priest)
-var ItemSetIncarnateRaiment = core.NewItemSet(core.ItemSet{
-	ID:   663,
-	Name: "Incarnate Raiment",
-	Bonuses: map[int32]core.ApplySetBonus{
-		2: func(agent core.Agent, setBonusAura *core.Aura) {
-			// TODO: Implement 2-piece bonus for healing set
-			// This would typically be healing-focused
-		},
-		4: func(agent core.Agent, setBonusAura *core.Aura) {
-			// TODO: Implement 4-piece bonus for healing set
-		},
-	},
-})
