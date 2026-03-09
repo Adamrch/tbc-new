@@ -903,8 +903,9 @@ func AtieshAura(char *Character, class proto.Class, numStaves float64) *Aura {
 
 func BraidedEterniumChainAura(char *Character) *Aura {
 	return makeStatBuff(char, BuffConfig{
-		Label:    "Braided Eternium Chain",
-		ActionID: ActionID{SpellID: 31025},
+		Label:             "Braided Eternium Chain",
+		ActionID:          ActionID{SpellID: 31025},
+		ExclusiveCategory: "Braided Eternium Chain",
 		Stats: []StatConfig{
 			{stats.MeleeCritRating, 28, false},
 		},
@@ -913,8 +914,9 @@ func BraidedEterniumChainAura(char *Character) *Aura {
 
 func ChainOfTheTwilightOwlAura(char *Character) *Aura {
 	return makeStatBuff(char, BuffConfig{
-		Label:    "Chain of the Twilight Owl",
-		ActionID: ActionID{SpellID: 31035},
+		Label:             "Chain of the Twilight Owl",
+		ActionID:          ActionID{SpellID: 31035},
+		ExclusiveCategory: "Chain of the Twilight Owl",
 		Stats: []StatConfig{
 			{stats.SpellCritPercent, 2, false},
 		},
@@ -957,8 +959,9 @@ func DraneiRacialAura(char *Character, caster bool) *Aura {
 
 func EyeOfTheNightAura(char *Character) *Aura {
 	return makeStatBuff(char, BuffConfig{
-		Label:    "Eye of the Night",
-		ActionID: ActionID{SpellID: 31033},
+		Label:             "Eye of the Night",
+		ActionID:          ActionID{SpellID: 31033},
+		ExclusiveCategory: "Eye of the Night",
 		Stats: []StatConfig{
 			{stats.SpellDamage, 34, false},
 		},
@@ -967,8 +970,9 @@ func EyeOfTheNightAura(char *Character) *Aura {
 
 func JadePendantOfBlastingAura(char *Character) *Aura {
 	return makeStatBuff(char, BuffConfig{
-		Label:    "Jade Pendant of Blasting",
-		ActionID: ActionID{SpellID: 25607},
+		Label:             "Jade Pendant of Blasting",
+		ActionID:          ActionID{SpellID: 25607},
+		ExclusiveCategory: "Jade Pendant of Blasting",
 		Stats: []StatConfig{
 			{stats.SpellDamage, 15, false},
 		},

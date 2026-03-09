@@ -1372,21 +1372,9 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		24116, // Eye of the Night
-		[
-			"Increases spell damage by up to 34 for all nearby party members. Lasts 30min.", // 31033 - https://www.wowhead.com/tbc/spell=31033
-		]
-	],
-	[
 		24117, // Embrace of the Dawn
 		[
 			"All stats of nearby party members increased by 10 for 30min.", // 31026 - https://www.wowhead.com/tbc/spell=31026
-		]
-	],
-	[
-		24121, // Chain of the Twilight Owl
-		[
-			"Increases the spell critical hit chance of nearby party members by 2% for 30min.", // 31035 - https://www.wowhead.com/tbc/spell=31035
 		]
 	],
 	[
