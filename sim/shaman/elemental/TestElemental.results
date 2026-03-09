@@ -277,6 +277,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestElemental-AllItems-ChainoftheTwilightOwl-24121"
+ value: {
+  dps: 1768.51284
+  tps: 1396.39966
+ }
+}
+dps_results: {
  key: "TestElemental-AllItems-CharmofAlacrity-25787"
  value: {
   dps: 1703.1864
@@ -491,6 +498,13 @@ dps_results: {
  value: {
   dps: 1762.67617
   tps: 1448.96253
+ }
+}
+dps_results: {
+ key: "TestElemental-AllItems-EyeoftheNight-24116"
+ value: {
+  dps: 1765.37026
+  tps: 1394.74187
  }
 }
 dps_results: {

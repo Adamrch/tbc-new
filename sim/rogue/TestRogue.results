@@ -256,6 +256,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestRogue-AllItems-ChainoftheTwilightOwl-24121"
+ value: {
+  dps: 1940.12636
+  tps: 1377.48971
+ }
+}
+dps_results: {
  key: "TestRogue-AllItems-CharmofAlacrity-25787"
  value: {
   dps: 1915.95424
@@ -477,6 +484,13 @@ dps_results: {
  value: {
   dps: 1915.95424
   tps: 1360.32751
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-EyeoftheNight-24116"
+ value: {
+  dps: 1940.21599
+  tps: 1377.55335
  }
 }
 dps_results: {

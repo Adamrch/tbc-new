@@ -349,6 +349,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-ChainoftheTwilightOwl-24121"
+ value: {
+  dps: 702.88853
+  tps: 1317.70743
+  dtps: 1334.03486
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-CharmofAlacrity-25787"
  value: {
   dps: 685.60926
@@ -610,6 +618,14 @@ dps_results: {
   dps: 685.60926
   tps: 1285.73146
   dtps: 1317.31212
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-EyeoftheNight-24116"
+ value: {
+  dps: 697.27514
+  tps: 1310.51249
+  dtps: 1344.90512
  }
 }
 dps_results: {
