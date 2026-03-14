@@ -652,4 +652,33 @@ func init() {
 			},
 		})
 	})
+
+	// Warp-Spring Coil
+	core.NewItemEffect(30450, func(agent core.Agent) {
+		character := agent.GetCharacter()
+
+		aura := character.NewTemporaryStatsAura(
+			"Warp-Spring Coil",
+			core.ActionID{SpellID: 37174},
+			stats.Stats{stats.ArmorPenetration: 1000},
+			time.Second*15,
+		)
+
+		procAura := character.MakeProcTriggerAura(core.ProcTrigger{
+			Name:               "Perceived Weakness",
+			ActionID:           core.ActionID{ItemID: 30450},
+			ProcMask:           core.ProcMaskMeleeSpecial,
+			ICD:                time.Second * 30,
+			RequireDamageDealt: true,
+			TriggerImmediately: true,
+			Outcome:            core.OutcomeLanded,
+			Callback:           core.CallbackOnSpellHitDealt,
+			ProcChance:         0.25,
+			Handler: func(sim *core.Simulation, _ *core.Spell, result *core.SpellResult) {
+				aura.Activate(sim)
+			},
+		})
+
+		character.ItemSwap.RegisterProc(30450, procAura)
+	})
 }

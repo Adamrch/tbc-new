@@ -83,18 +83,27 @@ var Tier5 = core.NewItemSet(core.ItemSet{
 				Label:    "Coup de Grace",
 				Duration: time.Second * 15,
 				ActionID: core.ActionID{SpellID: 37171},
+				OnApplyEffects: func(aura *core.Aura, sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+					if spell.Matches(RogueSpellFinisher) {
+						aura.Deactivate(sim)
+					}
+				},
 			}).AttachSpellMod(core.SpellModConfig{
 				Kind:       core.SpellMod_PowerCost_Pct,
 				ClassMask:  RogueSpellFinisher,
 				FloatValue: -2,
 			})
 			setBonusAura.AttachProcTrigger(core.ProcTrigger{
-				Name: "Deathmantle Proc Trigger",
-				DPM:  rogue.NewLegacyPPMManager(1.0, core.ProcMaskMelee),
+				Name:               "Deathmantle Proc Trigger",
+				ProcMask:           core.ProcMaskMelee,
+				Outcome:            core.OutcomeLanded,
+				Callback:           core.CallbackOnSpellHitDealt,
+				TriggerImmediately: true,
+				DPM:                rogue.NewLegacyPPMManager(1.0, core.ProcMaskMelee),
 				Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
 					mod.Activate(sim)
 				},
-			}).ExposeToAPL(37170)
+			})
 		},
 	},
 })
