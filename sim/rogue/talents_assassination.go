@@ -192,13 +192,13 @@ func (rogue *Rogue) registerSealFate() {
 	sfMetrics := rogue.NewComboPointMetrics(core.ActionID{SpellID: 14195})
 
 	rogue.MakeProcTriggerAura(core.ProcTrigger{
-		Name:           "Seal Fate Trigger",
-		ActionID:       core.ActionID{SpellID: 14195},
-		ProcChance:     0.2 * float64(rogue.Talents.SealFate),
-		Callback:       core.CallbackOnSpellHitDealt,
-		Outcome:        core.OutcomeCrit,
-		ClassSpellMask: RogueSpellLethality,
-		ICD:            time.Millisecond * 500,
+		Name:       "Seal Fate Trigger",
+		ActionID:   core.ActionID{SpellID: 14195},
+		ProcChance: 0.2 * float64(rogue.Talents.SealFate),
+		Callback:   core.CallbackOnSpellHitDealt,
+		Outcome:    core.OutcomeCrit,
+		SpellFlags: SpellFlagBuilder,
+		ICD:        time.Millisecond * 500,
 		Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
 			rogue.AddComboPoints(sim, 1, sfMetrics)
 		},
@@ -320,7 +320,7 @@ func (rogue *Rogue) newMutilateHitSpell(isMH bool) *core.Spell {
 		ActionID:       actionID,
 		SpellSchool:    core.SpellSchoolPhysical,
 		ProcMask:       procMask,
-		Flags:          core.SpellFlagMeleeMetrics,
+		Flags:          core.SpellFlagMeleeMetrics | SpellFlagBuilder,
 		ClassSpellMask: RogueSpellMutilateHit,
 
 		DamageMultiplier:         1,
