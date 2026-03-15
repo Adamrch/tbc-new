@@ -8,7 +8,7 @@ import (
 func RegisterAllProcs() {
 
 	// Procs
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -23,7 +23,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 3475, ItemName: "Cloak of Flames"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -38,7 +38,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 10696, ItemName: "Enchanted Azsharite Felbane Sword"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -53,7 +53,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 10697, ItemName: "Enchanted Azsharite Felbane Dagger"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -68,7 +68,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 10698, ItemName: "Enchanted Azsharite Felbane Staff"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -83,7 +83,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 11810, ItemName: "Force of Will"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -97,7 +97,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 12344, ItemName: "Seal of Ascension"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -112,7 +112,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 12588, ItemName: "Bonespike Shoulder"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -127,7 +127,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 12639, ItemName: "Stronghold Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -143,7 +143,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 12641, ItemName: "Invulnerable Mail"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -158,7 +158,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 12709, ItemName: "Pip's Skinner"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -174,7 +174,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13143, ItemName: "Mark of the Dragon Lord"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -189,7 +189,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13171, ItemName: "Smokey's Lighter"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -205,7 +205,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13209, ItemName: "Seal of the Dawn"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -220,7 +220,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13212, ItemName: "Halycon's Spiked Collar"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -235,7 +235,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13213, ItemName: "Smolderweb's Eye"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -250,7 +250,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13243, ItemName: "Argent Defender"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -265,7 +265,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13375, ItemName: "Crest of Retribution"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -280,7 +280,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13387, ItemName: "Foresight Girdle"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -295,7 +295,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13503, ItemName: "Alchemist's Stone"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -310,7 +310,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13505, ItemName: "Runeblade of Baron Rivendare"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -325,7 +325,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13515, ItemName: "Ramstein's Lightning Bolts"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -340,7 +340,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 13937, ItemName: "Headmaster's Charge"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -355,7 +355,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 14152, ItemName: "Robe of the Archmage"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -370,7 +370,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 14153, ItemName: "Robe of the Void"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -385,7 +385,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 14154, ItemName: "Truefaith Vestments"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -400,7 +400,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 14557, ItemName: "The Lion Horn of Stormwind"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -415,7 +415,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 15138, ItemName: "Onyxia Scale Cloak"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -430,7 +430,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 15782, ItemName: "Beaststalker Blade"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -445,7 +445,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 15783, ItemName: "Beasthunter Dagger"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -460,7 +460,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16391, ItemName: "Knight-Lieutenant's Silk Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -475,7 +475,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16392, ItemName: "Knight-Lieutenant's Leather Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -490,7 +490,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16403, ItemName: "Knight-Lieutenant's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -506,7 +506,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 16406, ItemName: "Knight-Lieutenant's Plate Gauntlets"},
 			//	{ItemID: 23286, ItemName: "Knight-Lieutenant's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -522,7 +522,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 16410, ItemName: "Knight-Lieutenant's Lamellar Gauntlets"},
 			//	{ItemID: 23274, ItemName: "Knight-Lieutenant's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -537,7 +537,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16440, ItemName: "Marshal's Silk Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -552,7 +552,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16446, ItemName: "Marshal's Leather Footguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -567,7 +567,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16463, ItemName: "Marshal's Chain Grips"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -582,7 +582,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16471, ItemName: "Marshal's Lamellar Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -597,7 +597,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16484, ItemName: "Marshal's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -612,7 +612,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16487, ItemName: "Blood Guard's Silk Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -627,7 +627,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16498, ItemName: "Blood Guard's Leather Treads"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -642,7 +642,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16510, ItemName: "Blood Guard's Plate Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -658,7 +658,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16518, ItemName: "Blood Guard's Mail Walkers"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -673,7 +673,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16530, ItemName: "Blood Guard's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -688,7 +688,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16540, ItemName: "General's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -703,7 +703,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16548, ItemName: "General's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -718,7 +718,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16558, ItemName: "General's Leather Treads"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -733,7 +733,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16571, ItemName: "General's Chain Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -749,7 +749,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16573, ItemName: "General's Mail Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -764,7 +764,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16907, ItemName: "Bloodfang Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -779,7 +779,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16928, ItemName: "Nemesis Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -794,7 +794,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16929, ItemName: "Nemesis Skullcap"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -809,7 +809,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 16932, ItemName: "Nemesis Spaulders"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -824,7 +824,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17066, ItemName: "Drillborer Disk"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -839,7 +839,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17082, ItemName: "Shard of the Flame"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -855,7 +855,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17104, ItemName: "Spinal Reaper"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -870,7 +870,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17111, ItemName: "Blazefury Medallion"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -885,7 +885,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17182, ItemName: "Sulfuras, Hand of Ragnaros"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -900,7 +900,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17564, ItemName: "Knight-Lieutenant's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -915,7 +915,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17577, ItemName: "Blood Guard's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -930,7 +930,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17584, ItemName: "Marshal's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -945,7 +945,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17588, ItemName: "General's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -960,7 +960,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17596, ItemName: "Knight-Lieutenant's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -975,7 +975,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17608, ItemName: "Marshal's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -990,7 +990,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17617, ItemName: "Blood Guard's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1005,7 +1005,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17620, ItemName: "General's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1020,7 +1020,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17759, ItemName: "Mark of Resolution"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1035,7 +1035,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17900, ItemName: "Stormpike Insignia Rank 2"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1050,7 +1050,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17901, ItemName: "Stormpike Insignia Rank 3"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1065,7 +1065,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17902, ItemName: "Stormpike Insignia Rank 4"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1080,7 +1080,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17903, ItemName: "Stormpike Insignia Rank 5"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1095,7 +1095,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17904, ItemName: "Stormpike Insignia Rank 6"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1110,7 +1110,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17905, ItemName: "Frostwolf Insignia Rank 2"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1125,7 +1125,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17906, ItemName: "Frostwolf Insignia Rank 3"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1140,7 +1140,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17907, ItemName: "Frostwolf Insignia Rank 4"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1155,7 +1155,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17908, ItemName: "Frostwolf Insignia Rank 5"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1170,7 +1170,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 17909, ItemName: "Frostwolf Insignia Rank 6"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1186,7 +1186,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18345, ItemName: "Murmuring Ring"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1201,7 +1201,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18346, ItemName: "Threadbare Trousers"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1216,7 +1216,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18354, ItemName: "Pimgib's Collar"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1231,7 +1231,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18355, ItemName: "Ferra's Collar"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1246,7 +1246,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18382, ItemName: "Fluctuating Cloak"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1261,7 +1261,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18406, ItemName: "Onyxia Blood Talisman"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1276,7 +1276,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18602, ItemName: "Tome of Sacrifice"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1292,7 +1292,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18639, ItemName: "Ultra-Flash Shadow Reflector"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1307,7 +1307,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18715, ItemName: "Lok'delar, Stave of the Ancient Keepers"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1322,7 +1322,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18722, ItemName: "Death Grips"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1337,7 +1337,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18758, ItemName: "Specter's Blade"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1352,7 +1352,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18760, ItemName: "Necromantic Band"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1367,7 +1367,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18809, ItemName: "Sash of Whispered Secrets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1382,7 +1382,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18815, ItemName: "Essence of the Pure Flame"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1397,7 +1397,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18825, ItemName: "Grand Marshal's Aegis"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1412,7 +1412,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 18826, ItemName: "High Warlord's Shield Wall"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1427,7 +1427,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19287, ItemName: "Darkmoon Card: Heroism"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1443,7 +1443,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19288, ItemName: "Darkmoon Card: Blue Dragon"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1458,7 +1458,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19289, ItemName: "Darkmoon Card: Maelstrom"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1473,7 +1473,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19290, ItemName: "Darkmoon Card: Twisting Nether"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1489,7 +1489,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19336, ItemName: "Arcane Infused Gem"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1504,7 +1504,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19340, ItemName: "Rune of Metamorphosis"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1520,7 +1520,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19341, ItemName: "Lifegiving Gem"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1536,7 +1536,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19342, ItemName: "Venomous Totem"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1551,7 +1551,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19577, ItemName: "Rage of Mugamba"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1566,7 +1566,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19588, ItemName: "Hero's Brand"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1581,7 +1581,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19594, ItemName: "The All-Seeing Eye of Zuldazar"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1596,7 +1596,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19601, ItemName: "Jewel of Kajaro"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1611,7 +1611,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19605, ItemName: "Kezan's Unstoppable Taint"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1626,7 +1626,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19609, ItemName: "Unmarred Vision of Voodress"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1641,7 +1641,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19617, ItemName: "Zandalarian Shadow Mastery Talisman"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1656,7 +1656,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19621, ItemName: "Maelstrom's Wrath"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1672,7 +1672,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19812, ItemName: "Rune of the Dawn"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1687,7 +1687,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19874, ItemName: "Halberd of Smiting"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1702,7 +1702,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19930, ItemName: "Mar'li's Eye"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1717,7 +1717,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19946, ItemName: "Tigule's Harpoon"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1733,7 +1733,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19948, ItemName: "Zandalarian Hero Badge"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1749,7 +1749,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19949, ItemName: "Zandalarian Hero Medallion"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1765,7 +1765,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19950, ItemName: "Zandalarian Hero Charm"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1780,7 +1780,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19951, ItemName: "Gri'lek's Charm of Might"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1795,7 +1795,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19953, ItemName: "Renataki's Charm of Beasts"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1810,7 +1810,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19954, ItemName: "Renataki's Charm of Trickery"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1825,7 +1825,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19956, ItemName: "Wushoolay's Charm of Spirits"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1840,7 +1840,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19961, ItemName: "Gri'lek's Grinder"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1855,7 +1855,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19962, ItemName: "Gri'lek's Carver"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1870,7 +1870,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19963, ItemName: "Pitchfork of Madness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1885,7 +1885,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 19968, ItemName: "Fiery Retributer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1900,7 +1900,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20048, ItemName: "Highlander's Plate Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1915,7 +1915,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20049, ItemName: "Highlander's Lamellar Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1930,7 +1930,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20050, ItemName: "Highlander's Chain Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1945,7 +1945,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20051, ItemName: "Highlander's Mail Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1960,7 +1960,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20052, ItemName: "Highlander's Leather Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1975,7 +1975,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20053, ItemName: "Highlander's Lizardhide Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -1990,7 +1990,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20054, ItemName: "Highlander's Cloth Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2005,7 +2005,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20071, ItemName: "Talisman of Arathor"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2020,7 +2020,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20072, ItemName: "Defiler's Talisman"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2035,7 +2035,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20154, ItemName: "Defiler's Chain Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2050,7 +2050,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20159, ItemName: "Defiler's Cloth Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2065,7 +2065,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20167, ItemName: "Defiler's Lizardhide Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2080,7 +2080,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20181, ItemName: "Defiler's Lamellar Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2095,7 +2095,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20186, ItemName: "Defiler's Leather Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2110,7 +2110,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20199, ItemName: "Defiler's Mail Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2125,7 +2125,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20208, ItemName: "Defiler's Plate Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2140,7 +2140,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20487, ItemName: "Lok'delar, Stave of the Ancient Keepers DEP"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2155,7 +2155,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 20579, ItemName: "Green Dragonskin Cloak"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2170,7 +2170,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21181, ItemName: "Grace of Earth"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2185,7 +2185,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21488, ItemName: "Fetish of Chitinous Spikes"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2201,7 +2201,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21517, ItemName: "Gnomish Turban of Psychic Might"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2216,7 +2216,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21526, ItemName: "Band of Icy Depths"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2232,7 +2232,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21625, ItemName: "Scarab Brooch"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2247,7 +2247,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21647, ItemName: "Fetish of the Sand Reaver"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2263,7 +2263,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21685, ItemName: "Petrified Scarab"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2278,7 +2278,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21687, ItemName: "Ukko's Ring of Darkness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2293,7 +2293,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21780, ItemName: "Blood Crown"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2308,7 +2308,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 21891, ItemName: "Shard of the Fallen Star"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2323,7 +2323,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22013, ItemName: "Beastmaster's Cap"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2338,7 +2338,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22060, ItemName: "Beastmaster's Tunic"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2353,7 +2353,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22061, ItemName: "Beastmaster's Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2368,7 +2368,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22191, ItemName: "Obsidian Mail Tunic"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2383,7 +2383,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22194, ItemName: "Black Grasp of the Destroyer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2399,7 +2399,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22196, ItemName: "Thick Obsidian Breastplate"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2414,7 +2414,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22198, ItemName: "Jagged Obsidian Shield"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2429,7 +2429,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22321, ItemName: "Heart of Wyrmthalak"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2444,7 +2444,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22345, ItemName: "Totem of Rebirth"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2459,7 +2459,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22396, ItemName: "Totem of Life"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2474,7 +2474,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22398, ItemName: "Idol of Rejuvenation"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2489,7 +2489,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22399, ItemName: "Idol of Health"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2504,7 +2504,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22401, ItemName: "Libram of Hope"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2519,7 +2519,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22402, ItemName: "Libram of Grace"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2536,7 +2536,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 22631, ItemName: "Atiesh, Greatstaff of the Guardian"},
 			//	{ItemID: 22632, ItemName: "Atiesh, Greatstaff of the Guardian"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2551,7 +2551,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22691, ItemName: "Corrupted Ashbringer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2566,7 +2566,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22856, ItemName: "Blood Guard's Leather Walkers"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2582,7 +2582,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22857, ItemName: "Blood Guard's Mail Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2597,7 +2597,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22862, ItemName: "Blood Guard's Chain Vices"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2612,7 +2612,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22865, ItemName: "Blood Guard's Dreadweave Handwraps"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2627,7 +2627,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22868, ItemName: "Blood Guard's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2642,7 +2642,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22869, ItemName: "Blood Guard's Satin Handwraps"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2657,7 +2657,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 22870, ItemName: "Blood Guard's Silk Handwraps"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2672,7 +2672,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23001, ItemName: "Eye of Diminution"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2687,7 +2687,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23004, ItemName: "Idol of Longevity"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2702,7 +2702,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23005, ItemName: "Totem of Flowing Water"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2717,7 +2717,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23006, ItemName: "Libram of Light"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2732,7 +2732,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23027, ItemName: "Warmth of Forgiveness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2747,7 +2747,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23072, ItemName: "Fists of the Unrelenting"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2762,7 +2762,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23078, ItemName: "Gauntlets of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2777,7 +2777,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23081, ItemName: "Handwraps of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2792,7 +2792,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23082, ItemName: "Handguards of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2807,7 +2807,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23084, ItemName: "Gloves of Undead Cleansing"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2822,7 +2822,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23085, ItemName: "Robe of Undead Cleansing"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2837,7 +2837,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23087, ItemName: "Breastplate of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2852,7 +2852,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23088, ItemName: "Chestguard of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2867,7 +2867,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23089, ItemName: "Tunic of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2882,7 +2882,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23090, ItemName: "Bracers of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2897,7 +2897,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23091, ItemName: "Bracers of Undead Cleansing"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2912,7 +2912,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23092, ItemName: "Wristguards of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2927,7 +2927,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23093, ItemName: "Wristwraps of Undead Slaying"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2942,7 +2942,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23197, ItemName: "Idol of the Moon"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2957,7 +2957,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23198, ItemName: "Idol of Brutality"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2972,7 +2972,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23200, ItemName: "Totem of Sustaining"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -2987,7 +2987,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23201, ItemName: "Libram of Divinity"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3003,7 +3003,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23203, ItemName: "Libram of Fervor"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3020,7 +3020,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 23206, ItemName: "Mark of the Champion"},
 			//	{ItemID: 23207, ItemName: "Mark of the Champion"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3035,7 +3035,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23221, ItemName: "Misplaced Servo Arm"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3050,7 +3050,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23279, ItemName: "Knight-Lieutenant's Chain Vices"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3065,7 +3065,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23282, ItemName: "Knight-Lieutenant's Dreadweave Handwraps"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3080,7 +3080,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23285, ItemName: "Knight-Lieutenant's Leather Walkers"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3095,7 +3095,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23288, ItemName: "Knight-Lieutenant's Satin Handwraps"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3110,7 +3110,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23290, ItemName: "Knight-Lieutenant's Silk Handwraps"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3125,7 +3125,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23533, ItemName: "Steelgrip Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3140,7 +3140,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23558, ItemName: "The Burrower's Shell"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3155,7 +3155,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23564, ItemName: "Twisting Nether Chain Shirt"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3170,7 +3170,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23565, ItemName: "Embrace of the Twisting Nether"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3185,7 +3185,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23570, ItemName: "Jom Gabbar"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3200,7 +3200,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23587, ItemName: "Mirren's Drinking Hat"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3215,7 +3215,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23824, ItemName: "Rocket Boots Xtreme"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3230,7 +3230,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23825, ItemName: "Nigh Invulnerability Belt"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3246,7 +3246,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23835, ItemName: "Gnomish Poultryizer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3262,7 +3262,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 23836, ItemName: "Goblin Rocket Launcher"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3277,7 +3277,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24092, ItemName: "Pendant of Frozen Flame"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3292,7 +3292,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24093, ItemName: "Pendant of Thawing"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3307,7 +3307,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24095, ItemName: "Pendant of Withering"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3322,7 +3322,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24097, ItemName: "Pendant of Shadow's End"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3337,7 +3337,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24098, ItemName: "Pendant of the Null Rune"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3352,7 +3352,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24106, ItemName: "Thick Felsteel Necklace"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3367,7 +3367,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24110, ItemName: "Living Ruby Pendant"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3382,7 +3382,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24117, ItemName: "Embrace of the Dawn"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3397,7 +3397,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24127, ItemName: "Figurine - Talasite Owl"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3412,7 +3412,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24376, ItemName: "Runed Fungalcap"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3427,7 +3427,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24386, ItemName: "Libram of Saints Departed"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3442,7 +3442,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24390, ItemName: "Auslese's Light Channeler"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3458,7 +3458,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24413, ItemName: "Totem of the Thunderhead"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3473,7 +3473,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24549, ItemName: "Gladiator's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3488,7 +3488,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24551, ItemName: "Talisman of the Horde"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3503,7 +3503,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 24556, ItemName: "Gladiator's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3518,7 +3518,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25643, ItemName: "Harold's Rejuvenating Broach"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3533,7 +3533,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25644, ItemName: "Blessed Book of Nagrand"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3548,7 +3548,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25645, ItemName: "Totem of the Plains"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3563,7 +3563,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25667, ItemName: "Idol of the Beast"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3578,7 +3578,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25786, ItemName: "Hypnotist's Watch"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3593,7 +3593,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25827, ItemName: "Muck-Covered Drape"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3608,7 +3608,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25828, ItemName: "Petrified Lichen Guard"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3623,7 +3623,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25829, ItemName: "Talisman of the Alliance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3639,7 +3639,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25834, ItemName: "Gladiator's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3654,7 +3654,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25835, ItemName: "Explorer's Walking Stick"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3669,7 +3669,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25857, ItemName: "Gladiator's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3684,7 +3684,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 25940, ItemName: "Idol of the Claw"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3699,7 +3699,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 26000, ItemName: "Gladiator's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3714,7 +3714,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 26055, ItemName: "Oculus of the Hidden Eye"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3729,7 +3729,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27416, ItemName: "Fetish of the Fallen"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3744,7 +3744,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27470, ItemName: "Gladiator's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3759,7 +3759,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27518, ItemName: "Ivory Idol of the Moongoddess"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3774,7 +3774,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27544, ItemName: "Totem of Spontaneous Regrowth"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3789,7 +3789,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27703, ItemName: "Gladiator's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3804,7 +3804,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27707, ItemName: "Gladiator's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3819,7 +3819,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27744, ItemName: "Idol of Ursoc"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3834,7 +3834,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27880, ItemName: "Gladiator's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3849,7 +3849,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27886, ItemName: "Idol of the Emerald Queen"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3864,7 +3864,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27896, ItemName: "Alembic of Infernal Power"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3879,7 +3879,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27900, ItemName: "Jewel of Charismatic Mystique"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3894,14 +3894,12 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 27917, ItemName: "Libram of the Eternal Rest"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Sometimes heals bearer of 120 damage when damaging an enemy in melee and chance on ranged hit to restore
-	// 172 mana to the bearer.
-	// https://www.wowhead.com/tbc/spell=33504
+	// https://www.wowhead.com/tbc/spell=39599
 			// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
 			//	Callback:           core.CallbackEmpty,
 			//	ProcMask:           core.ProcMaskUnknown,
@@ -3913,7 +3911,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 27921, ItemName: "Mark of Conquest"},
 			//	{ItemID: 27921, ItemName: "Mark of Conquest"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3929,7 +3927,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 27922, ItemName: "Mark of Defiance"},
 			//	{ItemID: 27924, ItemName: "Mark of Defiance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3945,7 +3943,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 27926, ItemName: "Mark of Vindication"},
 			//	{ItemID: 27927, ItemName: "Mark of Vindication"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3962,7 +3960,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 27949, ItemName: "Libram of Zeal"},
 			//	{ItemID: 27983, ItemName: "Libram of Zeal"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3978,7 +3976,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 27989, ItemName: "Idol of Savagery"},
 			//	{ItemID: 27990, ItemName: "Idol of Savagery"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -3993,7 +3991,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28064, ItemName: "Idol of the Wild"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4008,7 +4006,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28065, ItemName: "Libram of Wracking"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4024,7 +4022,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28108, ItemName: "Power Infused Mushroom"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4040,7 +4038,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28109, ItemName: "Essence Infused Mushroom"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4055,7 +4053,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28126, ItemName: "Gladiator's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4070,7 +4068,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28136, ItemName: "Gladiator's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4085,7 +4083,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28296, ItemName: "Libram of the Lightbringer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4100,7 +4098,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28335, ItemName: "Gladiator's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4115,7 +4113,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28355, ItemName: "Gladiator's Idol of Tenacity"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4130,7 +4128,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28356, ItemName: "Gladiator's Libram of Justice"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4145,7 +4143,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28357, ItemName: "Gladiator's Totem of the Third Wind"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4160,7 +4158,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28370, ItemName: "Bangle of Endless Blessings"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4175,7 +4173,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28372, ItemName: "Idol of Feral Shadows"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4190,7 +4188,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28523, ItemName: "Totem of Healing Rains"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4205,7 +4203,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28568, ItemName: "Idol of the Avian Heart"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4220,7 +4218,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28573, ItemName: "Despair"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4236,7 +4234,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28590, ItemName: "Ribbon of Sacrifice"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4252,7 +4250,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28592, ItemName: "Libram of Souls Redeemed"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4267,7 +4265,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28614, ItemName: "Grand Marshal's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4282,7 +4280,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28618, ItemName: "Grand Marshal's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4297,7 +4295,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28624, ItemName: "Grand Marshal's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4312,7 +4310,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28680, ItemName: "Grand Marshal's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4328,7 +4326,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28684, ItemName: "Grand Marshal's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4343,7 +4341,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28690, ItemName: "Grand Marshal's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4358,7 +4356,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28695, ItemName: "Grand Marshal's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4373,7 +4371,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28700, ItemName: "Grand Marshal's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4388,7 +4386,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28704, ItemName: "Grand Marshal's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4403,7 +4401,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28710, ItemName: "Grand Marshal's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4418,7 +4416,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28716, ItemName: "Grand Marshal's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4433,7 +4431,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28719, ItemName: "Grand Marshal's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4448,7 +4446,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28767, ItemName: "The Decapitator"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4463,7 +4461,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28774, ItemName: "Glaive of the Pit"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4478,7 +4476,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28806, ItemName: "High Warlord's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4493,7 +4491,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28811, ItemName: "High Warlord's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4508,7 +4506,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28817, ItemName: "High Warlord's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4523,7 +4521,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28823, ItemName: "Eye of Gruul"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4538,7 +4536,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28832, ItemName: "High Warlord's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4554,7 +4552,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28836, ItemName: "High Warlord's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4569,7 +4567,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28842, ItemName: "High Warlord's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4584,7 +4582,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28847, ItemName: "High Warlord's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4599,7 +4597,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28852, ItemName: "High Warlord's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4614,7 +4612,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28856, ItemName: "High Warlord's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4629,7 +4627,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28862, ItemName: "High Warlord's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4644,7 +4642,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28868, ItemName: "High Warlord's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4659,7 +4657,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 28871, ItemName: "High Warlord's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4674,7 +4672,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29181, ItemName: "Timelapse Shard"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4689,7 +4687,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29297, ItemName: "Band of the Eternal Defender"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4705,7 +4703,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29347, ItemName: "Talisman of the Breaker"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4720,7 +4718,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29357, ItemName: "Master Thief's Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4735,7 +4733,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29388, ItemName: "Libram of Repentance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4750,7 +4748,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29389, ItemName: "Totem of the Pulsing Earth"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4765,7 +4763,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29390, ItemName: "Everbloom Idol"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4780,7 +4778,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29398, ItemName: "Circle of Banishing"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4795,7 +4793,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29512, ItemName: "Earthen Netherscale Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4811,7 +4809,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29594, ItemName: "Knight-Lieutenant's Mail Greaves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4826,7 +4824,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29600, ItemName: "Blood Guard's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4842,7 +4840,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29606, ItemName: "Marshal's Mail Boots"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4857,7 +4855,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 29613, ItemName: "General's Lamellar Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4873,7 +4871,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30008, ItemName: "Pendant of the Lost Ages"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4888,7 +4886,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30023, ItemName: "Totem of the Maelstrom"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4903,7 +4901,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30051, ItemName: "Idol of the Crescent Goddess"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4918,7 +4916,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30063, ItemName: "Libram of Absolute Truth"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4933,7 +4931,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30188, ItemName: "Gladiator's Felweave Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4948,7 +4946,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30311, ItemName: "Warp Slicer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4963,7 +4961,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30316, ItemName: "Devastation"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4979,7 +4977,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30317, ItemName: "Cosmic Infuser"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -4994,7 +4992,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30318, ItemName: "Netherstrand Longbow"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5009,7 +5007,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30447, ItemName: "Tome of Fiery Redemption"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5024,7 +5022,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30450, ItemName: "Warp-Spring Coil"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5039,7 +5037,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30487, ItemName: "Merciless Gladiator's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5054,7 +5052,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30619, ItemName: "Fel Reaver's Piston"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5069,7 +5067,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30663, ItemName: "Fathom-Brooch of the Tidewalker"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5084,7 +5082,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30664, ItemName: "Living Root of the Wildheart"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5100,7 +5098,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30720, ItemName: "Serpent-Coil Braid"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5115,7 +5113,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30787, ItemName: "Illidari-Bane Mageblade"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5130,7 +5128,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30788, ItemName: "Illidari-Bane Broadsword"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5145,7 +5143,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30789, ItemName: "Illidari-Bane Claymore"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5160,7 +5158,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30841, ItemName: "Lower City Prayerbook"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5176,7 +5174,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 30847, ItemName: "X-52 Rocket Helmet"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5191,7 +5189,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31025, ItemName: "Idol of the Avenger"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5206,7 +5204,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31031, ItemName: "Stormfury Totem"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5221,7 +5219,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31033, ItemName: "Libram of Righteous Power"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5236,7 +5234,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31328, ItemName: "Leggings of Beast Mastery"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5251,7 +5249,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31334, ItemName: "Staff of Natural Fury"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5266,7 +5264,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31375, ItemName: "Gladiator's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5281,7 +5279,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31397, ItemName: "Gladiator's Ringmail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5296,7 +5294,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31409, ItemName: "Gladiator's Mooncloth Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5311,7 +5309,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31584, ItemName: "High Warlord's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5326,7 +5324,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31589, ItemName: "Grand Marshal's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5341,7 +5339,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31614, ItemName: "Gladiator's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5356,7 +5354,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31620, ItemName: "Grand Marshal's Mooncloth Mitts"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5371,7 +5369,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31621, ItemName: "High Warlord's Mooncloth Mitts"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5386,7 +5384,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31631, ItemName: "Grand Marshal's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5401,7 +5399,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31636, ItemName: "High Warlord's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5416,7 +5414,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31641, ItemName: "Grand Marshal's Ringmail Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5431,7 +5429,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31647, ItemName: "High Warlord's Ringmail Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5446,7 +5444,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31745, ItemName: "Illidari-Bane Dagger"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5461,7 +5459,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31859, ItemName: "Darkmoon Card: Madness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5476,7 +5474,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31961, ItemName: "Merciless Gladiator's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5491,7 +5489,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31967, ItemName: "Merciless Gladiator's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5506,7 +5504,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31973, ItemName: "Merciless Gladiator's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5521,7 +5519,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31981, ItemName: "Merciless Gladiator's Felweave Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5536,7 +5534,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31987, ItemName: "Merciless Gladiator's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5551,7 +5549,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31993, ItemName: "Merciless Gladiator's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5567,7 +5565,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 31998, ItemName: "Merciless Gladiator's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5582,7 +5580,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32005, ItemName: "Merciless Gladiator's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5597,7 +5595,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32010, ItemName: "Merciless Gladiator's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5612,7 +5610,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32015, ItemName: "Merciless Gladiator's Mooncloth Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5627,7 +5625,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32021, ItemName: "Merciless Gladiator's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5642,7 +5640,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32030, ItemName: "Merciless Gladiator's Ringmail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5657,7 +5655,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32034, ItemName: "Merciless Gladiator's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5672,7 +5670,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32040, ItemName: "Merciless Gladiator's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5687,7 +5685,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32049, ItemName: "Merciless Gladiator's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5702,7 +5700,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32056, ItemName: "Merciless Gladiator's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5717,7 +5715,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32093, ItemName: "Chancellor's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5732,7 +5730,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32100, ItemName: "Chancellor's Mooncloth Mitts"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5747,7 +5745,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32103, ItemName: "Chancellor's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5762,7 +5760,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32110, ItemName: "Chancellor's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5777,7 +5775,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32113, ItemName: "Chancellor's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5792,7 +5790,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32118, ItemName: "Chancellor's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5808,7 +5806,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32124, ItemName: "Chancellor's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5823,7 +5821,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32128, ItemName: "Chancellor's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5838,7 +5836,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32134, ItemName: "Chancellor's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5853,7 +5851,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32139, ItemName: "Chancellor's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5868,7 +5866,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32144, ItemName: "Chancellor's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5883,7 +5881,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32149, ItemName: "Chancellor's Ringmail Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5898,7 +5896,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32154, ItemName: "Chancellor's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5913,7 +5911,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32159, ItemName: "Chancellor's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5928,7 +5926,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32164, ItemName: "Chancellor's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5943,7 +5941,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32169, ItemName: "Chancellor's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5958,7 +5956,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32257, ItemName: "Idol of the White Stag"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5973,7 +5971,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32368, ItemName: "Tome of the Lightbringer"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -5989,7 +5987,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32387, ItemName: "Idol of the Raven Goddess"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6004,7 +6002,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32481, ItemName: "Charm of Swift Flight"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6020,7 +6018,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32485, ItemName: "Ashtongue Talisman of Valor"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6036,7 +6034,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32486, ItemName: "Ashtongue Talisman of Equilibrium"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6051,7 +6049,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32488, ItemName: "Ashtongue Talisman of Insight"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6067,7 +6065,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32489, ItemName: "Ashtongue Talisman of Zeal"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6083,7 +6081,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32490, ItemName: "Ashtongue Talisman of Acumen"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6099,7 +6097,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32491, ItemName: "Ashtongue Talisman of Vision"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6114,7 +6112,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32492, ItemName: "Ashtongue Talisman of Lethality"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6130,7 +6128,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32500, ItemName: "Crystal Spire of Karabor"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6145,7 +6143,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32538, ItemName: "Skywitch's Drape"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6160,7 +6158,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 32539, ItemName: "Skyguard's Drape"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6175,7 +6173,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33076, ItemName: "Merciless Gladiator's Idol of Tenacity"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6190,7 +6188,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33077, ItemName: "Merciless Gladiator's Libram of Justice"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6205,7 +6203,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33078, ItemName: "Merciless Gladiator's Totem of the Third Wind"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6220,7 +6218,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33502, ItemName: "Libram of Mending"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6235,7 +6233,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33503, ItemName: "Libram of Divine Judgement"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6251,7 +6249,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33504, ItemName: "Libram of Divine Purpose"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6266,7 +6264,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33505, ItemName: "Totem of Living Water"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6281,7 +6279,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33507, ItemName: "Stonebreaker's Totem"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6296,7 +6294,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33508, ItemName: "Idol of Budding Life"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6311,7 +6309,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33509, ItemName: "Idol of Terror"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6326,7 +6324,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33510, ItemName: "Idol of the Unseen Moon"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6341,7 +6339,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33665, ItemName: "Vengeful Gladiator's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6357,7 +6355,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33671, ItemName: "Vengeful Gladiator's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6372,7 +6370,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33676, ItemName: "Vengeful Gladiator's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6387,7 +6385,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33684, ItemName: "Vengeful Gladiator's Felweave Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6402,7 +6400,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33690, ItemName: "Vengeful Gladiator's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6417,7 +6415,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33696, ItemName: "Vengeful Gladiator's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6433,7 +6431,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33700, ItemName: "Vengeful Gladiator's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6448,7 +6446,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33707, ItemName: "Vengeful Gladiator's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6463,7 +6461,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33712, ItemName: "Vengeful Gladiator's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6478,7 +6476,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33717, ItemName: "Vengeful Gladiator's Mooncloth Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6493,7 +6491,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33723, ItemName: "Vengeful Gladiator's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6508,7 +6506,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33729, ItemName: "Vengeful Gladiator's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6523,7 +6521,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33739, ItemName: "Vengeful Gladiator's Ringmail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6538,7 +6536,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33744, ItemName: "Vengeful Gladiator's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6553,7 +6551,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33750, ItemName: "Vengeful Gladiator's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6568,7 +6566,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33759, ItemName: "Vengeful Gladiator's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6583,7 +6581,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33767, ItemName: "Vengeful Gladiator's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6598,7 +6596,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33808, ItemName: "The Horseman's Helm"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6613,7 +6611,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33820, ItemName: "Weather-Beaten Fishing Hat"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6628,7 +6626,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33841, ItemName: "Vengeful Gladiator's Idol of Tenacity"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6643,7 +6641,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33842, ItemName: "Vengeful Gladiator's Libram of Justice"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6658,7 +6656,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33843, ItemName: "Vengeful Gladiator's Totem of the Third Wind"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6673,7 +6671,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33936, ItemName: "Gladiator's Libram of Fortitude"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6688,7 +6686,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33937, ItemName: "Merciless Gladiator's Libram of Fortitude"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6703,7 +6701,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33938, ItemName: "Vengeful Gladiator's Libram of Fortitude"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6718,7 +6716,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33939, ItemName: "Gladiator's Totem of Indomitability"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6733,7 +6731,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33940, ItemName: "Merciless Gladiator's Totem of Indomitability"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6748,7 +6746,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33941, ItemName: "Vengeful Gladiator's Totem of Indomitability"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6763,7 +6761,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33942, ItemName: "Gladiator's Idol of Steadfastness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6778,7 +6776,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33943, ItemName: "Merciless Gladiator's Idol of Steadfastness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6793,7 +6791,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33944, ItemName: "Vengeful Gladiator's Idol of Steadfastness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6808,7 +6806,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33945, ItemName: "Gladiator's Idol of Resolve"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6823,7 +6821,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33946, ItemName: "Merciless Gladiator's Idol of Resolve"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6838,7 +6836,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33947, ItemName: "Vengeful Gladiator's Idol of Resolve"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6853,7 +6851,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33948, ItemName: "Gladiator's Libram of Vengeance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6868,7 +6866,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33949, ItemName: "Merciless Gladiator's Libram of Vengeance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6883,7 +6881,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33950, ItemName: "Vengeful Gladiator's Libram of Vengeance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6898,7 +6896,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33951, ItemName: "Gladiator's Totem of Survival"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6913,7 +6911,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33952, ItemName: "Merciless Gladiator's Totem of Survival"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6928,7 +6926,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 33953, ItemName: "Vengeful Gladiator's Totem of Survival"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6944,7 +6942,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34429, ItemName: "Shifting Naaru Sliver"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6959,7 +6957,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34430, ItemName: "Glimmering Naaru Sliver"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6974,7 +6972,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34470, ItemName: "Timbal's Focusing Crystal"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -6991,7 +6989,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 34471, ItemName: "Vial of the Sunwell"},
 			//	{ItemID: 34471, ItemName: "Vial of the Sunwell"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7007,7 +7005,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34677, ItemName: "Shattered Sun Pendant of Restoration"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7023,7 +7021,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34678, ItemName: "Shattered Sun Pendant of Acumen"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7039,7 +7037,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34679, ItemName: "Shattered Sun Pendant of Might"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7055,7 +7053,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34680, ItemName: "Shattered Sun Pendant of Resolve"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7070,7 +7068,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34991, ItemName: "Brutal Gladiator's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7086,7 +7084,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 34998, ItemName: "Brutal Gladiator's Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7101,7 +7099,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35003, ItemName: "Brutal Gladiator's Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7116,7 +7114,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35011, ItemName: "Brutal Gladiator's Felweave Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7131,7 +7129,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35019, ItemName: "Brutal Gladiator's Idol of Resolve"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7146,7 +7144,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35020, ItemName: "Brutal Gladiator's Idol of Steadfastness"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7161,7 +7159,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35021, ItemName: "Brutal Gladiator's Idol of Tenacity"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7176,7 +7174,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35022, ItemName: "Brutal Gladiator's Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7191,7 +7189,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35028, ItemName: "Brutal Gladiator's Lamellar Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7207,7 +7205,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35032, ItemName: "Brutal Gladiator's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7222,7 +7220,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35039, ItemName: "Brutal Gladiator's Libram of Fortitude"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7237,7 +7235,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35040, ItemName: "Brutal Gladiator's Libram of Justice"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7252,7 +7250,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35041, ItemName: "Brutal Gladiator's Libram of Vengeance"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7267,7 +7265,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35043, ItemName: "Brutal Gladiator's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7282,7 +7280,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35049, ItemName: "Brutal Gladiator's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7297,7 +7295,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35053, ItemName: "Brutal Gladiator's Mooncloth Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7312,7 +7310,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35060, ItemName: "Brutal Gladiator's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7327,7 +7325,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35067, ItemName: "Brutal Gladiator's Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7342,7 +7340,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35078, ItemName: "Brutal Gladiator's Ringmail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7357,7 +7355,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35083, ItemName: "Brutal Gladiator's Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7372,7 +7370,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35089, ItemName: "Brutal Gladiator's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7387,7 +7385,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35098, ItemName: "Brutal Gladiator's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7402,7 +7400,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35104, ItemName: "Brutal Gladiator's Totem of Indomitability"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7417,7 +7415,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35105, ItemName: "Brutal Gladiator's Totem of Survival"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7432,7 +7430,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35106, ItemName: "Brutal Gladiator's Totem of the Third Wind"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7447,7 +7445,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35111, ItemName: "Brutal Gladiator's Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7462,7 +7460,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35275, ItemName: "Orb of the Sin'dorei"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7477,7 +7475,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35328, ItemName: "Dreadweave Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7492,7 +7490,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35335, ItemName: "Mooncloth Mitts"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7507,7 +7505,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35338, ItemName: "Satin Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7522,7 +7520,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35345, ItemName: "Evoker's Silk Handguards"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7537,7 +7535,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35356, ItemName: "Dragonhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7552,7 +7550,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35361, ItemName: "Kodohide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7569,7 +7567,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 35366, ItemName: "Opportunist's Leather Gloves"},
 			//	{ItemID: 35468, ItemName: "Opportunist's Leather Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7585,7 +7583,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 35371, ItemName: "Wyrmhide Gloves"},
 			//	{ItemID: 35471, ItemName: "Wyrmhide Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7601,7 +7599,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 35377, ItemName: "Stalker's Chain Gauntlets"},
 			//	{ItemID: 35475, ItemName: "Stalker's Chain Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7616,7 +7614,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35382, ItemName: "Seer's Linked Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7631,7 +7629,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35387, ItemName: "Seer's Mail Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7647,7 +7645,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 35392, ItemName: "Seer's Ringmail Gloves"},
 			//	{ItemID: 35473, ItemName: "Seer's Ringmail Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7662,7 +7660,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35403, ItemName: "Crusader's Ornamented Gloves"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7677,7 +7675,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35408, ItemName: "Savage Plate Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7693,7 +7691,7 @@ func RegisterAllProcs() {
 			//	{ItemID: 35413, ItemName: "Crusader's Scaled Gauntlets"},
 			//	{ItemID: 35477, ItemName: "Crusader's Scaled Gauntlets"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7707,7 +7705,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35514, ItemName: "Frostscythe of Lord Ahune"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7722,7 +7720,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35581, ItemName: "Rocket Boots Xtreme Lite"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7737,7 +7735,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35703, ItemName: "Figurine - Seaspray Albatross"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7752,7 +7750,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35748, ItemName: "Guardian's Alchemist Stone"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7767,7 +7765,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35749, ItemName: "Sorcerer's Alchemist Stone"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7782,7 +7780,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35750, ItemName: "Redeemer's Alchemist Stone"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7797,7 +7795,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 35751, ItemName: "Assassin's Alchemist Stone"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7812,7 +7810,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 38175, ItemName: "The Horseman's Blade"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7826,7 +7824,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 38506, ItemName: "Don Carlos' Famous Hat"},
 			// })
-
+	
 	// TODO: Manual implementation required
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
@@ -7841,7 +7839,7 @@ func RegisterAllProcs() {
 			// }, []shared.ItemVariant{
 			//	{ItemID: 186073, ItemName: "Communal Totem of the Storm"},
 			// })
-
+	
 	// Reduces an enemy's armor by 200. Stacks up to 3 times.
 	// https://www.wowhead.com/tbc/spell=16928
 			shared.NewStackingStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7852,7 +7850,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 12798, ItemName: "Annihilator"},
 			})
-
+	
 	// Gives a chance when your harmful spells land to reduce the magical resistances of your spell targets by
 	// 50 for 8s.
 	// https://www.wowhead.com/tbc/spell=25768
@@ -7864,7 +7862,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 21128, ItemName: "Staff of the Qiraji Prophets"},
 			})
-
+	
 	// Gives a chance when your harmful spells land to increase the damage of your spells and effects by 132
 	// for 10s.
 	// https://www.wowhead.com/tbc/spell=25907
@@ -7876,7 +7874,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 21190, ItemName: "Wrath of Cenarius"},
 			})
-
+	
 	// Chance on successful spellcast to restore 90 Mana over 10s.
 	// https://www.wowhead.com/tbc/spell=31036
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7887,7 +7885,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 24122, ItemName: "Coronet of Verdant Flame"},
 			})
-
+	
 	// 2% chance on successful spellcast to increase your spell damage by up to 1 for 15s.
 	// https://www.wowhead.com/tbc/spell=31037
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7898,7 +7896,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 24123, ItemName: "Circlet of Arcane Might"},
 			})
-
+	
 	// Your harmful spells have a chance to increase your spell haste rating by 320 for 6 secs.
 	// https://www.wowhead.com/tbc/spell=33370
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7909,7 +7907,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 27683, ItemName: "Quagmirran's Eye"},
 			})
-
+	
 	// Your direct healing and heal over time spells have a chance to increase your spell haste rating by 320
 	// for 6 secs.
 	// https://www.wowhead.com/tbc/spell=33370
@@ -7921,7 +7919,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28190, ItemName: "Scarab of the Infinite Cycle"},
 			})
-
+	
 	// Chance on spell critical hit to increase your spell damage and healing by 225 for 10 secs.
 	// https://www.wowhead.com/tbc/spell=34321
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7932,7 +7930,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28418, ItemName: "Shiffar's Nexus-Horn"},
 			})
-
+	
 	// Increases Strength by 100 for 10s.
 	// https://www.wowhead.com/tbc/spell=34513
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7943,7 +7941,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28429, ItemName: "Lionheart Champion"},
 			})
-
+	
 	// Increases Strength by 100 for 10s.
 	// https://www.wowhead.com/tbc/spell=34513
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7954,7 +7952,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28430, ItemName: "Lionheart Executioner"},
 			})
-
+	
 	// Increases your haste rating by 212 for 10s.
 	// https://www.wowhead.com/tbc/spell=21165
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7965,7 +7963,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28437, ItemName: "Drakefist Hammer"},
 			})
-
+	
 	// Increases your haste rating by 212 for 10s.
 	// https://www.wowhead.com/tbc/spell=21165
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7976,7 +7974,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28438, ItemName: "Dragonmaw"},
 			})
-
+	
 	// Increases your haste rating by 212 for 10s.
 	// https://www.wowhead.com/tbc/spell=21165
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7987,7 +7985,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28439, ItemName: "Dragonstrike"},
 			})
-
+	
 	// Chance on spell cast to increase your Spirit by 145 for 15 secs.
 	// https://www.wowhead.com/tbc/spell=34585
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -7998,7 +7996,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28578, ItemName: "Masquerade Gown"},
 			})
-
+	
 	// Gives a chance when your harmful spells land to increase the damage of your spells and effects by up to
 	// 130 for 10s.
 	// https://www.wowhead.com/tbc/spell=34597
@@ -8010,7 +8008,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28602, ItemName: "Robe of the Elder Scribes"},
 			})
-
+	
 	// Your melee and ranged attacks have a chance to increase your haste rating by 325 for 10s.
 	// https://www.wowhead.com/tbc/spell=34775
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8021,7 +8019,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 28830, ItemName: "Dragonspine Trophy"},
 			})
-
+	
 	// Chance on hit to increase your attack power by 160 for 10 seconds.
 	// https://www.wowhead.com/tbc/spell=35081
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8032,7 +8030,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 29301, ItemName: "Band of the Eternal Champion"},
 			})
-
+	
 	// Your offensive spells have a chance on hit to increase your spell damage by 95 for 10 secs.
 	// https://www.wowhead.com/tbc/spell=35084
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8043,7 +8041,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 29305, ItemName: "Band of the Eternal Sage"},
 			})
-
+	
 	// Your healing and damage spells have a chance to increase your healing by up to 175 and damage by up to
 	// 59 for 10 secs.
 	// https://www.wowhead.com/tbc/spell=35087
@@ -8055,7 +8053,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 29309, ItemName: "Band of the Eternal Restorer"},
 			})
-
+	
 	// Increases your haste rating by 180 for 10s.
 	// https://www.wowhead.com/tbc/spell=35131
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8066,7 +8064,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 29348, ItemName: "The Bladefist"},
 			})
-
+	
 	// Increases attack power by 270 for 10s.
 	// https://www.wowhead.com/tbc/spell=36041
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8077,7 +8075,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 29962, ItemName: "Heartrazor"},
 			})
-
+	
 	// Chance on critical hit to increase your attack power by 340 for 10 secs.
 	// https://www.wowhead.com/tbc/spell=42084
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8088,7 +8086,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 30627, ItemName: "Tsunami Talisman"},
 			})
-
+	
 	// Your ranged attacks have a chance to increase your attack power by 250 for 10 sec.
 	// https://www.wowhead.com/tbc/spell=38293
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8099,7 +8097,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 31323, ItemName: "Don Santos' Famous Hunting Rifle"},
 			})
-
+	
 	// Your attacks ignore 435 of your enemies' armor for 10s. This effect stacks up to 3 times.
 	// https://www.wowhead.com/tbc/spell=38307
 			shared.NewStackingStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8110,7 +8108,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 31331, ItemName: "The Night Blade"},
 			})
-
+	
 	// Your harmful spells have a chance to increase your spell haste rating by 280 for 6 secs.
 	// https://www.wowhead.com/tbc/spell=38317
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8121,7 +8119,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 31336, ItemName: "Blade of Wizardry"},
 			})
-
+	
 	// Your melee and ranged attacks have a chance allow you to ignore 300 of your enemies' armor for 10 secs.
 	// https://www.wowhead.com/tbc/spell=40477
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
@@ -8132,7 +8130,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 32505, ItemName: "Madness of the Betrayer"},
 			})
-
+	
 	// 50% chance to increase your attack power by 140 for 30s when you kill a target that gives experience or
 	// honor. This effect cannot occur more than once every 10 seconds.
 	// https://www.wowhead.com/tbc/spell=41261
@@ -8144,7 +8142,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 32770, ItemName: "Skyguard Silver Cross"},
 			})
-
+	
 	// 50% chance to increase your spell damage and healing by 80 for 30s when you kill a target that gives experience
 	// or honor. This effect cannot occur more than once every 10 seconds.
 	// https://www.wowhead.com/tbc/spell=41263
@@ -8156,7 +8154,7 @@ func RegisterAllProcs() {
 			}, []shared.ItemVariant{
 				{ItemID: 32771, ItemName: "Airman's Ribbon of Gallantry"},
 			})
-
+	
 	// Chance on hit to increase your attack power by 230 for 20s.
 	// https://www.wowhead.com/tbc/spell=45053
 			shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
