@@ -172,7 +172,7 @@ func (bear *GuardianDruid) applySpecTalents() {
 // 		FloatValue: 10,
 // 	})
 
-// 	var oldGetSpellDamageValue func(*core.Spell, *core.Unit) float64
+//	var oldGetSpellDamageValue func(*core.Spell, *core.Unit) float64
 
 // 	bear.DreamOfCenariusAura = bear.RegisterAura(core.Aura{
 // 		Label:    "Dream of Cenarius",
@@ -188,14 +188,14 @@ func (bear *GuardianDruid) applySpecTalents() {
 // 			// TODO: Verify this
 // 			oldGetSpellDamageValue = bear.GetSpellDamageValue
 
-// 			bear.GetSpellDamageValue = func(spell *core.Spell, target *core.Unit) float64 {
-// 				if bear.HealingTouch.IsEqual(spell) {
-// 					return bear.GetStat(stats.AttackPower) / 2
-// 				} else {
-// 					return oldGetSpellDamageValue(spell, target)
-// 				}
-// 			}
-// 		},
+// 	bear.GetSpellDamageValue = func(spell *core.Spell, target *core.Unit) float64 {
+// 		if bear.HealingTouch.IsEqual(spell) {
+// 			return bear.GetStat(stats.AttackPower) / 2
+// 		} else {
+// 			return oldGetSpellDamageValue(spell, target)
+// 		}
+// 	}
+// },
 
 // 		OnExpire: func(_ *core.Aura, _ *core.Simulation) {
 // 			bear.HealingTouch.CastTimeMultiplier += 1
