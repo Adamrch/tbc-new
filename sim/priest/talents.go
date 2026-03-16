@@ -388,15 +388,29 @@ func (priest *Priest) applyShadowWeaving() {
 	})
 	procChance := 0.20 * float64(priest.Talents.ShadowWeaving)
 
+	spell := priest.RegisterSpell(core.SpellConfig{
+		ActionID:    core.ActionID{SpellID: 15334},
+		SpellSchool: core.SpellSchoolShadow,
+		ProcMask:    core.ProcMaskEmpty,
+		Flags:       core.SpellFlagPassiveSpell,
+
+		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+			result := spell.CalcAndDealOutcome(sim, target, spell.OutcomeMagicHit)
+			if result.Landed() {
+				swAuras.Get(result.Target).Activate(sim)
+				swAuras.Get(result.Target).AddStack(sim)
+			}
+		},
+	})
+
 	priest.MakeProcTriggerAura(core.ProcTrigger{
 		Name:           "Shadow Weaving Trigger",
 		ClassSpellMask: PriestShadowSpells,
 		Callback:       core.CallbackOnSpellHitDealt,
 		Outcome:        core.OutcomeLanded,
 		ProcChance:     procChance,
-		Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
-			swAuras.Get(result.Target).Activate(sim)
-			swAuras.Get(result.Target).AddStack(sim)
+		Handler: func(sim *core.Simulation, _ *core.Spell, result *core.SpellResult) {
+			spell.Cast(sim, result.Target)
 		},
 	})
 }
