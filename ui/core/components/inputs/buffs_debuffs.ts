@@ -1,4 +1,4 @@
-import { Drums, Race, Stat, TristateEffect } from '../../proto/common';
+import { Class, Drums, Race, Spec, Stat, TristateEffect } from '../../proto/common';
 import { ActionId } from '../../proto_utils/action_id';
 import {
 	makeBooleanDebuffInput,
@@ -18,6 +18,7 @@ import { IconPicker } from '../pickers/icon_picker';
 import { IconPickerStatOption, PickerStatOptions } from './stat_options';
 import { Party } from '../../party';
 import { NumberPicker } from '../pickers/number_picker';
+import { WarlockOptions, WarlockOptions_CurseOptions, WarlockTalents } from '../../proto/warlock';
 
 ///////////////////////////////////////////////////////////////////////////
 //                                 RAID BUFFS
@@ -472,11 +473,26 @@ export const CurseOfElements = makeTristateDebuffInput({
 	impId: ActionId.fromSpellId(32484),
 	fieldName: 'curseOfElements',
 	label: 'Curse of Elements',
+	enableWhen: player => {
+		if (player.isClass(Class.ClassWarlock)) {
+			const classOptions = player.getClassOptions() as WarlockOptions;
+			const talents = player.getTalents() as WarlockTalents;
+			return !(classOptions.curseOptions === WarlockOptions_CurseOptions.Elements && talents.malediction === 3);
+		}
+		return true;
+	},
 });
 export const CurseOfRecklessness = makeBooleanDebuffInput({
 	actionId: () => ActionId.fromSpellId(27226),
 	fieldName: 'curseOfRecklessness',
 	label: 'Curse of Recklessness',
+	enableWhen: player => {
+		if (player.isClass(Class.ClassWarlock)) {
+			const classOptions = player.getClassOptions() as WarlockOptions;
+			return classOptions.curseOptions !== WarlockOptions_CurseOptions.Recklessness;
+		}
+		return true;
+	},
 });
 export const FaerieFire = makeTristateDebuffInput({
 	actionId: () => ActionId.fromSpellId(26993),
