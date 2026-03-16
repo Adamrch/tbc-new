@@ -581,7 +581,7 @@ func simmableEnchantFilter(key database.EnchantDBKey, enchant *proto.UIEnchant) 
 	if _, ok := database.EnchantDenyList[enchant.EffectId]; ok {
 		return false
 	}
-	return enchant.EffectId > 1000 && (enchant.ItemId > 20000 || enchant.ItemId == 18283) // Filters EXTREMELY low level enchants
+	return enchant.EffectId > 1000 && (enchant.ItemId == 0 || enchant.ItemId > 20000 || enchant.ItemId == 18283) // Filters EXTREMELY low level enchants
 }
 
 type TalentConfig struct {
