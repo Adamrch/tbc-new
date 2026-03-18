@@ -43,7 +43,7 @@ export const P1_EP_PRESET = PresetUtils.makePresetEpWeights(
 export const StandardTalents = {
 	name: 'Shadow',
 	data: SavedTalents.create({
-		talentsString: '500230013--503250510240103051541',
+		talentsString: '500230013--503250510240103051451',
 	}),
 };
 
