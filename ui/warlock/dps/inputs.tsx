@@ -9,6 +9,7 @@ import { Input } from '../../core/components/input';
 import { buildIconInput } from '../../core/components/icon_inputs';
 import { EventID } from '../../core/typed_event';
 import clsx from 'clsx';
+import i18n from '../../i18n/config';
 
 // Configuration for spec-specific UI elements on the settings tab.
 // These don't need to be in a separate file but it keeps things cleaner.
@@ -52,9 +53,11 @@ export const DemonicSacrificeInput = <SpecType extends WarlockSpecs>() =>
 	});
 
 export function CursesSection(parentElem: HTMLElement, simUI: IndividualSimUI<any>): ContentBlock {
-	const contentBlock = new ContentBlock(parentElem, 'curses-settings', {
-		header: { title: 'Curses' },
+	const contentBlock = new ContentBlock(parentElem, 'assigned-curse-settings', {
+		header: { title: i18n.t('settings_tab.other.warlock_assigned_curse.title') },
 	});
+
+	contentBlock.headerElement?.appendChild(<p className="fs-body">{i18n.t('settings_tab.other.warlock_assigned_curse.description')}</p>);
 
 	const curses = Input.newGroupContainer(clsx('curses-toggle-container', 'icon-group'));
 	const tmp = (<></>) as HTMLElement;

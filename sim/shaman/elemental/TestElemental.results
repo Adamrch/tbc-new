@@ -1223,6 +1223,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestElemental-AllItems-WorldBreaker-30090"
+ value: {
+  dps: 1751.04336
+  tps: 1356.4669
+ }
+}
+dps_results: {
  key: "TestElemental-AllItems-WrathofCenarius-21190"
  value: {
   dps: 1715.84351
