@@ -13,7 +13,7 @@ func init() {
 	common.RegisterAllEffects()
 }
 
-const defaultTalents = "500230013--503250510240103051541"
+const defaultTalents = "500230013--503250510240103051451"
 
 func TestShadowPriest(t *testing.T) {
 	core.RunTestSuite(t, t.Name(), core.FullCharacterTestSuiteGenerator([]core.CharacterSuiteConfig{
