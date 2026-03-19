@@ -96,10 +96,28 @@ func applyConsumeEffects(agent Agent, partyBuffs *proto.PartyBuffs) {
 		character.AddStat(stats.Intellect, 20)
 	}
 	if consumables.ScrollSpi {
-		character.AddStat(stats.Spirit, 20)
+		character.AddStat(stats.Spirit, 30)
 	}
 	if consumables.ScrollArm {
 		character.AddStat(stats.Armor, 300)
+	}
+
+	// Pet Consumes
+	for _, pet := range character.Pets {
+		if pet.isGuardian {
+			continue
+		}
+
+		if consumables.PetScrollAgi {
+			pet.AddStat(stats.Agility, 20)
+		}
+		if consumables.PetScrollStr {
+			pet.AddStat(stats.Strength, 20)
+		}
+		if consumables.PetFoodId != 0 {
+			petFood := ConsumablesByID[consumables.PetFoodId]
+			pet.AddStats(petFood.Stats)
+		}
 	}
 
 	registerPotionCD(agent, consumables)
@@ -112,12 +130,17 @@ var PotionAuraTag = "Potion"
 
 func registerPotionCD(agent Agent, consumes *proto.ConsumesSpec) {
 	character := agent.GetCharacter()
-	potion := consumes.PotId
+	defaultPotion := consumes.PotId
 
-	if potion != 0 {
-		potMCD := makePotionActivationSpell(potion, character)
-		potMCD.Spell.Flags |= SpellFlagCombatPotion
-		character.AddMajorCooldown(potMCD)
+	for _, potionId := range consumes.Potions {
+		potion := ConsumablesByID[potionId]
+		if potion.Type == proto.ConsumableType_ConsumableTypePotion {
+			potMCD := makePotionActivationSpell(potion.Id, character)
+			if defaultPotion == potion.Id {
+				potMCD.Spell.Flags |= SpellFlagCombatPotion
+				character.AddMajorCooldown(potMCD)
+			}
+		}
 	}
 }
 
@@ -140,7 +163,7 @@ func makePotionActivationSpell(potionId int32, character *Character) MajorCooldo
 		// Mark as 'Encounter Only' so that users are forced to select the generic Potion
 		// placeholder action instead of specific potion spells, in APL prepull. This
 		// prevents a mismatch between Consumes and Rotation settings.
-		mcd.Spell.Flags |= SpellFlagEncounterOnly | SpellFlagPotion
+		mcd.Spell.Flags |= SpellFlagEncounterOnly | SpellFlagPotion | SpellFlagAPL
 		oldApplyEffects := mcd.Spell.ApplyEffects
 		mcd.Spell.ApplyEffects = func(sim *Simulation, target *Unit, spell *Spell) {
 			oldApplyEffects(sim, target, spell)
@@ -150,8 +173,8 @@ func makePotionActivationSpell(potionId int32, character *Character) MajorCooldo
 			}
 		}
 	}
-	return mcd
 
+	return mcd
 }
 
 type resourceGainConfig struct {
@@ -312,7 +335,6 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 			Type:  CooldownTypeDPS,
 		})
 	case 22788:
-
 		actionID := ActionID{ItemID: 22788}
 
 		flameCapProc := character.RegisterSpell(SpellConfig{
@@ -365,8 +387,9 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 			Spell: spell,
 			Type:  CooldownTypeDPS,
 		})
-	case 20520:
-		actionID := ActionID{ItemID: 20520}
+	// Demonic Rune
+	case 12662:
+		actionID := ActionID{ItemID: 12662}
 		manaMetrics := character.NewManaMetrics(actionID)
 		// damageTakenManaMetrics := character.NewManaMetrics(ActionID{SpellID: 33776})
 		spell := character.RegisterSpell(SpellConfig{
@@ -375,7 +398,7 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 			Cast: CastConfig{
 				CD: Cooldown{
 					Timer:    character.GetConjuredCD(),
-					Duration: time.Minute * 15,
+					Duration: time.Minute * 2,
 				},
 			},
 			ApplyEffects: func(sim *Simulation, _ *Unit, _ *Spell) {
@@ -434,6 +457,8 @@ func registerConjuredCD(agent Agent, consumes *proto.ConsumesSpec) {
 
 var SuperSapperActionID = ActionID{ItemID: 23827}
 var GoblinSapperActionID = ActionID{ItemID: 10646}
+var EzThroDynamiteTwoActionID = ActionID{ItemID: 18588}
+var CrystalChargeActionID = ActionID{ItemID: 11566}
 var FelIronBombActionID = ActionID{ItemID: 23736}
 var AdamantiteGrenadeActionID = ActionID{ItemID: 23737}
 var GnomishFlameTurretActionID = ActionID{ItemID: 23841}
@@ -465,6 +490,10 @@ func registerExplosivesCD(agent Agent, consumes *proto.ConsumesSpec) {
 	if consumes.ExplosiveId > 0 {
 		var filler *Spell
 		switch consumes.ExplosiveId {
+		case 18588:
+			filler = character.newEzThroDynamiteTwo(sharedTimer)
+		case 15239:
+			filler = character.newCrystalChargeSpell(sharedTimer)
 		case 30217:
 			filler = character.newAdamantiteGrenadeSpell(sharedTimer)
 		case 30216:
@@ -482,15 +511,19 @@ func registerExplosivesCD(agent Agent, consumes *proto.ConsumesSpec) {
 }
 
 // Creates a spell object for the common explosive case.
-func (character *Character) newBasicExplosiveSpellConfig(sharedTimer *Timer, actionID ActionID, school SpellSchool, minDamage float64, maxDamage float64, cooldown Cooldown) SpellConfig {
+func (character *Character) newBasicExplosiveSpellConfig(sharedTimer *Timer, actionID ActionID, school SpellSchool, minDamage float64, maxDamage float64, speed float64, castTime time.Duration, cooldown Cooldown) SpellConfig {
 	dealSelfDamage := actionID.SameAction(SuperSapperActionID) || actionID.SameAction(GoblinSapperActionID)
 
 	return SpellConfig{
-		ActionID:    actionID,
-		SpellSchool: school,
-		ProcMask:    ProcMaskEmpty,
+		ActionID:     actionID,
+		SpellSchool:  school,
+		ProcMask:     ProcMaskEmpty,
+		MissileSpeed: speed,
 
 		Cast: CastConfig{
+			DefaultCast: Cast{
+				CastTime: castTime,
+			},
 			CD: cooldown,
 			SharedCD: Cooldown{
 				Timer:    sharedTimer,
@@ -506,7 +539,14 @@ func (character *Character) newBasicExplosiveSpellConfig(sharedTimer *Timer, act
 
 		ApplyEffects: func(sim *Simulation, target *Unit, spell *Spell) {
 			baseDamage := sim.Roll(minDamage, maxDamage) * sim.Encounter.AOECapMultiplier()
-			spell.CalcAndDealAoeDamage(sim, baseDamage, spell.OutcomeMagicHitAndCrit)
+			spell.CalcAoeDamage(sim, baseDamage, spell.OutcomeMagicHitAndCrit)
+			if speed > 0 {
+				spell.WaitTravelTime(sim, func(sim *Simulation) {
+					spell.DealBatchedAoeDamage(sim)
+				})
+			} else {
+				spell.DealBatchedAoeDamage(sim)
+			}
 
 			if dealSelfDamage {
 				baseDamage := sim.Roll(minDamage, maxDamage)
@@ -516,16 +556,22 @@ func (character *Character) newBasicExplosiveSpellConfig(sharedTimer *Timer, act
 	}
 }
 func (character *Character) newSuperSapperSpell(sharedTimer *Timer) *Spell {
-	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, SuperSapperActionID, SpellSchoolFire, 900, 1500, Cooldown{Timer: character.NewTimer(), Duration: time.Minute * 5}))
+	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, SuperSapperActionID, SpellSchoolFire, 900, 1500, 0, 0, Cooldown{Timer: character.NewTimer(), Duration: time.Minute * 5}))
 }
 func (character *Character) newGoblinSapperSpell(sharedTimer *Timer) *Spell {
-	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, GoblinSapperActionID, SpellSchoolFire, 450, 750, Cooldown{Timer: character.NewTimer(), Duration: time.Minute * 5}))
+	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, GoblinSapperActionID, SpellSchoolFire, 450, 750, 0, 0, Cooldown{Timer: character.NewTimer(), Duration: time.Minute * 5}))
 }
 func (character *Character) newAdamantiteGrenadeSpell(sharedTimer *Timer) *Spell {
-	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, AdamantiteGrenadeActionID, SpellSchoolFire, 450, 750, Cooldown{}))
+	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, AdamantiteGrenadeActionID, SpellSchoolFire, 450, 750, 14, 0, Cooldown{}))
 }
 func (character *Character) newFelIronBombSpell(sharedTimer *Timer) *Spell {
-	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, AdamantiteGrenadeActionID, SpellSchoolFire, 330, 770, Cooldown{}))
+	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, FelIronBombActionID, SpellSchoolFire, 330, 770, 14, time.Second, Cooldown{}))
+}
+func (character *Character) newCrystalChargeSpell(sharedTimer *Timer) *Spell {
+	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, CrystalChargeActionID, SpellSchoolFire, 383, 517, 0, 0, Cooldown{}))
+}
+func (character *Character) newEzThroDynamiteTwo(sharedTimer *Timer) *Spell {
+	return character.GetOrRegisterSpell(character.newBasicExplosiveSpellConfig(sharedTimer, EzThroDynamiteTwoActionID, SpellSchoolFire, 213, 287, 14, time.Second, Cooldown{}))
 }
 
 func registerDrumsCD(agent Agent, consumables *proto.ConsumesSpec) {
@@ -598,5 +644,19 @@ func registerStaticImbue(agent Agent, imbueId int32, isMH bool) {
 			character.AutoAttacks.OH().BaseDamageMax += 12
 			character.AutoAttacks.OH().BaseDamageMin += 12
 		}
+
+		if imbueId == 34340 && character.AutoAttacks.Ranged() != nil {
+			character.AutoAttacks.Ranged().BaseDamageMin += 12
+			character.AutoAttacks.Ranged().BaseDamageMax += 12
+		}
+	case 28891: // Consecrated Sharpening Stone
+		character.Env.RegisterPostFinalizeEffect(func() {
+			for _, at := range character.AttackTables {
+				at.MobTypeBonusStats[proto.MobType_MobTypeUndead] = at.MobTypeBonusStats[proto.MobType_MobTypeUndead].Add(stats.Stats{
+					stats.AttackPower:       100,
+					stats.RangedAttackPower: 100,
+				})
+			}
+		})
 	}
 }

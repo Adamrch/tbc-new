@@ -33,6 +33,7 @@ type DamageEffect struct {
 	IsMelee          bool
 	ProcMask         core.ProcMask
 	Outcome          OutcomeType
+	Flags            core.SpellFlag
 }
 
 type ExtraSpellInfo struct {
@@ -163,7 +164,6 @@ func factory_StatBonusEffect(config ProcStatBonusEffect, extraSpell func(agent c
 					stats.FromProtoMap(effect.ScalingOptions[int32(0)].Stats),
 					time.Millisecond*time.Duration(effect.EffectDurationMs),
 				)
-
 			}
 
 			var dpm *core.DynamicProcManager
@@ -279,13 +279,18 @@ func NewSimpleStatActive(itemID int32) {
 			panic(fmt.Sprintf("No effects data for item with ID: %d", itemID))
 		}
 
-		for _, itemEffect := range itemEffects {
-
+		hasEffect := false
+		for idx, itemEffect := range itemEffects {
 			onUseData := itemEffect.GetOnUse()
+
 			if onUseData == nil {
-				panic(fmt.Sprintf("Item effect for item with ID: %d is not an active effect!", itemID))
+				if !hasEffect && idx == len(itemEffects)-1 {
+					panic(fmt.Sprintf("No active effects found for item with ID: %d!", itemID))
+				}
+				continue
 			}
 
+			hasEffect = true
 			spellConfig := core.SpellConfig{
 				ActionID: core.ActionID{ItemID: itemID},
 			}
@@ -527,11 +532,13 @@ const (
 	OutcomeDefault                  = 0
 	OutcomeMeleeCanCrit OutcomeType = iota
 	OutcomeMeleeNoCrit
+	OutcomeMeleeNoBlockDodgeParry
 	OutcomeMeleeNoBlockDodgeParryCrit
 	OutcomeSpellCanCrit
 	OutcomeSpellNoCrit
 	OutcomeSpellNoMissCanCrit
 	OutcomeRangedCanCrit
+	OutcomeAlwaysHit
 )
 
 type ProcDamageEffect struct {
@@ -554,6 +561,8 @@ func GetOutcome(spell *core.Spell, outcome OutcomeType) core.OutcomeApplier {
 		return spell.OutcomeMeleeSpecialHitAndCrit
 	case OutcomeMeleeNoCrit:
 		return spell.OutcomeMeleeSpecialHit
+	case OutcomeMeleeNoBlockDodgeParry:
+		return spell.OutcomeMeleeSpecialNoBlockDodgeParry
 	case OutcomeMeleeNoBlockDodgeParryCrit:
 		return spell.OutcomeMeleeSpecialNoBlockDodgeParryNoCrit
 	case OutcomeSpellCanCrit:
@@ -564,6 +573,8 @@ func GetOutcome(spell *core.Spell, outcome OutcomeType) core.OutcomeApplier {
 		return spell.OutcomeMagicHit
 	case OutcomeRangedCanCrit:
 		return spell.OutcomeRangedHitAndCrit
+	case OutcomeAlwaysHit:
+		return spell.OutcomeAlwaysHit
 	default:
 		return spell.OutcomeMagicHitAndCrit
 	}
@@ -793,6 +804,7 @@ type SpellRankConfig struct {
 	Coefficient      float64
 	ThreatMultiplier float64
 	FlatThreatBonus  float64
+	CastTimeSeconds  float64 // Optional: specify only if overriding default cast time
 }
 
 type SpellRankMap []SpellRankConfig

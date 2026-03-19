@@ -244,7 +244,7 @@ func applyRaceEffects(agent Agent) {
 			BuildPhase: Ternary(hasBowEquipped(), CharacterBuildPhaseBase, CharacterBuildPhaseNone),
 		}).AttachStatBuff(stats.RangedCritPercent, 1)
 
-		hasThwrowingEquipped := func() bool {
+		hasThrowingEquipped := func() bool {
 			ranged := character.Ranged()
 			return ranged != nil && (ranged.RangedWeaponType == proto.RangedWeaponType_RangedWeaponTypeThrown)
 		}
@@ -253,7 +253,7 @@ func applyRaceEffects(agent Agent) {
 			Label:      "Throwing Specialization",
 			ActionID:   ActionID{SpellID: 20558},
 			Duration:   NeverExpires,
-			BuildPhase: Ternary(hasThwrowingEquipped(), CharacterBuildPhaseBase, CharacterBuildPhaseNone),
+			BuildPhase: Ternary(hasThrowingEquipped(), CharacterBuildPhaseBase, CharacterBuildPhaseNone),
 		}).AttachStatBuff(stats.RangedCritPercent, 1)
 
 		character.RegisterItemSwapCallback([]proto.ItemSlot{proto.ItemSlot_ItemSlotRanged}, func(sim *Simulation, slot proto.ItemSlot) {
@@ -262,7 +262,7 @@ func applyRaceEffects(agent Agent) {
 			} else {
 				bowAura.Deactivate(sim)
 			}
-			if hasThwrowingEquipped() {
+			if hasThrowingEquipped() {
 				throwingAura.Activate(sim)
 			} else {
 				throwingAura.Deactivate(sim)
@@ -280,53 +280,51 @@ func applyRaceEffects(agent Agent) {
 		})
 
 		// Berserking
+		sharedCD := Cooldown{
+			Timer:    character.NewTimer(),
+			Duration: time.Minute * 3,
+		}
+
 		baseSpellConfig := SpellConfig{
 			Cast: CastConfig{
-				CD: Cooldown{
-					Timer:    character.NewTimer(),
-					Duration: time.Minute * 3,
-				},
+				CD: sharedCD,
 			},
 		}
 
+		if character.HasEnergyBar() {
+			baseSpellConfig.ActionID = ActionID{SpellID: 26297}
+			baseSpellConfig.EnergyCost = EnergyCostOptions{
+				Cost: 10,
+			}
+		} else if character.HasRageBar() {
+			baseSpellConfig.ActionID = ActionID{SpellID: 26296}
+			baseSpellConfig.RageCost = RageCostOptions{
+				Cost: 5,
+			}
+		} else if character.HasManaBar() {
+			baseSpellConfig.ActionID = ActionID{SpellID: 20554}
+			baseSpellConfig.ManaCost = ManaCostOptions{
+				FlatCost: int32(character.BaseMana * 0.06),
+			}
+		}
+
 		baseAuraConfig := Aura{
-			ActionID: baseSpellConfig.ActionID,
 			Duration: time.Second * 10,
+			ActionID: baseSpellConfig.ActionID,
 		}
 
 		createBerserkingSpell := func(labelSuffix string, tag int32, percentage float64) {
-			if character.HasEnergyBar() {
-				baseSpellConfig.ActionID = ActionID{SpellID: 26297}.WithTag(tag)
-				baseSpellConfig.EnergyCost = EnergyCostOptions{
-					Cost: 10,
-				}
-			} else if character.HasRageBar() {
-				baseSpellConfig.ActionID = ActionID{SpellID: 26296}.WithTag(tag)
-				baseSpellConfig.RageCost = RageCostOptions{
-					Cost: 5,
-				}
-			} else if character.HasManaBar() {
-				baseSpellConfig.ActionID = ActionID{SpellID: 20554}.WithTag(tag)
-				baseSpellConfig.ManaCost = ManaCostOptions{
-					FlatCost: int32(character.BaseMana * 0.06),
-				}
-			}
-
 			auraConfig := baseAuraConfig
+			auraConfig.ActionID.Tag = tag
 			auraConfig.Label = fmt.Sprintf("Berserking (%s)", labelSuffix)
 
 			berserkingAura := character.RegisterAura(auraConfig)
 			berserkingAura.
-				ApplyOnGain(func(aura *Aura, sim *Simulation) {
-					character.MultiplyCastSpeed(sim, percentage)
-					character.MultiplyAttackSpeed(sim, percentage)
-				}).
-				ApplyOnExpire(func(aura *Aura, sim *Simulation) {
-					character.MultiplyAttackSpeed(sim, 1/percentage)
-					character.MultiplyCastSpeed(sim, 1/percentage)
-				})
+				AttachMultiplyAttackSpeed(percentage).
+				AttachMultiplyCastSpeed(percentage)
 
 			berserkingSpellConfig := baseSpellConfig
+			berserkingSpellConfig.ActionID.Tag = tag
 			berserkingSpellConfig.RelatedSelfBuff = berserkingAura
 			berserkingSpellConfig.ApplyEffects = func(sim *Simulation, _ *Unit, _ *Spell) {
 				berserkingAura.Activate(sim)
@@ -336,12 +334,17 @@ func applyRaceEffects(agent Agent) {
 			character.AddMajorCooldown(MajorCooldown{
 				Spell: berserkingSpell,
 				Type:  CooldownTypeDPS,
+				ShouldActivate: func(sim *Simulation, character *Character) bool {
+					return false
+				},
 			})
 
 		}
 
-		createBerserkingSpell("10%", 1, 1.1)
-		createBerserkingSpell("30%", 2, 1.3)
+		for idx := range 5 {
+			percentage := 0.10 + 0.05*float64(idx)
+			createBerserkingSpell(fmt.Sprintf("%d%%", int(percentage*100)), int32(idx+1), 1+percentage)
+		}
 
 	case proto.Race_RaceUndead:
 		character.stats[stats.ShadowResistance] += 10

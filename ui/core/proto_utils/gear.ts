@@ -1,4 +1,4 @@
-import { EquipmentSpec, GemColor, HandType, ItemSlot, ItemSpec, Profession } from '../proto/common';
+import { EquipmentSpec, GemColor, HandType, ItemSlot, ItemSpec, Profession, WeaponType } from '../proto/common';
 import { ItemEffectRandPropPoints, SimDatabase, SimEnchant, SimGem, SimItem } from '../proto/db';
 import { UIEnchant as Enchant, UIGem as Gem, UIItem as Item } from '../proto/ui';
 import { isBluntWeaponType, isSharpWeaponType } from '../proto_utils/utils';
@@ -355,23 +355,28 @@ export class Gear extends BaseGear {
 		return curGear;
 	}
 
-	// Removes bonus gems from blacksmith profession bonus.
-	withoutBlacksmithSockets(): Gear {
+	// Removes enchanting profession bonus.
+	withoutEnchanting(): Gear {
 		let curGear: Gear = this;
 
-		// const wristItem = this.getEquippedItem(ItemSlot.ItemSlotWrist);
-		// if (wristItem) {
-		// 	curGear = curGear.withEquippedItem(ItemSlot.ItemSlotWrist, wristItem.withGem(null, wristItem.numPossibleSockets - 1), true);
-		// }
-
-		// const handsItem = this.getEquippedItem(ItemSlot.ItemSlotHands);
-		// if (handsItem) {
-		// 	curGear = curGear.withEquippedItem(ItemSlot.ItemSlotHands, handsItem.withGem(null, handsItem.numPossibleSockets - 1), true);
-		// }
+		[ItemSlot.ItemSlotFinger1, ItemSlot.ItemSlotFinger2].forEach(slot => {
+			const fingerItem = this.getEquippedItem(slot);
+			if (fingerItem) curGear = curGear.withEquippedItem(slot, fingerItem.withEnchant(null));
+		});
 
 		return curGear;
 	}
-
+	hasMHWeapon(): boolean {
+		return this.getEquippedItem(ItemSlot.ItemSlotMainHand) != null;
+	}
+	hasOHWeapon(): boolean {
+		const weapon = this.getEquippedItem(ItemSlot.ItemSlotOffHand);
+		return (
+			weapon != null &&
+			![HandType.HandTypeOffHand].includes(weapon.item.handType) &&
+			![WeaponType.WeaponTypeOffHand, WeaponType.WeaponTypeShield].includes(weapon.item.weaponType)
+		);
+	}
 	hasBluntMHWeapon(): boolean {
 		const weapon = this.getEquippedItem(ItemSlot.ItemSlotMainHand);
 		return weapon != null && isBluntWeaponType(weapon.item.weaponType);

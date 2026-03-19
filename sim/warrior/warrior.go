@@ -114,6 +114,7 @@ type Warrior struct {
 	MortalStrike                    *core.Spell
 	DevastateSunder                 *core.Spell
 	SweepingStrikesNormalizedAttack *core.Spell
+	SunderArmorDevastate            *core.Spell
 
 	HeroicStrike       *core.Spell
 	Cleave             *core.Spell
@@ -194,7 +195,7 @@ func (warrior *Warrior) Reset(_ *core.Simulation) {
 
 func (warrior *Warrior) OnEncounterStart(sim *core.Simulation) {}
 
-func (war *Warrior) GetHandType() proto.HandType {
+func (war *Warrior) GetMainHandType() proto.HandType {
 	mh := war.GetMHWeapon()
 
 	if mh != nil && (mh.HandType == proto.HandType_HandTypeTwoHand) {

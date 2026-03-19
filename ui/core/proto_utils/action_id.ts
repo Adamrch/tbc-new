@@ -303,25 +303,12 @@ export class ActionId {
 				}
 				break;
 			case 'Mind Flay':
-				if (this.spellId === 15407) {
-					if (tag == 1) {
-						name += ' (1 Tick)';
-					} else if (tag == 2) {
-						name += ' (2 Tick)';
-					} else if (tag == 3) {
-						name += ' (3 Tick)';
-					} else if (tag == 77486) {
-						name += ' (Mastery)';
-					}
-				} else {
-					// Gurthalak, Voice of the Deeps
-					if (tag === 0) {
-						name += ' (LFR)';
-					} else if (tag === 1) {
-						name += ' (Normal)';
-					} else if (tag === 2) {
-						name += ' (Heroic)';
-					}
+				if (tag == 1) {
+					name += ' (1 Tick)';
+				} else if (tag == 2) {
+					name += ' (2 Tick)';
+				} else if (tag == 3) {
+					name += ' (3 Tick)';
 				}
 				break;
 			case 'Mind Sear':
@@ -337,12 +324,13 @@ export class ActionId {
 
 				break;
 			case 'Devotion Aura':
-			case 'Shattering Throw':
 			case 'Pain Suppression':
+			case 'Curse of the Elements':
+			case 'Curse of Recklessness':
 				if (tag === -1) {
-					name += ' (raid)';
+					name += ' (External)';
 				} else {
-					name += ` (self)`;
+					name += ` (Self)`;
 				}
 				break;
 			case 'Envenom':
@@ -445,6 +433,11 @@ export class ActionId {
 					name += ' (Wasted)';
 				}
 				break;
+			case 'Windfury Totem Effect':
+				if (tag == 1) {
+					name += ' (Party Weapon Buff)';
+				}
+				break;
 			case 'Moonfire':
 			case 'Sunfire':
 				if (tag == 1) {
@@ -471,10 +464,8 @@ export class ActionId {
 				}
 				break;
 			case 'Berserking':
-				if (tag == 1) {
-					name += ' (10%)';
-				} else if (tag == 2) {
-					name += ' (30%)';
+				if (tag > 0) {
+					name += ` (${10 + (tag - 1) * 5}%)`;
 				}
 				break;
 			case 'Elemental Mastery':
@@ -513,6 +504,11 @@ export class ActionId {
 					name += ' (Normalized)';
 				}
 				break;
+			case 'Sunder Armor':
+				if (tag == 1) {
+					name += ' (Devastate)';
+				}
+				break;
 			case 'Improved Berserker Rage':
 			case 'Improved Overpower':
 				name += ` (${tag}/2)`;
@@ -521,7 +517,21 @@ export class ActionId {
 				if (tag == 0) {
 					name += ' (DoT)';
 				} else if (tag == 1) {
+					name += ' (Instant)';
+				} else if (tag == 2) {
 					name += ' (Explosion)';
+				}
+				break;
+			case 'Improved Corruption and Immolate':
+				if (this.spellId === 37380) {
+					name = 'T4 4PC';
+				} else if (this.spellId === 37384) {
+					name = 'T5 4PC';
+				}
+				break;
+			case 'Improved Shadow Bolt and Incinerate':
+				if (this.spellId === 38393) {
+					name = 'T6 4PC';
 				}
 				break;
 			case 'Thunderfury':
@@ -546,6 +556,10 @@ export class ActionId {
 			case 'Shadow Word: Death':
 				if (tag == 1) {
 					name += ' (No Orb)';
+				}
+			case 'Shadowfiend':
+				if (tag == 1) {
+					name += ' (Mana Restore)';
 				}
 			case 'Steady Focus':
 				if (tag == 2) {
@@ -580,8 +594,15 @@ export class ActionId {
 					name += ' (Malefic)';
 				}
 				break;
+			case 'Raptor Strike':
+				if (tag == 2) {
+					name += ' (Cooldown)';
+				}
+				break;
 			default:
-				if (tag) {
+				if (tag === -1) {
+					name += ' (External)';
+				} else if (tag) {
 					name += ' (??)';
 				}
 				break;
@@ -940,4 +961,6 @@ export const resourceTypeToIcon: Record<ResourceType, string> = {
 };
 
 // Use this to connect a buff row to a cast row in the timeline view
-export const buffAuraToSpellIdMap: Record<number, ActionId> = {};
+export const buffAuraToSpellIdMap: Record<number, ActionId> = {
+	34471: ActionId.fromSpellId(19574), // Bestial Wrath -> The Beast Within
+};

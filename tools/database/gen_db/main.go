@@ -258,15 +258,6 @@ func main() {
 
 	craftedSpellIds := []int32{}
 	for _, item := range db.Items {
-		// if item.NameDescription == "Celestial" {
-		// 	item.Sources = database.InferCelestialItemSource(item)
-		// }
-
-		// // Infer the drop difficulty for the item
-		// if item.NameDescription == "Flexible" {
-		// 	item.Sources = database.InferFlexibleRaidItemSource(item)
-		// }
-
 		for _, source := range item.Sources {
 			if crafted := source.GetCrafted(); crafted != nil {
 				craftedSpellIds = append(craftedSpellIds, crafted.SpellId)
@@ -275,6 +266,10 @@ func main() {
 				if instance.Items[int(item.Id)].Bonding == dbc.BIND_ON_ACQUIRE && item.Quality == proto.ItemQuality_ItemQualityEpic && item.RequiredProfession == proto.Profession_ProfessionUnknown {
 					item.RequiredProfession = crafted.Profession
 				}
+			}
+
+			if rep := source.GetRep(); rep != nil {
+				item.FactionRestriction = proto.UIItem_FactionRestriction(rep.FactionId)
 			}
 		}
 
@@ -439,11 +434,27 @@ func ApplyGlobalFilters(db *database.WowDatabase) {
 			return false
 		}
 
-		_, uncut, _ := strings.Cut(gem.Name, " ")
-		if slices.Contains([]string{"Crimson Spinel", "Empyrean Sapphire", "Lionseye", "Shadowsong Amethyst", "Pyrestone", "Seaspray Emerald"}, uncut) {
+		prefix, uncut, _ := strings.Cut(gem.Name, " ")
+		if slices.Contains([]string{
+			"Forceful",
+			"Quick",
+			"Reckless",
+			"Purified Shadowsong",
+		}, prefix) {
+			gem.Phase = 5
+		} else if slices.Contains([]string{
+			"Crimson Spinel",
+			"Empyrean Sapphire",
+			"Lionseye",
+			"Shadowsong Amethyst",
+			"Pyrestone",
+			"Seaspray Emerald",
+		}, uncut) {
 			gem.Phase = 3
 		} else if gem.Name == "Charmed Amani Jewel" {
 			gem.Phase = 3
+		} else if strings.Contains(prefix, "Unstable") {
+			gem.Phase = 2
 		} else {
 			gem.Phase = 1
 		}
@@ -570,7 +581,7 @@ func simmableEnchantFilter(key database.EnchantDBKey, enchant *proto.UIEnchant) 
 	if _, ok := database.EnchantDenyList[enchant.EffectId]; ok {
 		return false
 	}
-	return enchant.EffectId > 1000 && (enchant.ItemId > 20000 || enchant.ItemId == 18283) // Filters EXTREMELY low level enchants
+	return enchant.EffectId > 1000 && (enchant.ItemId == 0 || enchant.ItemId > 20000 || enchant.ItemId == 18283) // Filters EXTREMELY low level enchants
 }
 
 type TalentConfig struct {
@@ -723,21 +734,11 @@ func GetAllRotationSpellIds() map[string][]int32 {
 		}, &proto.Player_RetributionPaladin{RetributionPaladin: &proto.RetributionPaladin{Options: &proto.RetributionPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}}), nil, nil, nil)},
 
 		// Priest
-		{Name: "disciplinePriest", Raid: core.SinglePlayerRaidProto(core.WithSpec(&proto.Player{
+		{Name: "priest", Raid: core.SinglePlayerRaidProto(core.WithSpec(&proto.Player{
 			Class:         proto.Class_ClassPriest,
 			Equipment:     &proto.EquipmentSpec{},
 			TalentsString: "000000",
-		}, &proto.Player_DisciplinePriest{DisciplinePriest: &proto.DisciplinePriest{Options: &proto.DisciplinePriest_Options{ClassOptions: &proto.PriestOptions{}}}}), nil, nil, nil)},
-		{Name: "holyPriest", Raid: core.SinglePlayerRaidProto(core.WithSpec(&proto.Player{
-			Class:         proto.Class_ClassPriest,
-			Equipment:     &proto.EquipmentSpec{},
-			TalentsString: "000000",
-		}, &proto.Player_HolyPriest{HolyPriest: &proto.HolyPriest{Options: &proto.HolyPriest_Options{ClassOptions: &proto.PriestOptions{}}}}), nil, nil, nil)},
-		{Name: "shadowPriest", Raid: core.SinglePlayerRaidProto(core.WithSpec(&proto.Player{
-			Class:         proto.Class_ClassPriest,
-			Equipment:     &proto.EquipmentSpec{},
-			TalentsString: "000000",
-		}, &proto.Player_ShadowPriest{ShadowPriest: &proto.ShadowPriest{Options: &proto.ShadowPriest_Options{ClassOptions: &proto.PriestOptions{}}}}), nil, nil, nil)},
+		}, &proto.Player_Priest{Priest: &proto.Priest{Options: &proto.Priest_Options{ClassOptions: &proto.PriestOptions{}}}}), nil, nil, nil)},
 
 		// Rogue
 		{Name: "rogue", Raid: core.SinglePlayerRaidProto(core.WithSpec(&proto.Player{

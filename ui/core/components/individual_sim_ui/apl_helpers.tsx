@@ -122,7 +122,9 @@ const actionIdSets: Record<
 			const castableSpells = metadata.getSpells().filter(spell => spell.data.isCastable);
 
 			// Split up non-cooldowns and cooldowns into separate sections for easier browsing.
-			const { spells: spells, cooldowns: cooldowns } = bucket(castableSpells, spell => (spell.data.isMajorCooldown ? 'cooldowns' : 'spells'));
+			const { spells, cooldowns, potions } = bucket(castableSpells, spell =>
+				spell.data.isPotion ? 'potions' : spell.data.isMajorCooldown ? 'cooldowns' : 'spells',
+			);
 
 			const placeholders: Array<ActionId> = [ActionId.fromOtherId(OtherAction.OtherActionPotion)];
 
@@ -156,6 +158,24 @@ const actionIdSets: Record<
 					return {
 						value: actionId.id,
 						submenu: createSpellSubmenu(actionId.id, spells, ['cooldowns']),
+						extraCssClasses: actionId.data.prepullOnly
+							? ['apl-prepull-actions-only']
+							: actionId.data.encounterOnly
+								? ['apl-priority-list-only']
+								: [],
+					};
+				}),
+				[
+					{
+						value: ActionId.fromEmpty(),
+						headerText: i18n.t('rotation_tab.apl.submenus.potions'),
+						submenu: ['potions'],
+					},
+				],
+				(potions || []).map(actionId => {
+					return {
+						value: actionId.id,
+						submenu: createSpellSubmenu(actionId.id, spells, ['potions']),
 						extraCssClasses: actionId.data.prepullOnly
 							? ['apl-prepull-actions-only']
 							: actionId.data.encounterOnly
@@ -288,7 +308,7 @@ const actionIdSets: Record<
 };
 
 const spellHasRanks = (actionId: ActionId, spells: AuraStats[] | SpellStats[]) => {
-	return spells.filter(spell => actionId.baseName === spell.id.baseName && spell.id.hasRank).length > 1;
+	return spells.filter(spell => actionId.baseName === spell.id.baseName && actionId.tag === spell.id.tag && spell.id.hasRank).length > 1;
 };
 
 const createSpellSubmenu = (actionId: ActionId, spells: AuraStats[] | SpellStats[], baseMenuEntry: string[] = []) => {

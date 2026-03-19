@@ -1,5 +1,19 @@
 import { LaunchStatus } from '../core/launched_sims';
-import { ArmorType, Class, MobType, PseudoStat, Race, Profession, Spec, Stat, SpellSchool, WeaponType, RangedWeaponType, ItemSlot } from '../core/proto/common';
+import {
+	ArmorType,
+	Class,
+	MobType,
+	PseudoStat,
+	Race,
+	Profession,
+	Spec,
+	Stat,
+	SpellSchool,
+	WeaponType,
+	RangedWeaponType,
+	ItemSlot,
+	ItemQuality,
+} from '../core/proto/common';
 import { ResourceType } from '../core/proto/spell';
 import { RaidFilterOption, SourceFilterOption } from '../core/proto/ui';
 import { BulkSimItemSlot } from '../core/components/individual_sim_ui/bulk/utils';
@@ -121,15 +135,15 @@ export const pseudoStatI18nKeys: Record<PseudoStat, string> = {
 	[PseudoStat.PseudoStatMeleeCritPercent]: 'melee_crit',
 	[PseudoStat.PseudoStatSpellCritPercent]: 'spell_crit',
 	[PseudoStat.PseudoStatBlockValueMultiplier]: 'block_value_multiplier',
-	[PseudoStat.PseudoStatSchoolHitArcane]: 'arcane_hit',
-	[PseudoStat.PseudoStatSchoolHitFire]: 'fire_hit',
-	[PseudoStat.PseudoStatSchoolHitFrost]: 'frost_hit',
-	[PseudoStat.PseudoStatSchoolHitHoly]: 'holy_hit',
-	[PseudoStat.PseudoStatSchoolHitNature]: 'nature_hit',
-	[PseudoStat.PseudoStatSchoolHitShadow]: 'shadow_hit',
+	[PseudoStat.PseudoStatSchoolHitPercentArcane]: 'arcane_hit',
+	[PseudoStat.PseudoStatSchoolHitPercentFire]: 'fire_hit',
+	[PseudoStat.PseudoStatSchoolHitPercentFrost]: 'frost_hit',
+	[PseudoStat.PseudoStatSchoolHitPercentHoly]: 'holy_hit',
+	[PseudoStat.PseudoStatSchoolHitPercentNature]: 'nature_hit',
+	[PseudoStat.PseudoStatSchoolHitPercentShadow]: 'shadow_hit',
 	[PseudoStat.PseudoStatBlockValuePerStrength]: 'block_per_strength',
 	[PseudoStat.PseudoStatRangedHitPercent]: 'ranged_hit',
-	[PseudoStat.PseudoStatRangedCritPercent]: 'ranged_crit'
+	[PseudoStat.PseudoStatRangedCritPercent]: 'ranged_crit',
 };
 
 export const spellSchoolI18nKeys: Record<SpellSchool, string> = {
@@ -178,6 +192,17 @@ export const resourceTypeI18nKeys: Record<ResourceType, string> = {
 	[ResourceType.ResourceTypeGenericResource]: 'generic_resource',
 };
 
+export const itemQualityI18nKeys: Record<ItemQuality, string> = {
+	[ItemQuality.ItemQualityJunk]: 'junk',
+	[ItemQuality.ItemQualityCommon]: 'common',
+	[ItemQuality.ItemQualityUncommon]: 'uncommon',
+	[ItemQuality.ItemQualityRare]: 'rare',
+	[ItemQuality.ItemQualityEpic]: 'epic',
+	[ItemQuality.ItemQualityLegendary]: 'legendary',
+	[ItemQuality.ItemQualityArtifact]: 'artifact',
+	[ItemQuality.ItemQualityHeirloom]: 'heirloom',
+};
+
 // standardize keys regardless they are from backend or frontend
 export const backendMetricI18nKeys: Record<string, string> = {
 	'Chance of Death': 'cod',
@@ -207,9 +232,7 @@ export const specI18nKeys: Record<Spec, string> = {
 	[Spec.SpecProtectionPaladin]: 'protection',
 	[Spec.SpecRetributionPaladin]: 'retribution',
 	// Priest
-	[Spec.SpecDisciplinePriest]: 'discipline',
-	[Spec.SpecHolyPriest]: 'holy',
-	[Spec.SpecShadowPriest]: 'shadow',
+	[Spec.SpecPriest]: 'priest',
 	// Rogue
 	[Spec.SpecRogue]: 'rogue',
 	// Shaman
@@ -382,6 +405,7 @@ export const presetConfigurationCategoryI18nKeys: Record<PresetConfigurationCate
 	[PresetConfigurationCategory.Gear]: 'gear',
 	[PresetConfigurationCategory.Talents]: 'talents',
 	[PresetConfigurationCategory.Rotation]: 'rotation',
+	[PresetConfigurationCategory.RotationType]: 'rotationType',
 	[PresetConfigurationCategory.Encounter]: 'encounter',
 	[PresetConfigurationCategory.Settings]: 'settings',
 };
