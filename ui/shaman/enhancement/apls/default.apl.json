@@ -44,7 +44,7 @@
 					"groupName": "Shocks",
 					"variables": [
 						{ "name": "Twist Flame Shock?", "value": { "variableRef": { "name": "Yes" } } },
-						{ "name": "Filler Shock", "value": { "variableRef": { "name": " Earth Shock" } } }
+						{ "name": "Filler Shock", "value": { "variableRef": { "name": "Earth Shock" } } }
 					]
 				}
 			}
@@ -269,7 +269,7 @@
 							"cmp": {
 								"op": "OpEq",
 								"lhs": { "variablePlaceholder": { "name": "Filler Shock" } },
-								"rhs": { "variableRef": { "name": " Frost Shock" } }
+								"rhs": { "variableRef": { "name": "Frost Shock" } }
 							}
 						},
 						"castSpell": { "spellId": { "spellId": 25464, "rank": 5 } }
@@ -281,7 +281,7 @@
 							"cmp": {
 								"op": "OpEq",
 								"lhs": { "variablePlaceholder": { "name": "Filler Shock" } },
-								"rhs": { "variableRef": { "name": " Earth Shock" } }
+								"rhs": { "variableRef": { "name": "Earth Shock" } }
 							}
 						},
 						"castSpell": { "spellId": { "spellId": 25454, "rank": 8 } }
@@ -291,17 +291,21 @@
 		}
 	],
 	"valueVariables": [
+		{ "name": "--- Toggles ---" },
 		{ "name": "Yes", "value": { "const": { "val": "true" } } },
 		{ "name": "No", "value": { "const": { "val": "false" } } },
+		{ "name": "--- WF Twisting Pause and Shamanistic Rage ---" },
 		{ "name": "Mana below 30%", "value": { "cmp": { "op": "OpLt", "lhs": { "currentManaPercent": {} }, "rhs": { "const": { "val": "30%" } } } } },
 		{ "name": "Mana below 20%", "value": { "cmp": { "op": "OpLt", "lhs": { "currentManaPercent": {} }, "rhs": { "const": { "val": "20%" } } } } },
 		{ "name": "Mana below 10%", "value": { "cmp": { "op": "OpLt", "lhs": { "currentManaPercent": {} }, "rhs": { "const": { "val": "10%" } } } } },
 		{ "name": "Mana below 5%", "value": { "cmp": { "op": "OpLt", "lhs": { "currentManaPercent": {} }, "rhs": { "const": { "val": "5%" } } } } },
-		{ "name": " Frost Shock", "value": { "const": { "val": "Frost Shock" } } },
-		{ "name": " Earth Shock", "value": { "const": { "val": "Earth Shock" } } },
+		{ "name": "--- Filler Shocks ---" },
+		{ "name": "Frost Shock", "value": { "const": { "val": "Frost Shock" } } },
+		{ "name": "Earth Shock", "value": { "const": { "val": "Earth Shock" } } },
+		{ "name": "--- Filler Fire Totems ---" },
 		{ "name": "Magma Totem", "value": { "const": { "val": "Magma" } } },
 		{ "name": "Searing Totem", "value": { "const": { "val": "Searing" } } },
-		{ "name": "----- (internal use) -----" },
+		{ "name": "--- (internal use) ---" },
 		{
 			"name": "Mana below 2x Air Twist",
 			"value": {
