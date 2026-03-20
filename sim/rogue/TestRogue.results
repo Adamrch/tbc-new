@@ -172,6 +172,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestRogue-AllItems-BattlecastGarb"
+ value: {
+  dps: 1659.1434
+  tps: 1177.99181
+ }
+}
+dps_results: {
  key: "TestRogue-AllItems-Battlemaster'sAlacrity-35326"
  value: {
   dps: 1838.02717
@@ -512,6 +519,13 @@ dps_results: {
  value: {
   dps: 1857.67115
   tps: 1318.94652
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-FelSkin"
+ value: {
+  dps: 1780.64056
+  tps: 1264.2548
  }
 }
 dps_results: {
@@ -982,6 +996,13 @@ dps_results: {
  value: {
   dps: 1841.52834
   tps: 1307.48512
+ }
+}
+dps_results: {
+ key: "TestRogue-AllItems-StrengthoftheClefthoof"
+ value: {
+  dps: 1629.4897
+  tps: 1156.93769
  }
 }
 dps_results: {

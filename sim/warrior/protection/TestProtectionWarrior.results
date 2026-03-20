@@ -197,6 +197,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-BattlecastGarb"
+ value: {
+  dps: 752.53896
+  tps: 1397.14316
+  dtps: 1647.54025
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-Battlemaster'sAlacrity-35326"
  value: {
   dps: 735.04816
@@ -653,6 +661,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtectionWarrior-AllItems-FelSkin"
+ value: {
+  dps: 801.80672
+  tps: 1457.62593
+  dtps: 1767.45244
+ }
+}
+dps_results: {
  key: "TestProtectionWarrior-AllItems-FelscaleArmor"
  value: {
   dps: 773.53647
@@ -818,6 +834,14 @@ dps_results: {
   dps: 759.46673
   tps: 1405.38641
   dtps: 1446.07363
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-KhoriumWard"
+ value: {
+  dps: 731.54296
+  tps: 1365.08976
+  dtps: 1567.6461
  }
 }
 dps_results: {
@@ -1219,6 +1243,14 @@ dps_results: {
   dps: 797.57348
   tps: 1474.94035
   dtps: 1412.7092
+ }
+}
+dps_results: {
+ key: "TestProtectionWarrior-AllItems-StrengthoftheClefthoof"
+ value: {
+  dps: 735.35352
+  tps: 1370.5477
+  dtps: 1612.91435
  }
 }
 dps_results: {
