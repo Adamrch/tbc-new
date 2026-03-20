@@ -1433,7 +1433,7 @@ const valueKindFactories: { [f in ValidAPLValueKind]: ValueKindConfig<APLValueIm
 		shortDescription: i18n.t('rotation_tab.apl.values.totem_remaining_time.tooltip'),
 		newValue: APLValueTotemRemainingTime.create,
 		includeIf: (player: Player<any>, _isPrepull: boolean) => player.getClass() == Class.ClassShaman,
-		fields: [totemTypeFieldConfig('totemType')],
+		fields: [totemTypeFieldConfig('totemType'), AplHelpers.reactionTimeCheckbox()],
 	}),
 	catExcessEnergy: inputBuilder({
 		label: i18n.t('rotation_tab.apl.values.cat_excess_energy.label'),
