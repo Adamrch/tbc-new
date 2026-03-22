@@ -28,26 +28,6 @@ func (value *APLValueUnitIsMoving) String() string {
 	return "Is Moving"
 }
 
-type APLValueUnitMovementSpeed struct {
-	DefaultAPLValueImpl
-	unit *Unit
-}
-
-func (rot *APLRotation) newValueUnitMovementSpeed(_ *proto.APLValueUnitMovementSpeed, _ *proto.UUID) APLValue {
-	return &APLValueUnitMovementSpeed{
-		unit: rot.unit,
-	}
-}
-func (value *APLValueUnitMovementSpeed) Type() proto.APLValueType {
-	return proto.APLValueType_ValueTypeFloat
-}
-func (value *APLValueUnitMovementSpeed) GetFloat(sim *Simulation) float64 {
-	return value.unit.GetMovementSpeed()
-}
-func (value *APLValueUnitMovementSpeed) String() string {
-	return "Unit Movement Speed"
-}
-
 type APLValueUnitDistance struct {
 	DefaultAPLValueImpl
 	unit *Unit
