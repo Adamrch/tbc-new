@@ -98,12 +98,10 @@ func (druid *Druid) applyMoonfury() {
 		return
 	}
 
-	value := 0.02 * float64(druid.Talents.Moonfury)
-
 	druid.AddStaticMod(core.SpellModConfig{
-		ClassMask:  DruidSpellWrath | DruidSpellStarfire | DruidSpellMoonfire | DruidSpellMoonfireDoT,
+		ClassMask:  DruidSpellWrath | DruidSpellStarfire | DruidSpellMoonfire,
 		Kind:       core.SpellMod_DamageDone_Pct,
-		FloatValue: value,
+		FloatValue: 0.02 * float64(druid.Talents.Moonfury),
 	})
 }
 
@@ -244,7 +242,7 @@ func (druid *Druid) applyImprovedMoonfire() {
 
 	// 5% per point damage increase to Moonfire and its DoT
 	druid.AddStaticMod(core.SpellModConfig{
-		ClassMask:  DruidSpellMoonfire | DruidSpellMoonfireDoT,
+		ClassMask:  DruidSpellMoonfire,
 		Kind:       core.SpellMod_DamageDone_Flat,
 		FloatValue: 0.05 * float64(druid.Talents.ImprovedMoonfire),
 	})
