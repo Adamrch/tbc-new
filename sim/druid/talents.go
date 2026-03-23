@@ -89,7 +89,7 @@ func (druid *Druid) applyBalanceOfPower() {
 		// See https://www.wowhead.com/tbc/spell=33596/balance-of-power
 		ClassMask:  DruidSpellWrath | DruidSpellStarfire | DruidSpellMoonfire,
 		Kind:       core.SpellMod_BonusHit_Percent,
-		FloatValue: 0.02 * float64(druid.Talents.BalanceOfPower),
+		FloatValue: 2.0 * float64(druid.Talents.BalanceOfPower),
 	})
 }
 
