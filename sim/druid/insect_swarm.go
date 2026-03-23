@@ -10,7 +10,6 @@ const (
 	InsectSwarmBonusCoeff    = 0.12700000405
 	InsectSwarmNumberOfTicks = 6
 	InsectSwarmTickLength    = time.Second * 2
-	InsectSwarmTotalDamage   = 792
 )
 
 func (druid *Druid) registerInsectSwarmSpell() {
@@ -44,7 +43,7 @@ func (druid *Druid) registerInsectSwarmSpell() {
 			BonusCoefficient:    InsectSwarmBonusCoeff,
 
 			OnSnapshot: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				dot.Snapshot(target, InsectSwarmTotalDamage)
+				dot.Snapshot(target, 132)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
 				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

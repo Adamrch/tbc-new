@@ -10,7 +10,6 @@ const (
 	MoonfireDotBonusCoeff    = 0.12999999523
 	MoonfireDotTickLength    = time.Second * 3
 	MoonfireDotNumberOfTicks = 4
-	MoonfireDotTotalDamage   = 600
 
 	MoonfireImpactBonusCoeff = 0.15000000596
 	MoonfireImpactMinDmg     = 305
@@ -43,7 +42,7 @@ func (druid *Druid) registerMoonfireDoTSpell() {
 			BonusCoefficient:    MoonfireDotBonusCoeff,
 
 			OnSnapshot: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-				dot.Snapshot(target, MoonfireDotTotalDamage)
+				dot.Snapshot(target, 150)
 			},
 			OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
 				dot.CalcAndDealPeriodicSnapshotDamage(sim, target, dot.OutcomeTick)

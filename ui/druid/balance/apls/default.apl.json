@@ -15,6 +15,7 @@
 			}
 		},
 		{
+			"hide": true,
 			"action": {
 				"condition": {
 					"cmp": {

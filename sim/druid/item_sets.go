@@ -113,7 +113,7 @@ var ItemSetThunderheartRegalia = core.NewItemSet(core.ItemSet{
 			setBonusAura.AttachSpellMod(core.SpellModConfig{
 				ClassMask:  DruidSpellStarfire,
 				Kind:       core.SpellMod_BonusCrit_Percent,
-				FloatValue: 0.05,
+				FloatValue: 5,
 			})
 		},
 	},

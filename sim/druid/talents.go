@@ -231,7 +231,7 @@ func (druid *Druid) applyFocusedStarlight() {
 	druid.AddStaticMod(core.SpellModConfig{
 		ClassMask:  DruidSpellStarfire | DruidSpellWrath,
 		Kind:       core.SpellMod_BonusCrit_Percent,
-		FloatValue: 0.02 * float64(druid.Talents.FocusedStarlight),
+		FloatValue: 2 * float64(druid.Talents.FocusedStarlight),
 	})
 }
 
@@ -251,7 +251,7 @@ func (druid *Druid) applyImprovedMoonfire() {
 	druid.AddStaticMod(core.SpellModConfig{
 		ClassMask:  DruidSpellMoonfire,
 		Kind:       core.SpellMod_BonusCrit_Percent,
-		FloatValue: 0.05 * float64(druid.Talents.ImprovedMoonfire),
+		FloatValue: 5 * float64(druid.Talents.ImprovedMoonfire),
 	})
 }
 
