@@ -5,7 +5,6 @@ import { RetributionPaladin_Options as RetributionPaladinOptions, RetributionPal
 import { SavedTalents } from '../../core/proto/ui.js';
 import { Stats } from '../../core/proto_utils/stats';
 import DefaultApl from './apls/default.apl.json';
-import SimpleApl from './apls/simple.apl.json';
 import P1_Gear from './gear_sets/p1.gear.json';
 import Preraid_Gear from './gear_sets/preraid.gear.json';
 
@@ -15,6 +14,7 @@ export const PRERAID_GEAR_PRESET = PresetUtils.makePresetGear('Pre-raid', Prerai
 export const DefaultSimpleRotation = PaladinRotation.create({
 	useExorcism: false,
 	useConsecrate: false,
+	delayMajorCDs: 11,
 });
 
 export const APL_PRESET = PresetUtils.makePresetAPLRotation('Default', DefaultApl);

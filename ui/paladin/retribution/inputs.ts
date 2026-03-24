@@ -19,5 +19,13 @@ export const PaladinRotationConfig = {
 			changeEmitter: player => player.rotationChangeEmitter,
 			getValue: player => player.getSimpleRotation().useConsecrate,
 		}),
+		InputHelpers.makeRotationNumberInput<Spec.SpecRetributionPaladin>({
+			fieldName: 'delayMajorCDs',
+			label: 'Delay Major CDs',
+			labelTooltip: 'Delays the first automatic use of major cooldowns (e.g. Bloodlust, Drums) by the specified number of seconds.',
+			changeEmitter: player => player.rotationChangeEmitter,
+			getValue: player => player.getSimpleRotation().delayMajorCDs,
+			positive: true,
+		}),
 	],
 };

@@ -106,6 +106,7 @@ message RetributionPaladin {
 	message Rotation {
 		bool useExorcism = 1;
 		bool useConsecrate = 2;
+		int32 delayMajorCDs = 3;
 	}
 
 	message Options {
