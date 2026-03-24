@@ -411,6 +411,7 @@ var MapItemIdToPPM = map[int32]float64{
 	30090: 1,   // World Breaker
 	32505: 1,   // Madness of the Betrayer
 	31859: 1,   // Darkmoon Card: Madness
+	31323: 1,   // Don Santos' Famous Hunting Rifle
 }
 
 func getPPMForItemID(itemID int32) float64 {

@@ -487,8 +487,8 @@ dps_results: {
 dps_results: {
  key: "TestHunter-AllItems-DonSantos'FamousHuntingRifle-31323"
  value: {
-  dps: 3107.22804
-  tps: 2084.18705
+  dps: 3035.4801
+  tps: 2022.939
   dtps: 13.65072
  }
 }
