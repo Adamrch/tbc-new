@@ -14,7 +14,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecBalanceDruid, {
 	cssClass: 'balance-druid-sim-ui',
 	cssScheme: PlayerClasses.getCssClass(PlayerClasses.Druid),
 	// List any known bugs / issues here, and they'll be shown on the site.
-	knownIssues: [],
+	knownIssues: ['We need assistance testing in-game Treant base damage and spell damage scaling. If interested please join our Discord!'],
 
 	// All stats for which EP should be calculated.
 	epStats: [

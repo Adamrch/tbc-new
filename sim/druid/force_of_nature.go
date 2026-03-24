@@ -82,8 +82,10 @@ func (druid *Druid) newTreant(idx int) *TreantPet {
 
 	treant.EnableAutoAttacks(treant, core.AutoAttackOptions{
 		MainHand: core.Weapon{
-			BaseDamageMin:  174,  // TODO: Verify
-			BaseDamageMax:  196,  // TODO: Verify
+			// TODO: Verify base damage values in-game.
+			// Took the Wrath sim values * 70 / 80 to normalize for level 80
+			BaseDamageMin:  220.5,
+			BaseDamageMax:  312.375,
 			SwingSpeed:     1.75, // Seems to vary from 1.5 to almost 2
 			CritMultiplier: treant.DefaultMeleeCritMultiplier(),
 			SpellSchool:    core.SpellSchoolPhysical,
@@ -135,7 +137,9 @@ func (treant *TreantPet) ExecuteCustomRotation(_ *core.Simulation) {
 }
 
 func (druid *Druid) treantPetBaseStats() stats.Stats {
-	return core.ClassBaseStats[proto.Class_ClassWarrior]
+	return core.ClassBaseStats[proto.Class_ClassWarrior].Add(stats.Stats{
+		stats.PhysicalCritPercent: 5,
+	})
 }
 
 func (druid *Druid) treantPetStatInheritance() core.PetStatInheritance {
@@ -145,7 +149,7 @@ func (druid *Druid) treantPetStatInheritance() core.PetStatInheritance {
 
 		return stats.Stats{
 			stats.Stamina:     ownerStats[stats.Stamina],
-			stats.AttackPower: power * 0.5, // TODO: Determine scaling coefficient
+			stats.AttackPower: power * 0.15, // TODO: Determine scaling coefficient
 		}
 	}
 }
