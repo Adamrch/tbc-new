@@ -14,12 +14,12 @@
 		{"action":{"condition":{"and":{"vals":[{"auraIsInactive":{"auraId":{"spellId":20375,"rank":1}}},{"not":{"val":{"spellIsReady":{"spellId":{"spellId":20271}}}}},{"cmp":{"op":"OpLe","lhs":{"spellGcdHastedDuration":{"spellId":{"spellId":20375,"rank":1}}},"rhs":{"math":{"op":"OpAdd","lhs":{"const":{"val":".4s"}},"rhs":{"autoTimeToNext":{"autoType":"MeleeAuto"}}}}}},{"cmp":{"op":"OpGe","lhs":{"autoTimeSinceLast":{"autoType":"MeleeAuto"}},"rhs":{"const":{"val":".5s"}}}}]}},"castSpell":{"spellId":{"spellId":20375,"rank":1}}}}
 	],
 	"groups": [
-		 {"name":"ExoOrConsec","actions":[{"action":{"condition":{"variableRef":{"name":"Use Exorcism"}},"castSpell":{"spellId":{"spellId":27138,"rank":7}}}},{"action":{"condition":{"variableRef":{"name":"Use Consecrate"}},"castSpell":{"spellId":{"spellId":27173,"rank":6}}}}]}
+		{"name":"ExoOrConsec","actions":[{"action":{"condition":{"variableRef":{"name":"Use Exorcism"}},"castSpell":{"spellId":{"spellId":27138,"rank":7}}}},{"action":{"condition":{"variableRef":{"name":"Use Consecrate"}},"castSpell":{"spellId":{"spellId":27173,"rank":6}}}}]}
 	],
 	"valueVariables": [
 		{"name":"Yes","value":{"const":{"val":"true"}}},
 		{"name":"No","value":{"const":{"val":"false"}}},
-        {"name":"Use Exorcism","value":{"const":{"val":"false"}}},
-        {"name":"Use Consecrate","value":{"const":{"val":"false"}}}
+		{"name":"Use Exorcism","value":{"const":{"val":"false"}}},
+		{"name":"Use Consecrate","value":{"const":{"val":"false"}}}
 	]
 }

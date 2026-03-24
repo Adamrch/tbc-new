@@ -78,8 +78,7 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 		debuffs: DefaultDebuffs,
 
 		rotationType: APLRotation_Type.TypeSimple,
-		//simpleRotation: Presets.DefaultSimpleRotation,
-		//simpleRotation: DefaultSimpleRotation,
+		simpleRotation: DefaultSimpleRotation,
 	},
 
 	// IconInputs to include in the 'Player' section on the settings tab.
@@ -112,8 +111,36 @@ const SPEC_CONFIG = registerSpecConfig(Spec.SpecRetributionPaladin, {
 	},
 
 	simpleRotation: (player, simple): APLRotation => {
-		return Presets.APL_SIMPLE.rotation.rotation!;
+		const rotation = APLRotation.clone(Presets.APL_PRESET.rotation.rotation!);
+
+		const { useExorcism = false, useConsecrate = false } = simple;
+
+		const useExorcismBool = APLValueVariable.fromJson({
+			name: 'UseExorcism',
+			value: { const: { val: String(useExorcism) } },
+		});
+
+		const useConsecrateBool = APLValueVariable.fromJson({
+			name: 'UseConsecrate',
+			value: { const: { val: String(useConsecrate) } },
+		});
+
+		rotation.valueVariables[2] = useExorcismBool;
+		rotation.valueVariables[3] = useConsecrateBool;
+
+		return APLRotation.create({
+			simple: SimpleRotation.create({
+				cooldowns: Cooldowns.create(),
+			}),
+			prepullActions: rotation.prepullActions,
+			priorityList: rotation.priorityList,
+			groups: rotation.groups,
+			valueVariables: rotation.valueVariables,
+		});
 	},
+
+	//Handled by APL for major cds
+	hiddenMCDs: [2825, 28730, 31884, 351355, 22838, 23827, 29383, 12662],
 
 	raidSimPresets: [
 		{
