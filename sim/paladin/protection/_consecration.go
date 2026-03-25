@@ -47,7 +47,7 @@ func (prot *ProtectionPaladin) registerConsecrationSpell() {
 			OnTick: func(sim *core.Simulation, _ *core.Unit, dot *core.Dot) {
 				// Consecration recalculates everything on each tick
 				baseDamage := prot.CalcScalingSpellDmg(0.80000001192) + 0.07999999821*dot.Spell.MeleeAttackPower()
-				dot.Spell.CalcPeriodicAoeDamage(sim, baseDamage, dot.Spell.OutcomeMagicHitAndCrit)
+				dot.Spell.CalcPeriodicAoeDamage(sim, baseDamage, dot.Spell.OutcomeTickMagicHitAndCrit)
 				dot.Spell.DealBatchedPeriodicDamage(sim)
 			},
 		},

@@ -446,6 +446,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestBalance-AllItems-SyphonoftheNathrezim-32262"
+ value: {
+  dps: 1058.35713
+  tps: 976.53407
+ }
+}
+dps_results: {
  key: "TestBalance-AllItems-TheLightningCapacitor-28785"
  value: {
   dps: 1064.02616

@@ -1149,6 +1149,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestDpsWarrior-AllItems-SyphonoftheNathrezim-32262"
+ value: {
+  dps: 2005.73982
+  tps: 1516.10815
+  dtps: 7.2778
+ }
+}
+dps_results: {
  key: "TestDpsWarrior-AllItems-TalismanofAscendance-22678"
  value: {
   dps: 1955.47583

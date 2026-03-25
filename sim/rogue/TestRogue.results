@@ -1020,6 +1020,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestRogue-AllItems-SyphonoftheNathrezim-32262"
+ value: {
+  dps: 1864.704
+  tps: 1323.93984
+ }
+}
+dps_results: {
  key: "TestRogue-AllItems-TalismanofAscendance-22678"
  value: {
   dps: 1813.24487

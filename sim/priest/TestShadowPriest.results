@@ -936,6 +936,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestShadowPriest-AllItems-SyphonoftheNathrezim-32262"
+ value: {
+  dps: 1762.58728
+  tps: 1295.96544
+ }
+}
+dps_results: {
  key: "TestShadowPriest-AllItems-TalismanofAscendance-22678"
  value: {
   dps: 1721.86121

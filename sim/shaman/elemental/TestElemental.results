@@ -1090,6 +1090,13 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestElemental-AllItems-SyphonoftheNathrezim-32262"
+ value: {
+  dps: 1678.73243
+  tps: 1297.66928
+ }
+}
+dps_results: {
  key: "TestElemental-AllItems-TalismanofAscendance-22678"
  value: {
   dps: 1604.06743
