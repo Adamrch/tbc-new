@@ -234,7 +234,7 @@ func applyBuffEffects(agent Agent, raidBuffs *proto.RaidBuffs, partyBuffs *proto
 	}
 
 	if partyBuffs.ManaSpringTotem != proto.TristateEffect_TristateEffectMissing {
-		ManaSpringTotemAura(char, IsImproved(partyBuffs.ManaSpringTotem))
+		MakePermanent(ManaSpringTotemAura(char, IsImproved(partyBuffs.ManaSpringTotem)))
 	}
 
 	if partyBuffs.ManaTideTotems > 0 {
