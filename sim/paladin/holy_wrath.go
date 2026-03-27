@@ -63,9 +63,9 @@ func (paladin *Paladin) registerHolyWrath(rankConfig shared.SpellRankConfig) {
 		BonusCoefficient: coefficient,
 
 		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-			damage := sim.Roll(minDamage, maxDamage)
 			for _, aoeTarget := range sim.Encounter.ActiveTargetUnits {
 				if aoeTarget.MobType == proto.MobType_MobTypeUndead || aoeTarget.MobType == proto.MobType_MobTypeDemon {
+					damage := sim.Roll(minDamage, maxDamage)
 					spell.CalcAndDealDamage(sim, aoeTarget, damage, spell.OutcomeMagicHitAndCrit)
 				}
 			}
