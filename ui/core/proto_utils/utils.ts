@@ -1296,7 +1296,7 @@ export const orderedResourceTypes: Array<ResourceType> = [
 export const AL_CATEGORY_HARD_MODE = 'Hard Mode';
 export const AL_CATEGORY_TITAN_RUNE = 'Titan Rune';
 
-export const defaultRaidBuffMajorDamageCooldowns = (classID?: Class): Partial<RaidBuffs> => {
+export const defaultRaidBuffMajorDamageCooldowns = (_?: Class): Partial<RaidBuffs> => {
 	return RaidBuffs.create({
 		bloodlust: true,
 	});
@@ -1310,6 +1310,15 @@ const exposeWeaknessPhaseSettings: Map<Phase, Pick<Debuffs, 'exposeWeaknessUptim
 	[Phase.Phase5, { exposeWeaknessUptime: 0.9, exposeWeaknessHunterAgility: 1250 }],
 ]);
 export const defaultExposeWeaknessSettings = (phase?: Phase) => exposeWeaknessPhaseSettings.get(phase || Phase.Phase1);
+
+const improvedShadowBoltPhaseSettings: Map<Phase, Pick<Debuffs, 'isbUptime'>> = new Map([
+	[Phase.Phase1, { isbUptime: 0.52 }],
+	[Phase.Phase2, { isbUptime: 0.59 }],
+	[Phase.Phase3, { isbUptime: 0.72 }],
+	[Phase.Phase4, { isbUptime: 0.72 }],
+	[Phase.Phase5, { isbUptime: 0.8 }],
+]);
+export const defaultImprovedShadowBoltSettings = (phase?: Phase) => improvedShadowBoltPhaseSettings.get(phase || Phase.Phase1);
 
 // Adds missing Consumables and SpellEffects to the given player proto.
 export const extendPlayerProtoWithMissingEffects = (playerProto: PlayerProto, db: Database) => {

@@ -1,6 +1,6 @@
 import * as PresetUtils from '../../core/preset_utils';
-import { Debuffs, PseudoStat, RaidBuffs, Stat, ConsumesSpec, TristateEffect, PartyBuffs, IndividualBuffs, Profession, Drums } from '../../core/proto/common';
-import { defaultRaidBuffMajorDamageCooldowns } from '../../core/proto_utils/utils';
+import { Debuffs, PseudoStat, RaidBuffs, Stat, ConsumesSpec, PartyBuffs, IndividualBuffs, Profession, Drums } from '../../core/proto/common';
+import { defaultImprovedShadowBoltSettings } from '../../core/proto_utils/utils';
 import { Stats } from '../../core/proto_utils/stats';
 import { SavedTalents } from '../../core/proto/ui';
 import { MageArmor, Mage_Options as MageOptions } from '../../core/proto/mage';
@@ -9,6 +9,7 @@ import BlankGear from './gear_sets/blank.gear.json';
 import ArcaneApl from './apls/arcane.apl.json';
 import PreBISArcaneGear from './gear_sets/preBisArcane.gear.json';
 import P1BISArcaneGear from './gear_sets/p1Arcane.gear.json';
+import { CURRENT_PHASE } from '../../core/constants/other';
 
 // Preset options for this spec.
 // Eventually we will import these values for the raid sim too, so its good to
@@ -104,5 +105,5 @@ export const DefaultDebuffs = Debuffs.create({
 	curseOfElements: 2,
 	improvedSealOfTheCrusader: true,
 	judgementOfWisdom: true,
-	isbUptime: 0.52,
+	...defaultImprovedShadowBoltSettings(CURRENT_PHASE),
 });
