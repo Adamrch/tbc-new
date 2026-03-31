@@ -554,7 +554,6 @@ func (paladin *Paladin) registerSealOfJustice(seal seal) {
 // Unleashing this Seal's energy will judge an enemy for 20 sec, increasing
 // Holy damage taken from all sources.
 func (paladin *Paladin) registerSealOfTheCrusader(seal seal) {
-
 	percentBonus := core.Ternary(paladin.CouldHaveSetBonus(ItemSetJusticarBattlegear, 2), 1.15, 1.0)
 	flatBonus := 0.0
 	if paladin.Ranged().ID == 23203 { //https://www.wowhead.com/tbc/item=23203/libram-of-fervor
@@ -632,7 +631,7 @@ func (paladin *Paladin) registerSealOfBlood(seal seal) {
 	judgeSpell := paladin.RegisterSpell(core.SpellConfig{
 		ActionID:         core.ActionID{SpellID: seal.judge.spellID},
 		SpellSchool:      core.SpellSchoolHoly,
-		ProcMask:         core.ProcMaskMeleeOrRangedSpecial,
+		ProcMask:         core.ProcMaskMeleeMHSpecial,
 		Flags:            core.SpellFlagMeleeMetrics | core.SpellFlagBinary,
 		ClassSpellMask:   SpellMaskJudgementOfBlood,
 		DamageMultiplier: 1,
