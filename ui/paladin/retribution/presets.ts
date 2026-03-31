@@ -103,6 +103,7 @@ export const DefaultIndividualBuffs = IndividualBuffs.create({
 	blessingOfKings: true,
 	blessingOfWisdom: 2,
 	blessingOfMight: 2,
+	unleashedRage: true,
 });
 
 export const DefaultDebuffs = Debuffs.create({
