@@ -3350,6 +3350,34 @@
 							"additionalProperties": false,
 							"required": ["new", "reset"]
 						},
+						"nameModal": {
+							"type": "object",
+							"properties": {
+								"create": {
+									"type": "string"
+								},
+								"extract": {
+									"type": "string"
+								},
+								"nameConflict": {
+									"type": "string"
+								},
+								"rename": {
+									"type": "string"
+								},
+								"renameConfirm": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"create",
+								"extract",
+								"nameConflict",
+								"rename",
+								"renameConfirm"
+							]
+						},
 						"prePullActions": {
 							"type": "object",
 							"properties": {
@@ -3434,7 +3462,10 @@
 									"additionalProperties": false,
 									"required": ["name", "nameTooltip", "value", "valueTooltip"]
 								},
-								"copyName": {
+								"enterVariableName": {
+									"type": "string"
+								},
+								"extractToVariable": {
 									"type": "string"
 								},
 								"header": {
@@ -3464,7 +3495,7 @@
 								}
 							},
 							"additionalProperties": false,
-							"required": ["attributes", "copyName", "header", "name", "newVariableName", "tooltips"]
+							"required": ["attributes", "enterVariableName", "extractToVariable", "header", "name", "newVariableName", "tooltips"]
 						},
 						"prepull_actions": {
 							"type": "object",
@@ -6141,6 +6172,7 @@
 					"required": [
 						"actionGroups",
 						"floatingActionBar",
+						"nameModal",
 						"prePullActions",
 						"priorityList",
 						"tabs",
