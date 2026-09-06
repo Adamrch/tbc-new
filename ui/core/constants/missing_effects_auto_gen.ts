@@ -2094,12 +2094,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		32368, // Tome of the Lightbringer
-		[
-			"Your Judgement ability also increases your shield block value by 186 for 5s.", // 41042 - https://www.wowhead.com/tbc/spell=41042
-		]
-	],
-	[
 		32481, // Charm of Swift Flight
 		[
 			"Increases speed in Flight Form and Swift Flight Form by 10%.", // 48403 - https://www.wowhead.com/tbc/spell=48403

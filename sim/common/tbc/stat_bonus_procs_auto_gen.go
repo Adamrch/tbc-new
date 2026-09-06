@@ -5163,21 +5163,6 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Your Judgement ability also increases your shield block value by 186 for 5s.
-	// https://www.wowhead.com/tbc/spell=41042
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskUnknown,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 32368, ItemName: "Tome of the Lightbringer"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
 	// Increases speed in Flight Form and Swift Flight Form by 10%.
 	// https://www.wowhead.com/tbc/spell=48403
 	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
