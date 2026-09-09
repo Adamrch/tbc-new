@@ -65,12 +65,17 @@ func init() {
 				NumberOfTicks: 8,
 				TickLength:    time.Second,
 				OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-					dot.Spell.CalcAndDealPeriodicDamage(sim, target, 60, dot.OutcomeTickMagicHit)
+					dot.Spell.CalcAndDealPeriodicDamage(sim, target, 60, dot.OutcomeTick)
 				},
 			},
 
 			ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-				spell.Dot(target).Apply(sim)
+				result := spell.CalcOutcome(sim, target, spell.OutcomeMagicHit)
+
+				if result.Landed() {
+					spell.Dot(target).Apply(sim)
+				}
+				spell.DealOutcome(sim, result)
 			},
 		})
 
