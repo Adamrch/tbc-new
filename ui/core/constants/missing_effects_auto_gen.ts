@@ -2100,12 +2100,6 @@ export const MISSING_ITEM_EFFECTS = new Map<number, string[]>([
 		]
 	],
 	[
-		32489, // Ashtongue Talisman of Zeal
-		[
-			"Flash of Light and Holy Light have a 15% chance to grant your target 0 healing over 12s, and your Judgements have a 50% chance to inflict 0 damage on their target over 8s.", // 40470 - https://www.wowhead.com/tbc/spell=40470
-		]
-	],
-	[
 		32500, // Crystal Spire of Karabor
 		[
 			"If your target is below 50% health, your direct healing spells will cause your target to be healed for an additional 220 health.", // 40972 - https://www.wowhead.com/tbc/spell=40972

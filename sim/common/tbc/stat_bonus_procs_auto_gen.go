@@ -5178,22 +5178,6 @@ func RegisterAllProcs() {
 	//       This can be ignored if the effect has already been implemented.
 	//       With next db run the item will be removed if implemented.
 	//
-	// Flash of Light and Holy Light have a 15% chance to grant your target 0 healing over 12s, and your Judgements
-	// have a 50% chance to inflict 0 damage on their target over 8s.
-	// https://www.wowhead.com/tbc/spell=40470
-	// shared.NewProcStatBonusEffectWithVariants(shared.ProcStatBonusEffect{
-	//	Callback:           core.CallbackEmpty,
-	//	ProcMask:           core.ProcMaskUnknown,
-	//	Outcome:            core.OutcomeEmpty,
-	//	RequireDamageDealt: false
-	// }, []shared.ItemVariant{
-	//	{ItemID: 32489, ItemName: "Ashtongue Talisman of Zeal"},
-	// })
-
-	// TODO: Manual implementation required
-	//       This can be ignored if the effect has already been implemented.
-	//       With next db run the item will be removed if implemented.
-	//
 	// If your target is below 50% health, your direct healing spells will cause your target to be healed for
 	// an additional 220 health.
 	// https://www.wowhead.com/tbc/spell=40972

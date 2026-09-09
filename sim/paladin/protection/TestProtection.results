@@ -157,6 +157,14 @@ dps_results: {
  }
 }
 dps_results: {
+ key: "TestProtection-AllItems-AshtongueTalismanofZeal-32489"
+ value: {
+  dps: 895.28412
+  tps: 1604.0412
+  dtps: 1293.05591
+ }
+}
+dps_results: {
  key: "TestProtection-AllItems-BadgeofTenacity-32658"
  value: {
   dps: 871.88956
