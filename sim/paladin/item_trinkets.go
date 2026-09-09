@@ -62,20 +62,15 @@ func init() {
 					Label:    "Enduring Judgement",
 					ActionID: core.ActionID{SpellID: 40472},
 				},
-				NumberOfTicks: 8,
-				TickLength:    time.Second,
+				NumberOfTicks: 4,
+				TickLength:    2 * time.Second,
 				OnTick: func(sim *core.Simulation, target *core.Unit, dot *core.Dot) {
-					dot.Spell.CalcAndDealPeriodicDamage(sim, target, 60, dot.OutcomeTick)
+					dot.Spell.CalcAndDealPeriodicDamage(sim, target, 120, dot.OutcomeTick)
 				},
 			},
 
 			ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-				result := spell.CalcOutcome(sim, target, spell.OutcomeMagicHit)
-
-				if result.Landed() {
-					spell.Dot(target).Apply(sim)
-				}
-				spell.DealOutcome(sim, result)
+				spell.Dot(target).Apply(sim)
 			},
 		})
 
@@ -84,6 +79,7 @@ func init() {
 			MetricsActionID: core.ActionID{SpellID: 40472},
 			Callback:        core.CallbackOnSpellHitDealt,
 			ClassSpellMask:  SpellMaskAllJudgements,
+			Outcome:         core.OutcomeLanded,
 			ProcChance:      0.5,
 
 			Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
