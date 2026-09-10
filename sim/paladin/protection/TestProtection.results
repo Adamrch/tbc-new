@@ -159,8 +159,8 @@ dps_results: {
 dps_results: {
  key: "TestProtection-AllItems-AshtongueTalismanofZeal-32489"
  value: {
-  dps: 896.4746
-  tps: 1606.70781
+  dps: 899.80652
+  tps: 1612.78045
   dtps: 1293.05591
  }
 }

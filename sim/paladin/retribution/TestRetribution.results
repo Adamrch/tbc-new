@@ -143,9 +143,9 @@ dps_results: {
 dps_results: {
  key: "TestRetribution-AllItems-AshtongueTalismanofZeal-32489"
  value: {
-  dps: 1849.22042
-  tps: 1032.73423
-  dtps: 13.77917
+  dps: 1854.99029
+  tps: 1035.76836
+  dtps: 14.06277
  }
 }
 dps_results: {
