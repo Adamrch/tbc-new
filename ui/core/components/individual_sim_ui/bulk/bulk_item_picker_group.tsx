@@ -1,4 +1,6 @@
 import i18n from '../../../../i18n/config';
+import { getBulkSlotI18nKey } from '../../../../i18n/entity_mapping';
+import { translateBulkSlotName } from '../../../../i18n/localization';
 import { IndividualSimUI } from '../../../individual_sim_ui';
 import { HandType } from '../../../proto/common';
 import { EquippedItem } from '../../../proto_utils/equipped_item';
@@ -6,9 +8,7 @@ import { ContentBlock } from '../../content_block';
 import Toast from '../../toast';
 import { BulkTab } from '../bulk_tab';
 import BulkItemPicker from './bulk_item_picker';
-import { translateBulkSlotName } from '../../../../i18n/localization';
-import { getBulkSlotI18nKey } from '../../../../i18n/entity_mapping';
-import { BulkSimItemSlot } from './utils';
+import { BulkSimItemSlot } from './constants_auto_gen';
 
 export default class BulkItemPickerGroup extends ContentBlock {
 	readonly simUI: IndividualSimUI<any>;
@@ -35,6 +35,7 @@ export default class BulkItemPickerGroup extends ContentBlock {
 
 	// Whether both of this bulk slot's physical slots can hold the same item at once, which is
 	// what makes a same-item combo (two identical rings, one weapon in each hand) a valid input.
+	// Mirrors canStackTwoCopies in the backend.
 	private canStackTwoCopies(item: EquippedItem): boolean {
 		if (item._item.unique || item._item.limitCategory != 0) return false;
 		switch (this.bulkSlot) {
@@ -50,7 +51,7 @@ export default class BulkItemPickerGroup extends ContentBlock {
 
 	// True when the slot already lists as many copies of this exact item as can be worn.
 	// Items sharing a limit category are NOT rejected: only one of them can be worn at a time,
-	// but listing several is how you compare them, and the combo generator drops the
+	// but listing several is how you compare them, and the candidate generator drops the
 	// conflicting pairings itself.
 	private isDuplicateOfExisting(item: EquippedItem): boolean {
 		const pickers = Array.from(this.pickers.values());
@@ -58,9 +59,10 @@ export default class BulkItemPickerGroup extends ContentBlock {
 		return pickers.filter(picker => picker.item.id === item.id).length >= maxCopies;
 	}
 
-	// An equipped item is already part of every combo, so a batch entry for the same item is
-	// redundant and renders as a phantom duplicate - except where equipped + added is what makes
-	// a same-item-in-both-slots combo possible.
+	// An equipped item is already part of every candidate, so a batch entry for the same item is
+	// redundant and renders as a phantom duplicate. Mirrors the backend, which drops the
+	// user-added copy in initSelectedItems - except where equipped + added is what makes a
+	// same-item-in-both-slots combo possible.
 	private evictRedundantAddedCopies(equippedItem: EquippedItem) {
 		if (this.canStackTwoCopies(equippedItem)) {
 			return;
@@ -72,6 +74,8 @@ export default class BulkItemPickerGroup extends ContentBlock {
 		}
 	}
 
+	// Returns false if the item was rejected, so callers can undo the entry they pushed onto
+	// the batch list; a stale one sims and counts toward combinations with no picker to remove it.
 	add(idx: number, item: EquippedItem, silent = false): boolean {
 		// Equipped pickers (idx < 0) report what is worn rather than offering a choice, so they
 		// always render - the guard must never hide one. They evict redundant batch entries instead.

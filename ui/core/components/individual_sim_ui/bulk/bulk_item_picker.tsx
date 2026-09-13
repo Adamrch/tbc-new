@@ -8,11 +8,11 @@ import { EquippedItem } from '../../../proto_utils/equipped_item';
 import { getEligibleItemSlots } from '../../../proto_utils/utils';
 import { TypedEvent } from '../../../typed_event';
 import { Component } from '../../component';
-import { ItemRenderer } from '../../gear_picker/item_renderer';
 import { GearData } from '../../gear_picker/item_list';
+import { ItemRenderer } from '../../gear_picker/item_renderer';
 import { SelectorModalTabs } from '../../gear_picker/selector_modal';
 import { BulkTab } from '../bulk_tab';
-import { BulkSimItemSlot, bulkSimItemSlotToItemSlotPairs } from './utils';
+import { BULK_SIM_ITEM_SLOT_TO_ITEM_SLOT_PAIRS, BulkSimItemSlot } from './constants_auto_gen';
 
 export default class BulkItemPicker extends Component {
 	private readonly itemElem: ItemRenderer;
@@ -93,7 +93,7 @@ export default class BulkItemPicker extends Component {
 			return null;
 		}
 
-		const slots = bulkSimItemSlotToItemSlotPairs.get(this.bulkSlot);
+		const slots = BULK_SIM_ITEM_SLOT_TO_ITEM_SLOT_PAIRS.get(this.bulkSlot);
 		if (!slots) {
 			return null;
 		}
@@ -103,7 +103,7 @@ export default class BulkItemPicker extends Component {
 
 	private getFrozenBulkItemSlot(): ItemSlot | null {
 		const frozenItem = this.bulkUI.frozenItems.get(this.bulkSlot);
-		const slots = bulkSimItemSlotToItemSlotPairs.get(this.bulkSlot);
+		const slots = BULK_SIM_ITEM_SLOT_TO_ITEM_SLOT_PAIRS.get(this.bulkSlot);
 		if (!frozenItem || !slots) {
 			return null;
 		}
