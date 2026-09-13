@@ -187,8 +187,8 @@ func init() {
 		paladin := agent.(PaladinAgent).GetPaladin()
 
 		buffAura := paladin.NewTemporaryStatsAura(
-			"Judgement Block Value",
-			core.ActionID{SpellID: 41042},
+			"Bulwark of the Lightbringer",
+			core.ActionID{SpellID: 41043},
 			stats.Stats{stats.BlockValue: 186},
 			time.Second*5,
 		)
