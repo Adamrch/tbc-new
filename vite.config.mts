@@ -5,6 +5,7 @@ import { IncomingMessage, ServerResponse } from 'http';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { ConfigEnv, defineConfig, PluginOption, UserConfigExport } from 'vite';
+import { watchAndRun } from 'vite-plugin-watch-and-run';
 import { checker } from 'vite-plugin-checker';
 import i18nextLoader from 'vite-plugin-i18next-loader';
 import stylelint from 'vite-plugin-stylelint';
@@ -22,8 +23,7 @@ function serveExternalAssets() {
 	const workerMappings = {
 		'/tbc/sim_worker.js': simWorker,
 		'/tbc/net_worker.js': '/tbc/net_worker.js',
-		'/tbc/lib.wasm': '/tbc/lib.wasm',
-		'/tbc/reforge_worker.js': '/tbc/reforge_worker.js',
+		'/tbc/lib.wasm.gz': '/tbc/lib.wasm.gz',
 		'/tbc/highs.wasm': '/tbc/highs.wasm',
 	};
 
@@ -32,9 +32,10 @@ function serveExternalAssets() {
 		configureServer(server) {
 			server.middlewares.use((req, res, next) => {
 				const url = req.url!;
+				const pathname = new URL(url, 'http://localhost').pathname;
 
-				if (Object.keys(workerMappings).includes(url)) {
-					const targetPath = workerMappings[url as keyof typeof workerMappings];
+				if (Object.keys(workerMappings).includes(pathname)) {
+					const targetPath = workerMappings[pathname as keyof typeof workerMappings];
 					const assetsPath = path.resolve(__dirname, './dist/tbc');
 					const requestedPath = path.join(assetsPath, targetPath.replace('/tbc/', ''));
 
@@ -42,18 +43,9 @@ function serveExternalAssets() {
 					return;
 				}
 
-				// Serve HiGHS chunk files
-				if (url.startsWith('/tbc/highs-') && url.endsWith('.js')) {
-					const assetsPath = path.resolve(__dirname, './dist/tbc');
-					const requestedPath = path.join(assetsPath, url.replace('/tbc/', ''));
-
-					serveFile(res, requestedPath);
-					return;
-				}
-
-				if (url.includes('/tbc/assets')) {
+				if (pathname.includes('/tbc/assets')) {
 					const assetsPath = path.resolve(__dirname, './assets');
-					const assetRelativePath = url.split('/tbc/assets')[1];
+					const assetRelativePath = pathname.split('/tbc/assets')[1];
 					const requestedPath = path.join(assetsPath, assetRelativePath);
 
 					serveFile(res, requestedPath);
@@ -119,6 +111,13 @@ export const getBaseConfig = ({ command, mode }: ConfigEnv) =>
 
 export default defineConfig(({ command, mode }) => {
 	const baseConfig = getBaseConfig({ command, mode });
+	const watchedBackendFiles = [
+		path.resolve(__dirname, 'sim/core/character_constants.go'),
+		path.resolve(__dirname, 'sim/core/bulk/candidates.go'),
+		path.resolve(__dirname, 'tools/database/gen_character_constants_ts.go'),
+		path.resolve(__dirname, 'tools/database/gen_bulksim_constants.ts.go'),
+	];
+
 	return {
 		...baseConfig,
 		css: {
@@ -131,6 +130,16 @@ export default defineConfig(({ command, mode }) => {
 		plugins: [
 			specPages(BASE_PATH),
 			i18nextLoader({ namespaceResolution: 'basename', paths: ['assets/locales'] }),
+			watchAndRun([
+				{
+					name: 'Generate TypeScript from Go',
+					watch: watchedBackendFiles,
+					watchKind: ['ready', 'change'],
+					run: 'go run ./tools/database/gen_db -gen=go-to-ts',
+					delay: 0,
+					logs: ['trigger', 'end'],
+				},
+			]),
 			serveExternalAssets(),
 			checker({
 				root: BASE_PATH,

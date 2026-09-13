@@ -89,6 +89,83 @@ export function sum(arr: Array<number>): number {
 	return arr.reduce((total, cur) => total + cur, 0);
 }
 
+export interface FormatDurationSecondsOptions {
+	showMilliseconds?: boolean;
+	millisecondDigits?: 1 | 2 | 3;
+	separatorStyle?: 'colon' | 'unit';
+	minimumUnit?: 'seconds' | 'minutes' | 'hours';
+}
+
+export function formatDurationSeconds(seconds: number, options: FormatDurationSecondsOptions = {}): string {
+	const showMilliseconds = options.showMilliseconds ?? false;
+	const millisecondDigits = options.millisecondDigits ?? 1;
+	const precision = showMilliseconds ? Math.pow(10, millisecondDigits) : 1;
+	const totalUnits = Math.max(0, Math.round(seconds * precision));
+	const totalSeconds = Math.floor(totalUnits / precision);
+	const fractionalUnits = totalUnits % precision;
+	const hours = Math.floor(totalSeconds / 3600);
+	const minutes = Math.floor((totalSeconds % 3600) / 60);
+	const remainingSeconds = totalSeconds % 60;
+	const secondsSuffix = showMilliseconds ? `.${String(fractionalUnits).padStart(millisecondDigits, '0')}` : '';
+	const paddedSeconds = String(remainingSeconds).padStart(2, '0');
+
+	if (options.separatorStyle === 'colon') {
+		const showHours = hours > 0 || options.minimumUnit === 'hours';
+		const showMinutes = showHours || minutes > 0 || options.minimumUnit === 'minutes';
+
+		if (showHours) {
+			return `${hours}:${String(minutes).padStart(2, '0')}:${paddedSeconds}${secondsSuffix}`;
+		}
+		if (showMinutes) {
+			return `${minutes}:${paddedSeconds}${secondsSuffix}`;
+		}
+		return `${remainingSeconds}${secondsSuffix}s`;
+	}
+
+	if (hours > 0) {
+		return `${hours}h ${String(minutes).padStart(2, '0')}m ${paddedSeconds}${secondsSuffix}s`;
+	}
+	if (minutes > 0) {
+		return `${minutes}m ${paddedSeconds}${secondsSuffix}s`;
+	}
+	return `${remainingSeconds}${secondsSuffix}s`;
+}
+
+// Synchronous 64-bit string hash (FNV-1a paired with a djb2 variant). Collision-resistant
+// enough for local cache keys and content-derived seeds; unlike crypto.subtle it costs no
+// async round-trip.
+export function hashString(value: string): string {
+	let h1 = 0x811c9dc5;
+	let h2 = 0xcbf29ce4;
+	for (let i = 0; i < value.length; i++) {
+		const charCode = value.charCodeAt(i);
+		h1 = Math.imul(h1 ^ charCode, 0x01000193) >>> 0;
+		h2 = (Math.imul(h2, 33) ^ charCode) >>> 0;
+	}
+	return h1.toString(16).padStart(8, '0') + h2.toString(16).padStart(8, '0');
+}
+
+export const Z_95 = 1.96;
+
+// The sim's standard two-sample significance test; every "are these two results actually
+// different" decision should go through this so thresholds never diverge.
+export function zTest(
+	n1: number,
+	avg1: number,
+	stdev1: number,
+	n2: number,
+	avg2: number,
+	stdev2: number,
+	preNormalized = false,
+): { z: number; isDiff: boolean } {
+	const delta = avg1 - avg2;
+	const err1 = preNormalized ? stdev1 : stdev1 / Math.sqrt(n1);
+	const err2 = preNormalized ? stdev2 : stdev2 / Math.sqrt(n2);
+	const denom = Math.sqrt(Math.pow(err1, 2) + Math.pow(err2, 2));
+	const z = Math.abs(delta / denom);
+	return { z, isDiff: z > Z_95 };
+}
+
 // Swaps two elements in the given array.
 export function swap<T>(arr: Array<T>, i: number, j: number) {
 	[arr[i], arr[j]] = [arr[j], arr[i]];
@@ -137,6 +214,10 @@ export function stDevToConf90(stDev: number, N: number) {
 	return (1.645 * stDev) / Math.sqrt(N);
 }
 
+export function stDevToConf95(stDev: number, N: number) {
+	return (Z_95 * stDev) / Math.sqrt(N);
+}
+
 export async function wait(ms: number): Promise<void> {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -177,8 +258,19 @@ export function camelToSnakeCase(str: string): string {
 export function downloadJson(json: any, fileName: string) {
 	downloadString(JSON.stringify(json, null, 2), fileName);
 }
-export function downloadString(data: string, fileName: string) {
-	const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(data);
+// Nearest ancestor the user can scroll vertically, or null when the page itself is it. An
+// overflow-y: hidden box is skipped: it clips but never scrolls, and the log's sideways scroller
+// is one, sitting between the rows and the pane that really moves them.
+export function findScrollParent(elem: HTMLElement): HTMLElement | null {
+	for (let node = elem.parentElement; node && node !== document.body && node !== document.documentElement; node = node.parentElement) {
+		const overflowY = getComputedStyle(node).overflowY;
+		if (overflowY === 'auto' || overflowY === 'scroll') return node;
+	}
+	return null;
+}
+
+export function downloadString(data: string, fileName: string, mimeType = 'text/json') {
+	const dataStr = `data:${mimeType};charset=utf-8,` + encodeURIComponent(data);
 	const downloadAnchorNode = document.createElement('a');
 	downloadAnchorNode.setAttribute('href', dataStr);
 	downloadAnchorNode.setAttribute('download', fileName);
