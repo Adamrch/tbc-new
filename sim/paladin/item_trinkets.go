@@ -87,6 +87,6 @@ func init() {
 			},
 		})
 
-		paladin.ItemSwap.RegisterActive(40472, procAura)
+		paladin.ItemSwap.RegisterActive(32489, procAura)
 	})
 }
