@@ -74,7 +74,7 @@ func init() {
 			},
 		})
 
-		paladin.MakeProcTriggerAura(core.ProcTrigger{
+		procAura := paladin.MakeProcTriggerAura(core.ProcTrigger{
 			Name:            "Ashtongue Talisman of Zeal",
 			MetricsActionID: core.ActionID{SpellID: 40472},
 			Callback:        core.CallbackOnSpellHitDealt,
@@ -86,5 +86,7 @@ func init() {
 				dotSpell.Cast(sim, result.Target)
 			},
 		})
+
+		paladin.ItemSwap.RegisterActive(40472, procAura)
 	})
 }

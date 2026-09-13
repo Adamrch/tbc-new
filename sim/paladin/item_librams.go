@@ -198,7 +198,7 @@ func init() {
 			ActionID: core.ActionID{ItemID: 32368},
 		}).AttachProcTrigger(core.ProcTrigger{
 			Callback:       core.CallbackOnSpellHitDealt,
-			ClassSpellMask: SpellMaskAllJudgements,
+			ClassSpellMask: SpellMaskJudgement,
 
 			Handler: func(sim *core.Simulation, spell *core.Spell, result *core.SpellResult) {
 				buffAura.Activate(sim)
